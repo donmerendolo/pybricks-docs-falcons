@@ -1,6 +1,6 @@
 .. pybricks-requirements::
 
-:mod:`pupdevices <pybricks.pupdevices>` -- Motors, sensors, lights
+:mod:`pupdevices <pybricks.pupdevices>` -- Motores, sensores y luces
 ==================================================================
 
 .. automodule:: pybricks.pupdevices
@@ -10,18 +10,9 @@
    :maxdepth: 1
    :hidden:
 
-   dcmotor
    motor
-   tiltsensor
-   infraredsensor
-   colordistancesensor
-   pfmotor
    colorsensor
-   ultrasonicsensor
    forcesensor
-   colorlightmatrix
-   light
-   remote
 
 .. pybricks-classlink:: Motor
 

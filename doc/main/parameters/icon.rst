@@ -1,8 +1,11 @@
 .. pybricks-requirements:: light-matrix
 
-Icon
+Icono
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. autoclass:: pybricks.parameters.Icon
 
-    See the :ref:`make_icons` section for examples.
+Puedes crear tus propios iconos, por ejemplo:
+
+.. literalinclude::
+    ../../../examples/pup/hub_primehub/display_matrix.py

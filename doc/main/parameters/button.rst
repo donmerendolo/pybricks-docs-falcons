@@ -1,53 +1,33 @@
 .. pybricks-requirements::
 
-Button
+Botón
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. class:: Button
 
-    .. rubric:: Remote and hub buttons
-
-    .. autoattribute:: pybricks.parameters.Button.LEFT_MINUS
-        :annotation:
-
-        Powered Up Remote only.
-
-    .. autoattribute:: pybricks.parameters.Button.LEFT_PLUS
-        :annotation:
-
-        Powered Up Remote only.
-
-    .. autoattribute:: pybricks.parameters.Button.RIGHT_MINUS
-        :annotation:
-
-        Powered Up Remote only.
-
-    .. autoattribute:: pybricks.parameters.Button.RIGHT_PLUS
-        :annotation:
-
-        Powered Up Remote only.
+    .. rubric:: Botones del hub
 
     .. autoattribute:: pybricks.parameters.Button.CENTER
         :annotation:
 
-        Powered Up Remote (green button) or hub power button.
+        Botón de encendido del hub.
 
     .. autoattribute:: pybricks.parameters.Button.LEFT
         :annotation:
 
-        Powered Up Remote (left red button) and Prime/Inventor Hub (left button).
+        Botón izquierdo del hub.
 
     .. autoattribute:: pybricks.parameters.Button.RIGHT
         :annotation:
 
-        Powered Up Remote (right red button) and Prime/Inventor Hub (right button).
+        Botón derecho del hub.
 
     .. autoattribute:: pybricks.parameters.Button.BLUETOOTH
         :annotation:
 
-        Prime/Inventor Hub button with Bluetooth icon.
+        Botón del Hub con el icono de Bluetooth.
 
-    .. rubric:: Xbox controller buttons
+    .. rubric:: Botones del mando Xbox
 
     .. autoattribute:: pybricks.parameters.Button.A
         :annotation:
@@ -64,27 +44,27 @@ Button
     .. autoattribute:: pybricks.parameters.Button.LB
         :annotation:
 
-        The left bumper.
+        El bumper izquierdo.
 
     .. autoattribute:: pybricks.parameters.Button.RB
         :annotation:
 
-        The right bumper.
+        El bumper derecho.
 
     .. autoattribute:: pybricks.parameters.Button.LJ
         :annotation:
 
-        Pressing the left joystick.
+        Presionando el joystick izquierdo.
 
     .. autoattribute:: pybricks.parameters.Button.RJ
         :annotation:
 
-        Pressing the right joystick.
+        Presionando el joystick derecho.
 
     .. autoattribute:: pybricks.parameters.Button.GUIDE
         :annotation:
 
-        The Xbox button in the center of the controller.
+        El botón de Xbox en el centro del mando.
 
     .. autoattribute:: pybricks.parameters.Button.MENU
         :annotation:
@@ -92,12 +72,12 @@ Button
     .. autoattribute:: pybricks.parameters.Button.UPLOAD
         :annotation:
 
-        Only available on newer Xbox controllers.
+        Solo disponible en mandos Xbox más recientes.
 
     .. autoattribute:: pybricks.parameters.Button.VIEW
         :annotation:
 
-    .. rubric:: Xbox Elite Series 2 controller paddles
+    .. rubric:: Paletas del mando Xbox Elite Series 2
 
     .. autoattribute:: pybricks.parameters.Button.P1
         :annotation:

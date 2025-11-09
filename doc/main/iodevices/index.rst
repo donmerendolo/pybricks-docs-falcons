@@ -1,6 +1,4 @@
-.. pybricks-requirements:: pybricks-iodevices
-
-:mod:`iodevices <pybricks.iodevices>` -- Custom devices
+:mod:`iodevices <pybricks.iodevices>` -- Dispositivos personalizados
 ============================================================
 
 .. module:: pybricks.iodevices
@@ -11,7 +9,7 @@
 
    xboxcontroller
 
-This module has classes for generic and custom input/output devices.
+Este módulo tiene clases para dispositivos de entrada/salida genéricos y personalizados.
 
 .. pybricks-classlink:: XboxController
 

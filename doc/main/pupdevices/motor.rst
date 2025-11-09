@@ -1,5 +1,3 @@
-.. pybricks-requirements::
-
 Motors with rotation sensors
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -9,14 +7,14 @@ Motors with rotation sensors
    :width: 100 %
    :alt: pupmotors
 
-   Powered Up motors with rotation sensors. The arrows indicate the default
-   positive direction. See the :mod:`hubs <pybricks.hubs>` module for default
-   directions of built-in motors.
+   Motores de Powered Up con sensores de rotación. Las flechas indican la
+   dirección positiva predeterminada. Consulta el módulo :mod:`hubs <pybricks.hubs>`
+   para las direcciones predeterminadas de los motores integrados.
 
 .. autoclass:: pybricks.pupdevices.Motor
     :no-members:
 
-    .. rubric:: Measuring
+    .. rubric:: Medición
 
     .. automethod:: pybricks.pupdevices.Motor.angle
 
@@ -28,7 +26,7 @@ Motors with rotation sensors
 
     .. automethod:: pybricks.pupdevices.Motor.stalled
 
-    .. rubric:: Stopping
+    .. rubric:: Parada
 
     .. automethod:: pybricks.pupdevices.Motor.stop
 
@@ -36,13 +34,13 @@ Motors with rotation sensors
 
     .. automethod:: pybricks.pupdevices.Motor.hold
 
-    .. rubric:: Running forever
+    .. rubric:: Ejecutar indefinidamente
 
     .. automethod:: pybricks.pupdevices.Motor.run
 
     .. automethod:: pybricks.pupdevices.Motor.dc
 
-    .. rubric:: Running by a fixed amount
+    .. rubric:: Ejecutar según una cantidad fija
 
     .. automethod:: pybricks.pupdevices.Motor.run_time
 
@@ -58,48 +56,32 @@ Motors with rotation sensors
 
     .. _settings:
 
-    .. rubric:: Motor settings
+    .. rubric:: Configuración del motor
 
     .. automethod:: pybricks.pupdevices.Motor.settings
 
     .. automethod:: pybricks.pupdevices.Motor.close
 
-    .. rubric:: Control settings
-
-    .. pybricks-requirements:: pybricks-common-control
+    .. rubric:: Configuración del control
 
     .. automethod:: pybricks.pupdevices.Motor.control.limits
 
-    .. pybricks-requirements:: pybricks-common-control
-
     .. automethod:: pybricks.pupdevices.Motor.control.pid
 
-    .. pybricks-requirements:: pybricks-common-control
+        .. warning::
+            Ojo con poner valores demasiado altos o demasiado bajos. El motor puede romperse. Mejor no tocarlo.
 
     .. automethod:: pybricks.pupdevices.Motor.control.target_tolerances
 
-    .. pybricks-requirements:: pybricks-common-control
-
     .. automethod:: pybricks.pupdevices.Motor.control.stall_tolerances
-
-    .. pybricks-requirements:: pybricks-common-control
 
     .. attribute:: control.scale
 
-        Number of degrees that the motor turns to complete one degree at the
-        output of the gear train. This is the gear ratio determined from the
-        ``gears`` argument when initializing the motor.
-
-    .. versionchanged:: 3.2
-
-        The :meth:`done`, :meth:`stalled` and :meth:`load` methods have been
-        moved.
-
-    .. pybricks-requirements:: pybricks-common-control
+        Número de grados que gira el motor para completar un grado
+        en la salida del tren de engranajes. Esta es la relación de engranajes
+        determinada a partir del argumento ``gears`` al inicializar el motor.
 
     .. automethod:: pybricks.pupdevices.Motor.model.state
-
-    .. pybricks-requirements:: pybricks-common-control
 
     .. automethod:: pybricks.pupdevices.Motor.model.settings
 

@@ -1,6 +1,4 @@
-.. pybricks-requirements::
-
-Color Sensor
+Sensor de color
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. figure:: ../../main/diagrams/sensor_color_lights.png
@@ -15,17 +13,17 @@ Color Sensor
 
     .. automethod:: pybricks.pupdevices.ColorSensor.ambient
 
-    .. rubric:: Advanced color sensing
+    .. rubric:: Detección del color avanzada
 
     .. automethod:: pybricks.pupdevices.ColorSensor.hsv
 
     .. automethod:: pybricks.pupdevices.ColorSensor.detectable_colors
 
-    .. rubric:: Built-in lights
+    .. rubric:: Luces integradas
 
-    This sensor has 3 built-in lights. You can adjust the brightness of each
-    light. If you use the sensor to measure something, the lights will
-    be turned on or off as needed for the measurement.
+    Este sensor tiene 3 luces integradas. Puedes ajustar el brillo de cada
+    luz. Si usas el sensor para medir algo, las luces se encenderán o
+    apagarán según sea necesario para la medición.
 
     .. automethod:: pybricks.pupdevices::ColorSensor.lights.on
 

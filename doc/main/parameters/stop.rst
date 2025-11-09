@@ -1,11 +1,11 @@
 .. pybricks-requirements::
 
-Stop
+Parada
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. class:: Stop
 
-    Action after the motor stops.
+    Acción después de que el motor se detenga.
 
     .. autoattribute:: pybricks.parameters.Stop.COAST
         :annotation:
@@ -22,27 +22,27 @@ Stop
     .. autoattribute:: pybricks.parameters.Stop.NONE
         :annotation:
 
-    The following table shows how each of the basic stop types add an extra
-    level of resistance to motion. In these examples, ``m`` is a
-    :class:`Motor <pybricks.pupdevices.Motor>` and
-    and ``d`` is a :class:`DriveBase <pybricks.robotics.DriveBase>`. The
-    examples also show how running at zero speed compares to these stop types.
+    La tabla siguiente muestra cómo cada uno de los tipos de parada básicos añade un
+    nivel extra de resistencia al movimiento. En estos ejemplos, ``m`` es un
+    :class:`Motor <pybricks.pupdevices.Motor>` y ``d`` es una
+    :class:`DriveBase <pybricks.robotics.DriveBase>`. Los ejemplos
+    también muestran cómo se compara la ejecución a velocidad cero con estos tipos de parada.
 
-    +--------+------------+--------+-------------+---------------+-----------------------------------------+
-    | | Type | | Friction | | Back | | Speed     |  | Angle kept | | Examples                              |
-    |        |            | | EMF  | | kept at 0 |  | at target  |                                         |
-    +========+============+========+=============+===============+=========================================+
-    | Coast  | +          |        |             |               | | ``m.stop()``                          |
-    |        |            |        |             |               | | ``m.run_target(500, 90, Stop.COAST)`` |
-    +--------+------------+--------+-------------+---------------+-----------------------------------------+
-    | Brake  | +          | +      |             |               | | ``m.brake()``                         |
-    |        |            |        |             |               | | ``m.run_target(500, 90, Stop.BRAKE)`` |
-    +--------+------------+--------+-------------+---------------+-----------------------------------------+
-    |        | +          | +      | +           |               | | ``m.run(0)``                          |
-    |        |            |        |             |               | | ``d.drive(0, 0)``                     |
-    +--------+------------+--------+-------------+---------------+-----------------------------------------+
-    | Hold   | +          | +      | +           | +             | | ``m.hold()``                          |
-    |        |            |        |             |               | | ``m.run_target(500, 90, Stop.HOLD)``  |
-    |        |            |        |             |               | | ``d.straight(0)``                     |
-    |        |            |        |             |               | | ``d.straight(100)``                   |
-    +--------+------------+--------+-------------+---------------+-----------------------------------------+
+    +--------+------------+-----------+------------------+------------------------+-----------------------------------------+
+    | | Tipo | | Fricción | | Bloqueo | | Velocidad      |  | Ángulo mantenido en | | Ejemplos                              |
+    |        |            |           | | mantenida en 0 |  | el objetivo         |                                         |
+    +========+============+===========+==================+========================+=========================================+
+    | Coast  | +          |           |                  |                        | | ``m.stop()``                          |
+    |        |            |           |                  |                        | | ``m.run_target(500, 90, Stop.COAST)`` |
+    +--------+------------+-----------+------------------+------------------------+-----------------------------------------+
+    | Brake  | +          | +         |                  |                        | | ``m.brake()``                         |
+    |        |            |           |                  |                        | | ``m.run_target(500, 90, Stop.BRAKE)`` |
+    +--------+------------+-----------+------------------+------------------------+-----------------------------------------+
+    |        | +          | +         | +                |                        | | ``m.run(0)``                          |
+    |        |            |           |                  |                        | | ``d.drive(0, 0)``                     |
+    +--------+------------+-----------+------------------+------------------------+-----------------------------------------+
+    | Hold   | +          | +         | +                | +                      | | ``m.hold()``                          |
+    |        |            |           |                  |                        | | ``m.run_target(500, 90, Stop.HOLD)``  |
+    |        |            |           |                  |                        | | ``d.straight(0)``                     |
+    |        |            |           |                  |                        | | ``d.straight(100)``                   |
+    +--------+------------+-----------+------------------+------------------------+-----------------------------------------+

@@ -1,6 +1,4 @@
-.. pybricks-requirements:: stm32-float
-
-Axis
+Eje
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. autoclass:: pybricks.parameters.Axis

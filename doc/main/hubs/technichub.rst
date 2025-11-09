@@ -9,7 +9,7 @@ Technic Hub
 .. autoclass:: pybricks.hubs.TechnicHub
     :no-members:
 
-    .. rubric:: Using the hub status light
+    .. rubric:: Uso de la luz de estado del hub
 
     .. automethod:: pybricks.hubs::TechnicHub.light.on
 
@@ -19,7 +19,7 @@ Technic Hub
 
     .. automethod:: pybricks.hubs::TechnicHub.light.animate
 
-    .. rubric:: Using the IMU
+    .. rubric:: Uso de la IMU (básicamente el giroscopio y acelerómetro)
 
     .. automethod:: pybricks.hubs::TechnicHub.imu.ready
 
@@ -43,13 +43,13 @@ Technic Hub
 
     .. automethod:: pybricks.hubs::TechnicHub.imu.settings
 
-    .. rubric:: Using the battery
+    .. rubric:: Uso de la batería
 
     .. automethod:: pybricks.hubs::TechnicHub.battery.voltage
 
     .. automethod:: pybricks.hubs::TechnicHub.battery.current
 
-    .. rubric:: Button and system control
+    .. rubric:: Botón y control del sistema
 
     .. automethod:: pybricks.hubs::TechnicHub.buttons.pressed
 
@@ -59,9 +59,9 @@ Technic Hub
 
     .. automethod:: pybricks.hubs::TechnicHub.system.storage
 
-        You can store up to 128 bytes of data on this hub. The data is cleared
-        when you update the Pybricks firmware or if you restore the original
-        firmware.
+        Puedes guardar hasta 128 bytes de datos en este hub. Los datos se borran
+        cuando actualizas el firmware de Pybricks o si restauras el firmware
+        original (el oficial de LEGO).
 
     .. automethod:: pybricks.hubs::TechnicHub.system.reset_storage
 

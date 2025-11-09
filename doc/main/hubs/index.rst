@@ -1,5 +1,3 @@
-.. pybricks-requirements::
-
 :mod:`hubs <pybricks.hubs>` -- Funciones del hub integradas
 =====================================================
 

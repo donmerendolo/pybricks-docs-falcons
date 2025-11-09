@@ -1,11 +1,9 @@
-.. pybricks-requirements::
-
-Port
+Puerto
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. class:: Port
 
-    Input and output ports:
+    Puertos de entrada y salida:
 
     .. autoattribute:: pybricks.parameters.Port.A
         :annotation:

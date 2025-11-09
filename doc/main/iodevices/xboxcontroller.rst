@@ -1,6 +1,4 @@
-.. pybricks-requirements:: xbox-controller
-
-Xbox Controller
+Mando de Xbox
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. figure:: ../../main/diagrams_source/xboxcontroller.png
@@ -11,17 +9,17 @@ Xbox Controller
 
   .. automethod:: pybricks.iodevices::XboxController.buttons.pressed
 
-    Buttons include:
+    Los botones incluyen:
 
       * ``Button.A``, ``Button.B``, ``Button.X``, ``Button.Y``.
       * ``Button.UP``, ``Button.DOWN``, ``Button.LEFT``, ``Button.RIGHT``
-        (direction pad). At most two of these can be pressed at the same time.
-      * ``Button.LB`` and ``Button.RB`` (bumpers).
-      * ``Button.LJ`` and ``Button.RJ`` (pressing the joysticks).
-      * ``Button.VIEW``, ``Button.MENU``, ``Button.GUIDE`` (the Xbox logo), and ``Button.UPLOAD``.
-      * ``Button.P1``, ``Button.P2``, ``Button.P3``, and ``Button.P4`` (Elite Series 2 only).
-        Pressing the paddles may also be detected as other button presses,
-        depending on the currently active profile.
+        (pad direccional). Se pueden presionar, como máximo, dos de estos al mismo tiempo.
+      * ``Button.LB`` y ``Button.RB`` (bumper).
+      * ``Button.LJ`` y ``Button.RJ`` (presionando los joysticks).
+      * ``Button.VIEW``, ``Button.MENU``, ``Button.GUIDE`` (el logo de Xbox), y ``Button.UPLOAD``.
+      * ``Button.P1``, ``Button.P2``, ``Button.P3``, y ``Button.P4`` (solo Elite Series 2).
+        Presionar las paletas también puede detectarse como otras pulsaciones de botones,
+        dependiendo del perfil activo.
 
   .. automethod:: pybricks.iodevices::XboxController.joystick_left
 
@@ -37,57 +35,59 @@ Xbox Controller
 
 .. _xbox-controller-pairing:
 
-Xbox Controller Pairing Instructions
+Instrucciones para emparejar el mando de Xbox
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The first time you use a controller with a hub, you will need to pair
-them: Turn the controller on and then press and hold the pairing
-button on the back of the controller for a few seconds. When you release
-it, the Xbox button starts flashing more rapidly. Then start your program.
 
-When pairing and the connection is succesful, the Xbox button will stop
-flashing and stay on for as long as the program is running.
+La primera vez que uses un mando con un hub, tendrás que emparejarlos:
+enciende el mando y luego mantén pulsado el botón de emparejamiento
+en la parte trasera del mando durante unos segundos. Cuando lo sueltes,
+el botón de Xbox comenzará a parpadear más rápidamente. Luego, inicia tu
+programa.
 
-Repeat Connections
+Cuando el emparejamiento y la conexión sean exitosos, el botón de Xbox
+dejará de parpadear y permanecerá encendido mientras el programa esté en
+ejecución.
+
+Repetir conexiones
 ==================
 
-If you keep using the same controller with the same hub, you can simply
-turn the controller on the next time and the hub will connect to it
-automatically when your program with this class runs.
+Si usas el mismo mando con el mismo hub, puedes simplemente encenderlo
+la próxima vez y el hub se conectará automáticamente cuando tu programa
+ejecute esta clase.
 
-The Xbox controller only accepts this simpler connection with the most
-recently connected device. So if you connect to your Xbox console again, or
-connect to another hub, you will need to pair them again as described
-above.
+El mando de Xbox solo soporta esta conexión más rápida con el dispositivo
+usado más recientemente. Así que si lo vuelves a conectar a tu consola Xbox,
+o lo conectas a otro hub, tendrás que emparejarlos de nuevo como se describe
+arriba.
 
-Compatible Controllers
+Mandos compatibles
 ============================
 
-All Xbox controllers released since 2016 are compatible. This includes the
-controller from the One S (``1708`` from 2016), the Elite Series 2 (``1797``
-from 2019), and the Series X/S (``1914`` from 2020), which is
-the latest model as of this writing.
+Todos los mandos lanzados después del 2016 son compatibles. Esto incluye el
+mando de la One S (``1708`` de 2016), el Elite Series 2 (``1797`` de 2019), y el
+Series X/S (``1914`` de 2020), que es el modelo más reciente hasta la fecha de esta redacción.
 
 .. raw:: html
 
-  <p>See also <a href="https://en.wikipedia.org/wiki/Xbox_Wireless_Controller#Summary" target="_blank">
-  this overview</a> of model numbers including pictures of each controller.</p>
+  <p>Ver también <a href="https://en.wikipedia.org/wiki/Xbox_Wireless_Controller#Summary" target="_blank">
+  este resumen</a> de números de modelo que incluye imágenes de cada mando.</p>
 
-Updating the Xbox Controller
+Actualizar el mando de Xbox
 ============================
 
-If you frequently use the Xbox Controller with your console, your controller
-is probably already up to date. If you have not used it for a while or if you
-bought one recently, you may need to update it.
+Si usas el mando con una consola Xbox, probablemente esté ya actualizado. Si
+no lo has usado durante un tiempo o si lo has comprado recientemente, es posible
+que tengas actualizarlo.
 
-To update the controller without a console, you can use the Xbox Accessories
-app on a Windows computer. You can download it from the Microsoft Store.
-Connect the controller via USB to the computer and follow the instructions in
-the app to click on "Update now".
+Para actualizar el mando sin una consola Xbox, puedes usar la app Xbox Accessories
+en un ordenador con Windows. Puedes descargarla desde la Microsoft Store.
+Conecta el mando al ordenador mediante USB y sigue las instrucciones en la
+app para hacer clic en "Actualizar ahora".
 
-Technic Hub Limitations
+Limitaciones del Technic Hub
 =======================
 
-Due to limitations of the Technic Hub, the hub will disconnect from the
-computer when searching for the Xbox controller. This means you will not be
-able to see output from the ``print`` command. Also, you'll have to connect to
-the computer again if you want to change your program.
+Debido a limitaciones del Technic Hub, el hub se desconectará del
+ordenador al buscar el mando de Xbox. Esto significa que no podrás
+ver la salida del comando ``print``. Además, tendrás que conectarte
+de nuevo al ordenador si quieres cambiar tu programa.

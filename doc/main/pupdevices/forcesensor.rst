@@ -1,6 +1,4 @@
-.. pybricks-requirements::
-
-Force Sensor
+Sensor de contacto
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. figure:: ../../main/cad/output/pupdevice-force.png

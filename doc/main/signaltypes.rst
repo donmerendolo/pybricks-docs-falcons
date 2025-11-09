@@ -1,185 +1,180 @@
-Signals and Units
+Señales y unidades
 =================
 
-Many commands allow you to specify arguments in terms of well-known physical
-quantities. This page gives an overview of each quantity and its unit.
 
-Numbers
+Muchos comandos permiten especificar argumentos en términos de magnitudes
+físicas. Esta página ofrece una visión general de cada cantidad y su unidad.
+
+Números
 ~~~~~~~
 
 .. autodata:: pybricks.parameters.Number
   :noindex:
 
-Time
+Tiempo
 ~~~~~~
 
 .. _time:
 
-time: ms
+tiempo: ms
 ---------
-All time and duration values are measured in milliseconds (ms).
+Todas las cantidades de tiempo se miden en milisegundos (ms).
 
-For example, the duration of motion with ``run_time``, and the duration
-of :func:`wait <.tools.wait>` are
-specified in milliseconds.
+Por ejemplo, la duración del movimiento con ``run_time``, y la duración
+de :func:`wait <.tools.wait>` se especifican en milisegundos (ms).
 
-Angles and angular motion
+Ángulos y movimiento angular
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. _angle:
 
-angle: deg
+ángulo: °
 -----------
 
-All angles are measured in degrees (deg). One full rotation corresponds to 360
-degrees.
+Todos los ángulos se miden en grados (°).
+Una vuelta completa corresponde a 360 grados.
 
-For example, the angle values of a ``Motor`` or
-the ``GyroSensor`` are expressed in degrees.
+Por ejemplo, los valores de ángulo de un ``Motor`` o del
+``GyroSensor`` (giroscopio) se expresan en grados.
 
 .. _speed:
 
-rotational speed: deg/s
+velocidad angular: °/s
 -----------------------
 
-Rotational speed, or *angular velocity* describes how fast something rotates,
-expressed as the number of degrees per second (deg/s).
+La velocidad angular describe cómo de rapido gira algo, expresada como
+el número de grados por segundo (°/s).
 
-For example, the rotational speed values of a ``Motor`` or the
-``GyroSensor`` are expressed in degrees
-per second.
+Por ejemplo, la velocidad angular de un ``Motor`` o del
+``GyroSensor`` (giroscopio) se expresa en grados por segundo.
 
-While we recommend working with degrees per second in your programs, you can
-use the following table to convert between commonly used units.
+Si bien recomendamos trabajar con grados por segundo en tus programas,
+puedes usar la siguiente tabla para convertir entre unidades comúnmente usadas.
 
 +-----------+-------+-----------+
-|           | deg/s | rpm       |
+|           | °/s   | rpm       |
 +-----------+-------+-----------+
-| 1 deg/s = | 1     | 1/6=0.167 |
+| 1 °/s =   | 1     | 1/6=0.167 |
 +-----------+-------+-----------+
 | 1 rpm =   | 6     | 1         |
 +-----------+-------+-----------+
 
 .. _acceleration:
 
-rotational acceleration: deg/s²
+aceleración angular: deg/s²
 --------------------------------
 
-Rotational acceleration, or *angular acceleration* describes how fast the
-rotational speed changes. This is expressed as the change of the number of
-degrees per second, during one second (deg/s²). This is also commonly written
-as  :math:`deg/s^2`.
+La aceleración angular describe cómo de rápido cambia la velocidad angular.
+Esto se expresa como el cambio del número de grados por segundo, durante
+un segundo (°/s²). Esto también se escribe comúnmente como :math:`deg/s^2`.
 
-For example, you can adjust the rotational acceleration setting of a ``Motor``
-to change how smoothly or
-how quickly it reaches the constant speed set point.
+Por ejemplo, puedes ajustar la aceleración angular de un ``Motor``
+para cambiar cómo de suave o rápido alcanza la velocidad constante establecida.
 
-
-Distance and linear motion
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Distancia y movimiento lineal
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. _distance:
 
-distance: mm
+distancia: mm
 -------------
-Distances are expressed in millimeters (mm) whenever possible.
+Las distancias se expresan en milímetros (mm) siempre que sea posible.
 
-For example, the distance value of the ``UltrasonicSensor``
-is measured in millimeters.
+Por ejemplo, el valor de distancia del ``UltrasonicSensor``
+se expresa en milímetros.
 
-While we recommend working with millimeters in your programs, you can use the
-following table to convert between commonly used units.
 
-+---------+------+-----+--------+
-|         | mm   | cm  | inch   |
-+---------+------+-----+--------+
-| 1 mm =  | 1    | 0.1 | 0.0394 |
-+---------+------+-----+--------+
-| 1 cm =  | 10   | 1   | 0.394  |
-+---------+------+-----+--------+
-| 1 inch =| 25.4 | 2.54| 1      |
-+---------+------+-----+--------+
+Si bien recomendamos trabajar con milímetros en tus programas,
+puedes usar la siguiente tabla para convertir entre unidades comúnmente usadas.
+
++-------------+------+------+----------+
+|             | mm   | cm   | pulgadas |
++-------------+------+------+----------+
+| 1 mm =      | 1    | 0.1  | 0.0394   |
++-------------+------+------+----------+
+| 1 cm =      | 10   | 1    | 0.394    |
++-------------+------+------+----------+
+| 1 pulgada = | 25.4 | 2.54 | 1        |
++-------------+------+------+----------+
 
 .. _dimension:
 
-dimension: mm
+dimensión: mm
 -------------
 
-Dimensions are expressed in millimeters (mm), just like
-distances.
+Las dimensiones se expresan en milímetros (mm), al igual que
+las distancias.
 
-For example, the diameter of a wheel is measured in millimeters.
+Por ejemplo, las dimensiones de los sensores y motores
+se especifican en milímetros (mm).
 
 .. _linspeed:
 
-speed: mm/s
+velocidad: mm/s
 ------------
-Linear speeds are expressed as millimeters per second (mm/s).
+Las velocidades lineales se expresan en milímetros por segundo (mm/s).
 
-For example, the speed of a robotic vehicle is expressed in mm/s.
+Por ejemplo, la velocidad de un robot se expresa en mm/s.
 
 .. _linacceleration:
 
-linear acceleration: mm/s²
+aceleración lineal: mm/s²
 --------------------------------
 
-Linear acceleration describes how fast the speed changes. This is expressed as
-the change of the millimeters per second, during one second (mm/s²).
-This is also commonly written as  :math:`mm/s^2`.
+La aceleración lineal describe cómo de rápido cambia la velocidad lineal.
+Esto se expresa como el cambio de los milímetros por segundo, durante
+un segundo (mm/s²). Esto también se escribe comúnmente como :math:`mm/s^2`.
 
-For example, you can adjust the acceleration setting of a
-:class:`DriveBase <.robotics.DriveBase>` to change how
-smoothly or how quickly it reaches the constant speed set point.
+Por ejemplo, puedes ajustar la configuración de aceleración de una
+:class:`DriveBase <.robotics.DriveBase>` para cambiar cómo
+de suave o cómo de rápido alcanza el punto de ajuste de velocidad constante.
 
-Approximate and relative units
+Unidades aproximadas y relativas
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. _percentage:
 
-percentage: %
+porcentaje: %
 --------------
 
-Some signals do not have specific units. They range from a minimum (0%) to a
-maximum (100%). Specifics type of percentages are :ref:`relative distances
-<relativedistance>` or  :ref:`brightness <brightness>`.
+Algunas señales no tienen unidades específicas. Van desde un mínimo (0%) hasta un
+máximo (100%). Los tipos específicos de porcentajes son :ref:`relative distances
+<relativedistance>` o :ref:`brightness <brightness>`.
 
-Another example is the sound volume,
-which ranges from 0% (silent) to 100% (loudest).
+Otro ejemplo es el volumen del sonido,
+que va desde 0% (silencio) hasta 100% (máximo volumen).
 
 .. _relativedistance:
 
-relative distance: %
+distancia relativa: %
 ---------------------
 
-Some distance measurements do not provide an accurate value with a specific
-unit, but they range from very close (0%) to very far (100%). These are
-referred to as relative distances.
+Algunas mediciones de distancia no tienen un valor exacto con una unidad específica,
+pero varían desde muy cerca (0%) hasta muy lejos (100%). Estas se denominan distancias relativas.
 
-For example, the distance value of the ``InfraredSensor``
-is a relative distance.
-
+Por ejemplo, el valor de distancia del ``InfraredSensor`` es una distancia relativa.
 
 .. _brightness:
 
-brightness: %
+brillo: %
 --------------
 
-The perceived brightness of a light is expressed as a percentage. It is 0% when
-the light is off and 100% when the light is fully on. When you choose 50%, this
-means that the light is perceived as approximately half as bright to the human
-eye.
+El brillo percibido de una luz se expresa como un porcentaje. Es 0% cuando
+la luz está apagada y 100% cuando la luz está completamente encendida.
+Cuando eliges 50%, esto significa que la luz se percibe como aproximadamente
+la mitad de brillante para el ojo humano.
 
-Force and torque
+Fuerza y par
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. _force:
 
-force: N
+fuerza: N
 ------------
-Force values are expressed in newtons (N).
+Los valores de fuerza se expresan en newtons (N).
 
-While we recommend working with newtons in your programs, you can use the
-following table to convert to and from other units.
+Si bien recomendamos trabajar con newtons en tus programas, puedes usar la
+siguiente tabla para convertir a y desde otras unidades.
 
 +---------+------+-------+-----------------------------+
 |         | mN   | N     | lbf                         |
@@ -193,63 +188,63 @@ following table to convert to and from other units.
 
 .. _torque:
 
-torque: mNm
+par: mNm
 ------------
-Torque values are expressed in millinewtonmeter (mNm) unless stated otherwise.
+Los valores de par se expresan en milinewtonmetros (mNm) a menos que se indique lo contrario.
 
-Electricity
+Electricidad
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. _voltage:
 
-voltage: mV
+voltaje: mV
 --------------
-Voltages are expressed in millivolt (mV).
+Los voltajes se expresan en milivoltios (mV).
 
-For example, you can check the voltage of the battery.
+Por ejemplo, puedes verificar el voltaje de la batería.
 
 .. _current:
 
-current: mA
+corriente: mA
 --------------
 
-Electrical currents are expressed in milliampere (mA).
+La corriente eléctrica se expresa en miliamperios (mA).
 
-For example, you can check the current supplied by the battery.
+Por ejemplo, puedes verificar la corriente suministrada por la batería.
 
 .. _energy:
 
-energy: J
+energía: J
 --------------
 
-Stored energy or energy consumption can be expressed in Joules (J).
+La energía almacenada o el consumo de energía se pueden expresar en Julios (J).
 
 .. _power:
 
-power: mW
+potencia: mW
 --------------
 
-Power is the rate at which energy is stored or consumed. It is expressed in
-milliwatt (mW).
+La potencia es la tasa a la que se almacena o consume energía. Se expresa en
+milivatios (mW).
 
-Ambient environment
+Ambiente
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. _frequency:
 
-frequency: Hz
+frecuencia: Hz
 --------------
-Sound frequencies are expressed in Hertz (Hz).
+Las frecuencias de sonido se expresan en Hercios (Hz).
 
-For example, you can choose the frequency of a beep to change the pitch.
+Por ejemplo, puedes elegir la frecuencia de un pitido para cambiar el tono.
 
 .. _temperature:
 
-temperature: °C
+temperatura: °C
 ---------------
 
-Temperature is measured in degrees Celsius (°C). To convert to degrees
-Fahrenheit (°F) or Kelvin (K), you can use the following conversion formulas:
+La temperatura se mide en grados Celsius (°C). Para convertir a grados
+Fahrenheit (°F) o Kelvin (K), puedes usar las siguientes fórmulas:
 
     :math:`^{\circ}\kern1pt\!F =\kern1pt^{\circ}\kern1pt\!C \cdot \frac{9}{5} + 32`.
 
@@ -257,39 +252,39 @@ Fahrenheit (°F) or Kelvin (K), you can use the following conversion formulas:
 
 .. _hue:
 
-hue: deg
+tono: °
 --------------
-Hue of a color (0-359 degrees).
+Tono de un color (0-359 grados).
 
 .. _robotframe:
 
-Reference frames
+Marcos de referencia
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The Pybricks module and this documentation use the following conventions:
+El módulo de Pybricks y esta documentación usan las siguientes convenciones:
 
-- X: Positive means forward. Negative means backward.
-- Y: Positive means to the left. Negative means to the right.
-- Z: Positive means upward. Negative means downward.
+- X: Positivo significa hacia adelante. Negativo significa hacia atrás.
+- Y: Positivo significa hacia la izquierda. Negativo significa hacia la derecha.
+- Z: Positivo significa hacia arriba. Negativo significa hacia abajo.
 
-To make sure that all hub measurements (such as acceleration) have the correct
-value and sign, you can specify how the hub is mounted in your creation. This
-adjust the measurements so that it is easy to see how your *robot* is moving,
-rather than how the *hub* is moving.
+Para asegurarte de que todas las mediciones del hub (como la aceleración) tengan el
+valor y el signo correctos, puedes especificar cómo está montado el hub en tu robot.
+Esto ajusta las mediciones para que sea fácil ver cómo se mueve tu *robot*,
+en lugar de cómo se mueve el *hub*.
 
-For example, the hub may be mounted upside down in your design. If you
-configure the settings as shown in :numref:`fig_imuexamples`, the hub
-measurements will be adjusted accordingly. This way, a positive acceleration
-value in the X direction means that your *robot* accelerates forward, even
-though the *hub* accelerates backward.
+Por ejemplo, el hub puede estar montado boca abajo en tu diseño. Si
+configuras los ajustes como se muestra en :numref:`fig_imuexamples`, las
+mediciones del hub se ajustarán en consecuencia. De esta manera, un valor
+positivo de aceleración en la dirección X significa que tu *robot*
+acelera hacia adelante, aunque el *hub* acelere hacia atrás.
 
 .. _fig_imuexamples:
 
 .. figure:: ../main/diagrams/imuexamples.png
    :width: 100 %
 
-   How to configure the ``top_side`` and ``front_side`` settings for three
-   different robot designs. The same technique can be applied to other hubs
-   and other creations, by noting which way the top and
-   front :class:`Side <Side>` of the hub are pointing. The example
-   on the left is the default configuration.
+   Cómo configurar los ajustes de ``top_side`` y ``front_side`` para tres
+   diseños de robots diferentes. La misma técnica se puede aplicar a otros hubs
+   y robots, al observar hacia dónde apuntan la parte superior y el frente
+   :class:`Side <Side>` del hub. La configuración del ejemplo de la izquierda
+   es la predeterminada.

@@ -1,11 +1,9 @@
-.. pybricks-requirements::
-
-Direction
+Dirección
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. class:: Direction
 
-    Rotational direction for positive speed or angle values.
+    Rotación direccional para valores positivos de velocidad o ángulo.
 
     .. autoattribute:: pybricks.parameters.Direction.CLOCKWISE
         :annotation:
@@ -13,14 +11,15 @@ Direction
     .. autoattribute:: pybricks.parameters.Direction.COUNTERCLOCKWISE
         :annotation:
 
-    +--------------------------------+-------------------+-----------------+
-    | ``positive_direction =``       | Positive speed:   | Negative speed: |
-    +================================+===================+=================+
-    | ``Direction.CLOCKWISE``        | clockwise         | counterclockwise|
-    +--------------------------------+-------------------+-----------------+
-    | ``Direction.COUNTERCLOCKWISE`` | counterclockwise  | clockwise       |
-    +--------------------------------+-------------------+-----------------+
+    +--------------------------------+-----------------------------------------+---------------------------+
+    | ``direccion_positiva =``       | Velocidad positiva:                     | Velocidad negativa:       |
+    +================================+=========================================+===========================+
+    | ``Direction.CLOCKWISE``        | sentido de las agujas del reloj  | contrario a las agujas del reloj |
+    +--------------------------------+-----------------------------------------+---------------------------+
+    | ``Direction.COUNTERCLOCKWISE`` | contrario a las agujas del reloj | sentido de las agujas del reloj  |
+    +--------------------------------+-----------------------------------------+---------------------------+
 
-    In general, clockwise is defined by **looking at the motor shaft, just
-    like looking at a clock**. Some motors have two shafts. If in doubt,
-    refer to the diagram in the ``Motor`` class documentation.
+    En general, el sentido de las agujas del reloj se define **mirando el eje del motor,
+    como si miraras un reloj**. Algunos motores tienen dos ejes. Si tienes dudas,
+    consulta el diagrama en la documentación de la clase ``Motor``.
+    

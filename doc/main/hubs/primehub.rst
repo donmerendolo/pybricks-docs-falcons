@@ -9,7 +9,7 @@ Prime Hub
 .. autoclass:: pybricks.hubs.PrimeHub
     :no-members:
 
-    .. rubric:: Using the hub status light
+    .. rubric:: Uso de la luz de estado del hub
 
     .. figure:: ../../main/diagrams/primehub_light.png
         :width: 22 em
@@ -22,7 +22,7 @@ Prime Hub
 
     .. automethod:: pybricks.hubs::PrimeHub.light.animate
 
-    .. rubric:: Using the light matrix display
+    .. rubric:: Uso de la matriz de luces
 
     .. figure:: ../../main/diagrams/primehub_display.png
         :width: 22 em
@@ -43,7 +43,7 @@ Prime Hub
 
     .. automethod:: pybricks.hubs::PrimeHub.display.text
 
-    .. rubric:: Using the buttons
+    .. rubric:: Uso de los botones
 
     .. figure:: ../../main/diagrams/primehub_buttons.png
         :width: 22 em
@@ -52,14 +52,7 @@ Prime Hub
 
     .. automethod:: pybricks.hubs::PrimeHub.system.set_stop_button
 
-    .. rubric:: Using the IMU
-
-    .. versionchanged:: 3.6
-
-        The methods below now return calibrated data by default. Depending on
-        the method used, this combines data from the accelerometer, gyroscope,
-        with your calibration values. Use ``calibrated=False`` where applicable
-        to get the raw data you got before.
+    .. rubric:: Uso de la IMU (básicamente el giroscopio y acelerómetro)
 
     .. automethod:: pybricks.hubs::PrimeHub.imu.ready
 
@@ -83,7 +76,7 @@ Prime Hub
 
     .. automethod:: pybricks.hubs::PrimeHub.imu.settings
 
-    .. rubric:: Using the speaker
+    .. rubric:: Uso del altavoz
 
     .. automethod:: pybricks.hubs::PrimeHub.speaker.volume
 
@@ -91,7 +84,7 @@ Prime Hub
 
     .. automethod:: pybricks.hubs::PrimeHub.speaker.play_notes
 
-    .. rubric:: Using connectionless Bluetooth messaging
+    .. rubric:: Uso de la mensajería Bluetooth sin conexión directa
 
     .. automethod:: pybricks.hubs::PrimeHub.ble.broadcast
 
@@ -101,13 +94,13 @@ Prime Hub
 
     .. automethod:: pybricks.hubs::PrimeHub.ble.version
 
-    .. rubric:: Using the battery
+    .. rubric:: Uso de la batería
 
     .. automethod:: pybricks.hubs::PrimeHub.battery.voltage
 
     .. automethod:: pybricks.hubs::PrimeHub.battery.current
 
-    .. rubric:: Getting the charger status
+    .. rubric:: Estado del cargador
 
     .. automethod:: pybricks.hubs::PrimeHub.charger.connected
 
@@ -115,14 +108,14 @@ Prime Hub
 
     .. automethod:: pybricks.hubs::PrimeHub.charger.status
 
-    .. rubric:: System control
+    .. rubric:: Control del sistema
 
     .. automethod:: pybricks.hubs::PrimeHub.system.info
 
     .. automethod:: pybricks.hubs::PrimeHub.system.storage
 
-        You can store up to 512 bytes of data on this hub. The data is cleared
-        when you update the Pybricks firmware.
+        Puedes guardar hasta 512 bytes de datos en este hub. Los datos se borran
+        si actualizas el firmware de Pybricks.
 
     .. automethod:: pybricks.hubs::PrimeHub.system.reset_storage
 
@@ -179,14 +172,13 @@ Matrix display examples
     .. literalinclude::
         ../../../examples/pup/hub_primehub/display_orientation.py
 
-.. dropdown::
+.. dropdown:: Displaying orientation using the IMU
 
     .. literalinclude::
         ../../../examples/pup/hub_primehub/display_orientation_imu.py
 
-.. _make_icons:
-
 .. dropdown:: Making your own images
+    :name: make_your_own_images
 
     .. literalinclude::
         ../../../examples/pup/hub_primehub/display_matrix.py

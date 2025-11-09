@@ -1,28 +1,26 @@
-Pybricks Documentation
+Documentación de Pybricks
 ==================================================================
 
-`Pybricks <https://pybricks.com/>`_ is Python coding for smart LEGO® hubs.
-Run MicroPython scripts
-directly on the hub, and get full control of your motors and sensors.
+`Pybricks <https://pybricks.com/>`_ es programación en Python para hubs inteligentes de LEGO®.
+Ejecuta scripts de MicroPython directamente en el hub y ten control total de sus motores y sensores.
 
-Pybricks runs on LEGO® BOOST, City, Technic, MINDSTORMS®, and SPIKE®. You
-can code using Windows, Mac, Linux, Chromebook, and Android.
+Pybricks funciona en LEGO® BOOST, City, Technic, MINDSTORMS® y SPIKE®. Puedes programar usando Windows, Mac, Linux, Chromebook y Android.
 
-Click on any device below to see its documentation. Use the menu on the left
-to find documentation for additional modules. You may need to click the ☰ icon
-above to reveal this menu.
+Haz click en cualquier dispositivo a continuación para ver su documentación.
+Usa el menú a la izquierda para encontrar documentación de módulos adicionales.
+Es posible que necesites hacer click en el icono ☰ de arriba para revelar el menú.
 
 .. only:: main
    
 .. _Pybricks website: https://pybricks.com/
 
-.. rubric:: Programmable hubs
+.. rubric:: Hubs programables
 
 .. figure:: ../main/cad/output/hub-all.png
    :width: 100 %
    :target: hubs/index.html
 
-.. rubric:: Powered Up motors and sensors
+.. rubric:: Motores y sensores de Powered Up
 
 .. figure:: ../main/cad/output/pupdevice-all.png
    :width: 100 %
@@ -34,7 +32,7 @@ above to reveal this menu.
 
 .. toctree::
     :maxdepth: 1
-    :caption: Table of contents
+    :caption: Tabla de contenidos
     :hidden:
 
 .. toctree::
