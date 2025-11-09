@@ -6,12 +6,8 @@ Xbox Controller
 .. figure:: ../../main/diagrams_source/xboxcontroller.png
    :width: 60 %
 
-.. blockimg:: pybricks_variables_set_xbox_controller
-
 .. autoclass:: pybricks.iodevices.XboxController
   :no-members:
-
-  .. blockimg:: pybricks_blockButtonIsPressed_XboxController
 
   .. automethod:: pybricks.iodevices::XboxController.buttons.pressed
 
@@ -27,37 +23,15 @@ Xbox Controller
         Pressing the paddles may also be detected as other button presses,
         depending on the currently active profile.
 
-  .. blockimg:: pybricks_blockJoystickValue_lj_x
-
-  .. blockimg:: pybricks_blockJoystickValue_lj_y
-
   .. automethod:: pybricks.iodevices::XboxController.joystick_left
-
-  .. blockimg:: pybricks_blockJoystickValue_rj_x
-
-  .. blockimg:: pybricks_blockJoystickValue_rj_y
 
   .. automethod:: pybricks.iodevices::XboxController.joystick_right
 
-  .. blockimg:: pybricks_blockJoystickValue_lt
-
-  .. blockimg:: pybricks_blockJoystickValue_rt
-
   .. automethod:: pybricks.iodevices::XboxController.triggers
-
-  .. blockimg:: pybricks_blockJoystickValue_dpad
 
   .. automethod:: pybricks.iodevices::XboxController.dpad
 
-  .. blockimg:: pybricks_blockJoystickValue_profile
-
   .. automethod:: pybricks.iodevices::XboxController.profile
-
-  .. blockimg:: pybricks_blockGamepadRumble_default
-
-  .. blockimg:: pybricks_blockGamepadRumble_default_with_list
-
-  .. blockimg:: pybricks_blockGamepadRumble_with_options
 
   .. automethod:: pybricks.iodevices::XboxController.rumble
 

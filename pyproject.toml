@@ -1,43 +1,83 @@
-[tool.poetry]
+[project]
 name = "pybricks"
 version = "3.6.1"
 description = "Documentation and user-API stubs for Pybricks MicroPython"
-authors = ["The Pybricks Authors <team@pybricks.com>"]
-maintainers = ["Laurens Valk <laurens@pybricks.com>", "David Lechner <david@pybricks.com>" ]
-license = "MIT"
+authors = [{ name = "The Pybricks Authors", email = "team@pybricks.com" }]
+requires-python = "~=3.8"
 readme = "README.rst"
-homepage = "https://pybricks.com"
-repository = "https://github.com/pybricks/pybricks-api"
-documentation = "https://docs.pybricks.com"
-classifiers = [
-    "Programming Language :: Python :: Implementation :: MicroPython",
+license = "MIT"
+maintainers = [
+    { name = "Laurens Valk", email = "laurens@pybricks.com" },
+    { name = "David Lechner", email = "david@pybricks.com" },
 ]
-packages = [
-    { include = "pybricks", from = "src" },
-    { include = "micropython", from = "src" },
-    { include = "uerrno", from = "src" },
-    { include = "uio", from = "src" },
-    { include = "ujson", from = "src" },
-    { include = "umath", from = "src" },
-    { include = "urandom", from = "src" },
-    { include = "uselect", from = "src" },
-    { include = "ustruct", from = "src" },
-    { include = "usys", from = "src" },
+classifiers = ["Programming Language :: Python :: Implementation :: MicroPython"]
+
+[project.urls]
+Homepage = "https://pybricks.com"
+Repository = "https://github.com/pybricks/pybricks-api"
+Documentation = "https://docs.pybricks.com"
+
+[dependency-groups]
+lint = [
+    "black>=22.3.0,<23",
+    "doc8>=0.8.1,<0.9",
+    "flake8~=4.0",
+]
+doc = [
+    "Sphinx",
+    "sphinx-rtd-theme>=1.0.0,<2",
+    "toml>=0.10.0,<0.11",
 ]
 
-[tool.poetry.dependencies]
-python = "^3.8"
+[tool.uv]
+default-groups = [
+    "lint",
+    "doc",
+]
 
-[tool.poetry.group.lint.dependencies]
-black = "^22.3.0"
-doc8 = "^0.8.1"
-flake8 = "^4.0"
-
-[tool.poetry.group.doc.dependencies]
+[tool.uv.sources]
 Sphinx = { git = "https://github.com/pybricks/sphinx.git", rev = "cd277d09" }
-sphinx-rtd-theme = "^1.0.0"
-toml = "^0.10.0"
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "src/pybricks",
+    "src/micropython",
+    "src/uerrno",
+    "src/uio",
+    "src/ujson",
+    "src/umath",
+    "src/urandom",
+    "src/uselect",
+    "src/ustruct",
+    "src/usys",
+]
+
+[tool.hatch.build.targets.wheel]
+include = [
+    "src/pybricks",
+    "src/micropython",
+    "src/uerrno",
+    "src/uio",
+    "src/ujson",
+    "src/umath",
+    "src/urandom",
+    "src/uselect",
+    "src/ustruct",
+    "src/usys",
+]
+
+[tool.hatch.build.targets.wheel.sources]
+"src/pybricks" = "pybricks"
+"src/micropython" = "micropython"
+"src/uerrno" = "uerrno"
+"src/uio" = "uio"
+"src/ujson" = "ujson"
+"src/umath" = "umath"
+"src/urandom" = "urandom"
+"src/uselect" = "uselect"
+"src/ustruct" = "ustruct"
+"src/usys" = "usys"
 
 [build-system]
-requires = ["poetry-core>=1.0.0"]
-build-backend = "poetry.core.masonry.api"
+requires = ["hatchling"]
+build-backend = "hatchling.build"

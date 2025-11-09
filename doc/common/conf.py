@@ -56,9 +56,7 @@ extensions = [
     "sphinx.ext.napoleon",
     "sphinx.ext.todo",
     "sphinx.ext.mathjax",
-    # Custom Pybricks extensions
-    "blockimg",
-    "color",
+    # Custom Pybricks extensions    "color",
     "classlink",
     "requirements",
     "requirements-static",
@@ -82,7 +80,7 @@ master_doc = "index"
 # built documents.
 #
 # The full version, including alpha/beta/rc tags.
-release = "v" + _pyproject["tool"]["poetry"]["version"]
+release = "v" + _pyproject["project"]["version"]
 # The short X.Y version.
 version = re.match(r"(v\d+\.\d+)", release)[0]
 

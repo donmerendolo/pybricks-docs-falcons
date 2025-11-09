@@ -6,28 +6,16 @@ Color Sensor
 .. figure:: ../../main/diagrams/sensor_color_lights.png
    :width: 70 %
 
-.. blockimg:: pybricks_variables_set_color_sensor_colorsensor_default
-
-.. blockimg:: pybricks_variables_set_color_sensor_colorsensor_detectable_colors
-
 .. autoclass:: pybricks.pupdevices.ColorSensor
     :no-members:
 
-    .. blockimg:: pybricks_blockColor_ColorSensor_color
-
     .. automethod:: pybricks.pupdevices.ColorSensor.color
 
-    .. blockimg:: pybricks_blockLightReflection_ColorSensor
-
     .. automethod:: pybricks.pupdevices.ColorSensor.reflection
-
-    .. blockimg:: pybricks_blockLightAmbient_ColorSensor
 
     .. automethod:: pybricks.pupdevices.ColorSensor.ambient
 
     .. rubric:: Advanced color sensing
-
-    .. blockimg:: pybricks_blockColor_ColorSensor_hsv
 
     .. automethod:: pybricks.pupdevices.ColorSensor.hsv
 
@@ -39,13 +27,7 @@ Color Sensor
     light. If you use the sensor to measure something, the lights will
     be turned on or off as needed for the measurement.
 
-    .. blockimg:: pybricks_blockLightOn_colorsensor_on
-
-    .. blockimg:: pybricks_blockLightOn_colorsensor_on_list
-
     .. automethod:: pybricks.pupdevices::ColorSensor.lights.on
-
-    .. blockimg:: pybricks_blockLightOn_colorsensor_off
 
     .. automethod:: pybricks.pupdevices::ColorSensor.lights.off
 

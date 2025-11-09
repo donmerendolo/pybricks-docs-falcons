@@ -64,24 +64,9 @@ above to reveal this menu.
 
 .. toctree::
    :maxdepth: 1
-   :caption: Code with blocks
-   :hidden:
-
-   blocks/index
-
-.. toctree::
-   :maxdepth: 1
    :caption: MicroPython modules
    :hidden:
 
    micropython/builtins
    micropython/exceptions
-   micropython/micropython
    micropython/uerrno
-   micropython/uio
-   micropython/ujson
-   micropython/umath
-   micropython/urandom
-   micropython/uselect
-   micropython/ustruct
-   micropython/usys

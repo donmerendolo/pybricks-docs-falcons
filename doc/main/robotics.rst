@@ -6,8 +6,6 @@
 
 .. pybricks-requirements::
 
-.. blockimg:: pybricks_variables_set_drive_base
-
 .. autoclass:: pybricks.robotics.DriveBase
     :no-members:
 
@@ -19,11 +17,7 @@
     This is measured using the internal rotation sensors. Because wheels may
     slip while moving, the traveled distance and angle are only estimates.
 
-    .. blockimg:: pybricks_blockDriveBaseDrive_drivebase_drive_straight
-
     .. automethod:: pybricks.robotics.DriveBase.straight
-
-    .. blockimg:: pybricks_blockDriveBaseDrive_drivebase_drive_turn
 
     .. automethod:: pybricks.robotics.DriveBase.turn
 
@@ -40,19 +34,7 @@
         you drive along a circle by a given distance, which is useful for
         veering slightly in one direction.
 
-    .. blockimg:: pybricks_blockDriveBaseDrive2_drivebase_drive_arc_angle
-
-    .. blockimg:: pybricks_blockDriveBaseDrive2_drivebase_drive_arc_distance
-
     .. automethod:: pybricks.robotics.DriveBase.arc
-
-    .. blockimg:: pybricks_blockDriveBaseConfigure_drivebase_straight_speed
-
-    .. blockimg:: pybricks_blockDriveBaseConfigure_drivebase_straight_acceleration
-
-    .. blockimg:: pybricks_blockDriveBaseConfigure_drivebase_turn_rate
-
-    .. blockimg:: pybricks_blockDriveBaseConfigure_drivebase_turn_acceleration
 
     .. automethod:: pybricks.robotics.DriveBase.settings
 
@@ -66,41 +48,23 @@
     using :meth:`.drive` again. For example, you can drive until a
     sensor is triggered and then stop or turn around.
 
-    .. blockimg:: pybricks_blockDriveBaseDrive_drivebase_drive_forever
-
     .. automethod:: pybricks.robotics.DriveBase.drive
-
-    .. blockimg:: pybricks_blockDriveBaseStop_coast
 
     .. automethod:: pybricks.robotics.DriveBase.stop
 
-    .. blockimg:: pybricks_blockDriveBaseStop_brake
-
     .. automethod:: pybricks.robotics.DriveBase.brake
-
-    .. blockimg:: pybricks_blockDriveBaseStop_hold
 
     .. rubric:: Measuring
 
-    .. blockimg:: pybricks_blockDriveBaseMeasure_drivebase_get_distance
-
     .. automethod:: pybricks.robotics.DriveBase.distance
 
-    .. blockimg:: pybricks_blockDriveBaseMeasure_drivebase_get_angle
-
     .. automethod:: pybricks.robotics.DriveBase.angle
-
-    .. blockimg:: pybricks_blockDriveBaseMeasure_drivebase_get_speed
-
-    .. blockimg:: pybricks_blockDriveBaseMeasure_drivebase_get_turn_rate
 
     .. automethod:: pybricks.robotics.DriveBase.state
 
     .. versionchanged:: 3.6
 
         Now stops the drive base. You can now use nonzero values.
-
-    .. blockimg:: pybricks_blockDriveBaseResetWithValues
 
     .. automethod:: pybricks.robotics.DriveBase.reset
 
@@ -109,8 +73,6 @@
     .. pybricks-requirements:: gyro
 
     .. rubric:: Driving with the gyro
-
-    .. blockimg:: pybricks_blockDriveBaseUseGyro
 
     .. automethod:: pybricks.robotics.DriveBase.use_gyro
 
@@ -200,22 +162,14 @@
 
 .. pybricks-requirements::
 
-.. blockimg:: pybricks_variables_set_car
-
 .. versionadded:: 3.4
 
 .. autoclass:: pybricks.robotics.Car
     :no-members:
 
-    .. blockimg:: pybricks_blockCarSteer
-
     .. automethod:: pybricks.robotics.Car.steer
 
-    .. blockimg:: pybricks_blockCarDrive_car_drive_at_power
-
     .. automethod:: pybricks.robotics.Car.drive_power
-
-    .. blockimg:: pybricks_blockCarDrive_car_drive_at_speed
 
     .. automethod:: pybricks.robotics.Car.drive_speed
 

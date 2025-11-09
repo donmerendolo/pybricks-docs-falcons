@@ -2,8 +2,6 @@ from docutils.parsers.rst import Directive
 from docutils import nodes
 from pathlib import Path
 
-SPHINX_IMAGE_PATH = "blockimg"
-
 
 def get_svg_content(file_path):
     with open(file_path, "r", encoding="utf-8") as file:
@@ -37,4 +35,3 @@ class BlockImageDirective(Directive):
 def setup(apparg):
     global app
     app = apparg
-    app.add_directive("blockimg", BlockImageDirective)
