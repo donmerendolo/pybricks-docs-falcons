@@ -176,25 +176,23 @@
 Examples
 -------------------
 
-Driving straight and turning in place with a drive base
-********************************************************
+.. dropdown:: Driving straight and turning in place with a drive base
 
-This program shows the basics of driving and turning.
+    This program shows the basics of driving and turning.
 
-.. literalinclude::
-    ../../examples/pup/robotics/drivebase_basics.py
+    .. literalinclude::
+        ../../examples/pup/robotics/drivebase_basics.py
 
-Remote controlling a car with front wheel steering
-**************************************************
+.. dropdown:: Remote controlling a car with front wheel steering
 
-This program shows how you can drive a car with front wheel steering
-using the :class:`remote control <pybricks.pupdevices.Remote>`.
-
-In this program, the ports match those of the `LEGO Technic 42099 Off-Roader
-<https://pybricks.com/projects/sets/technic/42099-off-roader/>`_, but you can
-use any other car with front wheel steering. If your vehicle has only one
-drive motor, you can use a single motor instead of a tuple of the motors used
-below.
-
-.. literalinclude::
-    ../../examples/pup/robotics/car_remote.py
+    This program shows how you can drive a car with front wheel steering
+    using the :class:`remote control <pybricks.pupdevices.Remote>`.
+    
+    In this program, the ports match those of the `LEGO Technic 42099 Off-Roader
+    <https://pybricks.com/projects/sets/technic/42099-off-roader/>`_, but you can
+    use any other car with front wheel steering. If your vehicle has only one
+    drive motor, you can use a single motor instead of a tuple of the motors used
+    below.
+    
+    .. literalinclude::
+        ../../examples/pup/robotics/car_remote.py

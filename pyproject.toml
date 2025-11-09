@@ -11,6 +11,9 @@ maintainers = [
     { name = "David Lechner", email = "david@pybricks.com" },
 ]
 classifiers = ["Programming Language :: Python :: Implementation :: MicroPython"]
+dependencies = [
+    "sphinx-design>=0.5.0",
+]
 
 [project.urls]
 Homepage = "https://pybricks.com"

@@ -36,31 +36,8 @@ Side
     .. figure:: ../../main/diagrams/orientation_primehub.png
         :width: 60%
 
-    **Inventor Hub**
-
-    .. figure:: ../../main/diagrams/orientation_inventorhub.png
-        :width: 60%
-
-    **Essential Hub**
-
-    .. figure:: ../../main/diagrams/orientation_essentialhub.png
-        :width: 60%
-
-    **Move Hub**
-
-    .. figure:: ../../main/diagrams/orientation_movehub.png
-        :width: 60%
-
     **Technic Hub**
 
     .. figure:: ../../main/diagrams/orientation_technichub.png
         :width: 60%
 
-    .. versionchanged:: 3.2
-
-        Changed which side is the front.
-
-    **Tilt Sensor**
-
-    .. figure:: ../../main/diagrams/orientation_tiltsensor.png
-        :width: 50%

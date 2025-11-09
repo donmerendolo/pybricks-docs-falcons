@@ -21,13 +21,6 @@ Technic Hub
 
     .. rubric:: Using the IMU
 
-    .. versionchanged:: 3.6
-
-        The methods below now return calibrated data by default. Depending on
-        the method used, this combines data from the accelerometer, gyroscope,
-        with your calibration values. Use ``calibrated=False`` where applicable
-        to get the raw data you got before.
-
     .. automethod:: pybricks.hubs::TechnicHub.imu.ready
 
     .. automethod:: pybricks.hubs::TechnicHub.imu.stationary
@@ -49,16 +42,6 @@ Technic Hub
     .. automethod:: pybricks.hubs::TechnicHub.imu.orientation
 
     .. automethod:: pybricks.hubs::TechnicHub.imu.settings
-
-    .. rubric:: Using connectionless Bluetooth messaging
-
-    .. automethod:: pybricks.hubs::TechnicHub.ble.broadcast
-
-    .. automethod:: pybricks.hubs::TechnicHub.ble.observe
-
-    .. automethod:: pybricks.hubs::TechnicHub.ble.signal_strength
-
-    .. automethod:: pybricks.hubs::TechnicHub.ble.version
 
     .. rubric:: Using the battery
 
@@ -87,92 +70,79 @@ Technic Hub
 Status light examples
 ---------------------
 
-Turning the light on and off
-****************************
+.. dropdown:: Turning the light on and off
 
-.. literalinclude::
-    ../../../examples/pup/hub_common/build/light_off_technichub.py
+    .. literalinclude::
+        ../../../examples/pup/hub_common/build/light_off_technichub.py
 
-Changing brightness and using custom colors
-*******************************************
+.. dropdown:: Changing brightness and using custom colors
 
-.. literalinclude::
-    ../../../examples/pup/hub_common/build/light_hsv_technichub.py
+    .. literalinclude::
+        ../../../examples/pup/hub_common/build/light_hsv_technichub.py
 
-Making the light blink
-**********************
+.. dropdown:: Making the light blink
 
-.. literalinclude::
-    ../../../examples/pup/hub_common/build/light_blink_technichub.py
+    .. literalinclude::
+        ../../../examples/pup/hub_common/build/light_blink_technichub.py
 
-Creating light animations
-*************************
+.. dropdown:: Creating light animations
 
-.. literalinclude::
-    ../../../examples/pup/hub_common/build/light_animate_technichub.py
+    .. literalinclude::
+        ../../../examples/pup/hub_common/build/light_animate_technichub.py
 
 IMU examples
 ---------------
 
-Testing which way is up
-********************************
+.. dropdown:: Testing which way is up
 
-.. literalinclude::
-    ../../../examples/pup/hub_common/build/imu_up_technichub.py
+    .. literalinclude::
+        ../../../examples/pup/hub_common/build/imu_up_technichub.py
 
 
-Reading the tilt value
-********************************
+.. dropdown:: Reading the tilt value
 
-.. literalinclude::
-    ../../../examples/pup/hub_common/build/imu_tilt_technichub.py
+    .. literalinclude::
+        ../../../examples/pup/hub_common/build/imu_tilt_technichub.py
 
-Using a custom hub orientation
-**************************************************
+.. dropdown:: Using a custom hub orientation
 
-.. literalinclude::
-    ../../../examples/pup/hub_common/build/imu_tilt_blast_technichub.py
+    .. literalinclude::
+        ../../../examples/pup/hub_common/build/imu_tilt_blast_technichub.py
 
-Reading acceleration and angular velocity vectors
-**************************************************
+.. dropdown:: Reading acceleration and angular velocity vectors
 
-.. literalinclude::
-    ../../../examples/pup/hub_common/build/imu_read_vector_technichub.py
+    .. literalinclude::
+        ../../../examples/pup/hub_common/build/imu_read_vector_technichub.py
 
-Reading acceleration and angular velocity on one axis
-*****************************************************
+.. dropdown:: Reading acceleration and angular velocity on one axis
 
-.. literalinclude::
-    ../../../examples/pup/hub_common/build/imu_read_scalar_technichub.py
+    .. literalinclude::
+        ../../../examples/pup/hub_common/build/imu_read_scalar_technichub.py
 
 
 Bluetooth examples
 ------------------
 
-Broadcasting data to other hubs
-*******************************
+.. dropdown:: Broadcasting data to other hubs
 
-.. literalinclude::
-    ../../../examples/pup/hub_common/build/ble_broadcast_technichub.py
+    .. literalinclude::
+        ../../../examples/pup/hub_common/build/ble_broadcast_technichub.py
 
-Observing data from other hubs
-******************************
+.. dropdown:: Observing data from other hubs
 
-.. literalinclude::
-    ../../../examples/pup/hub_common/build/ble_observe_technichub.py
+    .. literalinclude::
+        ../../../examples/pup/hub_common/build/ble_observe_technichub.py
 
 
 Button and system examples
 ----------------------------------
 
-Using the stop button during your program
-*****************************************
+.. dropdown:: Using the stop button during your program
 
-.. literalinclude::
-    ../../../examples/pup/hub_common/build/button_single_technichub.py
+    .. literalinclude::
+        ../../../examples/pup/hub_common/build/button_single_technichub.py
 
-Turning the hub off
-*****************************************
+.. dropdown:: Turning the hub off
 
-.. literalinclude::
-    ../../../examples/pup/hub_common/build/system_shutdown_technichub.py
+    .. literalinclude::
+        ../../../examples/pup/hub_common/build/system_shutdown_technichub.py

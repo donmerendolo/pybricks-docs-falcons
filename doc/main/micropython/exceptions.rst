@@ -83,22 +83,19 @@ This section lists all available exceptions in alphabetical order.
 Examples
 ---------------------
 
-Debugging in the REPL terminal
-*****************************************
+.. dropdown:: Debugging in the REPL terminal
 
-.. literalinclude::
-    ../../../examples/micropython/keyboard_interrupt.py
+    .. literalinclude::
+        ../../../examples/micropython/keyboard_interrupt.py
 
-Running code when the stop button is pressed
-********************************************
+.. dropdown:: Running code when the stop button is pressed
 
-.. literalinclude::
-    ../../../examples/micropython/system_exit.py
+    .. literalinclude::
+        ../../../examples/micropython/system_exit.py
 
 .. _device_detection:
 
-Detecting devices using ``OSError``
-*****************************************
+.. dropdown:: Detecting devices using ``OSError``
 
-.. literalinclude::
-    ../../../examples/micropython/oserror.py
+    .. literalinclude::
+        ../../../examples/micropython/oserror.py

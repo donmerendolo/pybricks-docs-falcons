@@ -1,17 +1,10 @@
 .. pybricks-requirements:: primehub
 
-Prime Hub / Inventor Hub
+Prime Hub
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. figure:: ../../main/cad/output/hub-spike-inventor.png
-    :width: 80%
-
-.. class:: InventorHub
-
-    This class is the same as the ``PrimeHub`` class, shown below. Both classes
-    work on both hubs.
-
-    These hubs are completely identical. They use the same Pybricks firmware.
+.. figure:: ../../main/cad/output/hub-prime.png
+    :width: 40%
 
 .. autoclass:: pybricks.hubs.PrimeHub
     :no-members:
@@ -135,167 +128,141 @@ Prime Hub / Inventor Hub
 
     .. automethod:: pybricks.hubs::PrimeHub.system.shutdown
 
-.. note::
-
-        The examples below use the ``PrimeHub`` class. The examples work fine
-        on both hubs because they are the identical. If you prefer, you can
-        change this to ``InventorHub``.
-
 Status light examples
 ---------------------
 
-Turning the light on and off
-****************************
+.. dropdown:: Turning the light on and off
 
-.. literalinclude::
-    ../../../examples/pup/hub_common/build/light_off_primehub.py
+    .. literalinclude::
+        ../../../examples/pup/hub_common/build/light_off_primehub.py
 
-Changing brightness and using custom colors
-*******************************************
+.. dropdown:: Changing brightness and using custom colors
 
-.. literalinclude::
-    ../../../examples/pup/hub_common/build/light_hsv_primehub.py
+    .. literalinclude::
+        ../../../examples/pup/hub_common/build/light_hsv_primehub.py
 
-Making the light blink
-**********************
+.. dropdown:: Making the light blink
 
-.. literalinclude::
-    ../../../examples/pup/hub_common/build/light_blink_primehub.py
+    .. literalinclude::
+        ../../../examples/pup/hub_common/build/light_blink_primehub.py
 
-Creating light animations
-*************************
+.. dropdown:: Creating light animations
 
-.. literalinclude::
-    ../../../examples/pup/hub_common/build/light_animate_primehub.py
+    .. literalinclude::
+        ../../../examples/pup/hub_common/build/light_animate_primehub.py
 
 Matrix display examples
 -----------------------
 
-Displaying images
-*****************
+.. dropdown:: Displaying images
 
-.. literalinclude::
-    ../../../examples/pup/hub_primehub/display_image.py
+    .. literalinclude::
+        ../../../examples/pup/hub_primehub/display_image.py
 
-Displaying numbers
-******************
+.. dropdown:: Displaying numbers
 
-.. literalinclude::
-    ../../../examples/pup/hub_primehub/display_number.py
+    .. literalinclude::
+        ../../../examples/pup/hub_primehub/display_number.py
 
-Displaying text
-***************
+.. dropdown:: Displaying text
 
-.. literalinclude::
-    ../../../examples/pup/hub_primehub/display_text.py
+    .. literalinclude::
+        ../../../examples/pup/hub_primehub/display_text.py
 
-Displaying individual pixels
-****************************
+.. dropdown:: Displaying individual pixels
 
-.. literalinclude::
-    ../../../examples/pup/hub_primehub/display_pixel.py
+    .. literalinclude::
+        ../../../examples/pup/hub_primehub/display_pixel.py
 
-Changing the display orientation
-********************************
+.. dropdown:: Changing the display orientation
 
-.. literalinclude::
-    ../../../examples/pup/hub_primehub/display_orientation.py
+    .. literalinclude::
+        ../../../examples/pup/hub_primehub/display_orientation.py
 
-.. literalinclude::
-    ../../../examples/pup/hub_primehub/display_orientation_imu.py
+.. dropdown::
+
+    .. literalinclude::
+        ../../../examples/pup/hub_primehub/display_orientation_imu.py
 
 .. _make_icons:
 
-Making your own images
-**********************
+.. dropdown:: Making your own images
 
-.. literalinclude::
-    ../../../examples/pup/hub_primehub/display_matrix.py
+    .. literalinclude::
+        ../../../examples/pup/hub_primehub/display_matrix.py
 
-Combining icons to make expressions
-************************************
+.. dropdown:: Combining icons to make expressions
 
-.. literalinclude::
-    ../../../examples/pup/hub_primehub/display_expression.py
+    .. literalinclude::
+        ../../../examples/pup/hub_primehub/display_expression.py
 
-Displaying animations
-*********************
+.. dropdown:: Displaying animations
 
-.. literalinclude::
-    ../../../examples/pup/hub_primehub/display_animate.py
+    .. literalinclude::
+        ../../../examples/pup/hub_primehub/display_animate.py
 
 Button examples
 ---------------
 
-Detecting button presses
-************************
+.. dropdown:: Detecting button presses
 
-.. literalinclude::
-    ../../../examples/pup/hub_primehub/button_main.py
+    .. literalinclude::
+        ../../../examples/pup/hub_primehub/button_main.py
 
 IMU examples
 ---------------
 
-Testing which way is up
-********************************
+.. dropdown:: Testing which way is up
 
-.. literalinclude::
-    ../../../examples/pup/hub_common/build/imu_up_primehub.py
+    .. literalinclude::
+        ../../../examples/pup/hub_common/build/imu_up_primehub.py
 
 
-Reading the tilt value
-********************************
+.. dropdown:: Reading the tilt value
 
-.. literalinclude::
-    ../../../examples/pup/hub_common/build/imu_tilt_primehub.py
+    .. literalinclude::
+        ../../../examples/pup/hub_common/build/imu_tilt_primehub.py
 
-Using a custom hub orientation
-**************************************************
+.. dropdown:: Using a custom hub orientation
 
-.. literalinclude::
-    ../../../examples/pup/hub_common/build/imu_tilt_blast_primehub.py
+    .. literalinclude::
+        ../../../examples/pup/hub_common/build/imu_tilt_blast_primehub.py
 
-Reading acceleration and angular velocity vectors
-**************************************************
+.. dropdown:: Reading acceleration and angular velocity vectors
 
-.. literalinclude::
-    ../../../examples/pup/hub_common/build/imu_read_vector_primehub.py
+    .. literalinclude::
+        ../../../examples/pup/hub_common/build/imu_read_vector_primehub.py
 
-Reading acceleration and angular velocity on one axis
-*****************************************************
+.. dropdown:: Reading acceleration and angular velocity on one axis
 
-.. literalinclude::
-    ../../../examples/pup/hub_common/build/imu_read_scalar_primehub.py
+    .. literalinclude::
+        ../../../examples/pup/hub_common/build/imu_read_scalar_primehub.py
 
 
 Bluetooth examples
 ------------------
 
-Broadcasting data to other hubs
-*******************************
+.. dropdown:: Broadcasting data to other hubs
 
-.. literalinclude::
-    ../../../examples/pup/hub_common/build/ble_broadcast_primehub.py
+    .. literalinclude::
+        ../../../examples/pup/hub_common/build/ble_broadcast_primehub.py
 
-Observing data from other hubs
-******************************
+.. dropdown:: Observing data from other hubs
 
-.. literalinclude::
-    ../../../examples/pup/hub_common/build/ble_observe_primehub.py
+    .. literalinclude::
+        ../../../examples/pup/hub_common/build/ble_observe_primehub.py
 
 
 System examples
 ----------------------------------
 
-Changing the stop button combination
-*****************************************
+.. dropdown:: Changing the stop button combination
 
-.. literalinclude::
-    ../../../examples/pup/hub_primehub/button_stop.py
+    .. literalinclude::
+        ../../../examples/pup/hub_primehub/button_stop.py
 
-Turning the hub off
-*****************************************
+.. dropdown:: Turning the hub off
 
-.. literalinclude::
-    ../../../examples/pup/hub_common/build/system_shutdown_primehub.py
+    .. literalinclude::
+        ../../../examples/pup/hub_common/build/system_shutdown_primehub.py
 

@@ -13,15 +13,7 @@ to find documentation for additional modules. You may need to click the ☰ icon
 above to reveal this menu.
 
 .. only:: main
-
-   .. note:: You are viewing the stand-alone version of the documentation. To
-             learn more about Pybricks and to start coding, visit
-             the `Pybricks website`_
-
-   .. note:: Are you using LEGO MINDSTORMS EV3? Check out the
-            `EV3 documentation`_ instead.
-
-.. _EV3 documentation: https://pybricks.com/ev3-micropython/
+   
 .. _Pybricks website: https://pybricks.com/
 
 .. rubric:: Programmable hubs
@@ -40,10 +32,6 @@ above to reveal this menu.
    :width: 100 %
    :target: pupdevices/motor.html
 
-.. figure:: ../main/cad/output/pupdevice-dcmotors.png
-   :width: 70 %
-   :target: pupdevices/dcmotor.html
-
 .. toctree::
     :maxdepth: 1
     :caption: Table of contents
@@ -51,7 +39,7 @@ above to reveal this menu.
 
 .. toctree::
    :maxdepth: 1
-   :caption: Pybricks modules
+   :caption: Módulos de Pybricks
    :hidden:
 
    hubs/index
@@ -64,7 +52,7 @@ above to reveal this menu.
 
 .. toctree::
    :maxdepth: 1
-   :caption: MicroPython modules
+   :caption: Módulos de MicroPython
    :hidden:
 
    micropython/builtins

@@ -1,6 +1,6 @@
 .. pybricks-requirements::
 
-:mod:`hubs <pybricks.hubs>` -- Built-in hub functions
+:mod:`hubs <pybricks.hubs>` -- Funciones del hub integradas
 =====================================================
 
 .. module:: pybricks.hubs

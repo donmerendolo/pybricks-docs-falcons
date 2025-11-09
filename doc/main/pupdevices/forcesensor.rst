@@ -20,14 +20,12 @@ Force Sensor
 Examples
 -------------------
 
-Measuring force and movement
-****************************
+.. dropdown:: Measuring force and movement
 
-.. literalinclude::
-    ../../../examples/pup/sensor_force/basics.py
+    .. literalinclude::
+        ../../../examples/pup/sensor_force/basics.py
 
-Measuring peak force
-********************
+.. dropdown:: Measuring peak force
 
-.. literalinclude::
-    ../../../examples/pup/sensor_force/peak.py
+    .. literalinclude::
+        ../../../examples/pup/sensor_force/peak.py

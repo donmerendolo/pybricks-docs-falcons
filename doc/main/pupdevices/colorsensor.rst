@@ -35,56 +35,49 @@ Color Sensor
 Examples
 -------------------
 
-Measuring color and reflection
-******************************
+.. dropdown:: Measuring color and reflection
 
-.. literalinclude::
-    ../../../examples/pup/sensor_color/color_print.py
-
-
-Waiting for a color
-*******************
-
-.. literalinclude::
-    ../../../examples/pup/sensor_color/wait_for_color.py
+    .. literalinclude::
+        ../../../examples/pup/sensor_color/color_print.py
 
 
-Reading *reflected* hue, saturation, and value
-************************************************
+.. dropdown:: Waiting for a color
 
-.. literalinclude::
-    ../../../examples/pup/sensor_color/hsv.py
+    .. literalinclude::
+        ../../../examples/pup/sensor_color/wait_for_color.py
 
 
-Changing the detectable colors
-******************************
+.. dropdown:: Reading *reflected* hue, saturation, and value
 
-By default, the sensor is configured to detect red, yellow, green,
-blue, white, or no color, which suits many applications.
+    .. literalinclude::
+        ../../../examples/pup/sensor_color/hsv.py
 
-For better results in your application, you can measure your desired
-colors in advance, and tell the sensor to look only for those colors.
-Be sure to measure them at the **same distance and light conditions**
-as in your final application. Then you'll get very accurate results
-even for colors that are otherwise hard to detect.
 
-.. literalinclude::
-    ../../../examples/pup/sensor_color/detectable_colors.py
+.. dropdown:: Changing the detectable colors
 
-Reading *ambient* hue, saturation, value, and color
-***************************************************
+    By default, the sensor is configured to detect red, yellow, green,
+    blue, white, or no color, which suits many applications.
 
-.. literalinclude::
-    ../../../examples/pup/sensor_color/color_ambient.py
+    For better results in your application, you can measure your desired
+    colors in advance, and tell the sensor to look only for those colors.
+    Be sure to measure them at the **same distance and light conditions**
+    as in your final application. Then you'll get very accurate results
+    even for colors that are otherwise hard to detect.
+    
+    .. literalinclude::
+        ../../../examples/pup/sensor_color/detectable_colors.py
 
-Blinking the built-in lights
-****************************
+.. dropdown:: Reading *ambient* hue, saturation, value, and color
 
-.. literalinclude::
-    ../../../examples/pup/sensor_color/lights_blink.py
+    .. literalinclude::
+        ../../../examples/pup/sensor_color/color_ambient.py
 
-Turning off the lights when the program ends
-**********************************************
+.. dropdown:: Blinking the built-in lights
 
-.. literalinclude::
-    ../../../examples/pup/sensor_color/cleanup.py
+    .. literalinclude::
+        ../../../examples/pup/sensor_color/lights_blink.py
+
+.. dropdown:: Turning off the lights when the program ends
+
+    .. literalinclude::
+        ../../../examples/pup/sensor_color/cleanup.py
