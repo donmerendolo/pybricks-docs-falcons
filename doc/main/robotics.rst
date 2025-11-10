@@ -4,8 +4,6 @@
 .. automodule:: pybricks.robotics
     :no-members:
 
-.. pybricks-requirements::
-
 .. autoclass:: pybricks.robotics.DriveBase
     :no-members:
 
@@ -53,8 +51,6 @@
     .. automethod:: pybricks.robotics.DriveBase.reset
 
     .. automethod:: pybricks.robotics.DriveBase.stalled
-
-    .. pybricks-requirements:: gyro
 
     .. rubric:: Moviéndose con el giroscopio
 

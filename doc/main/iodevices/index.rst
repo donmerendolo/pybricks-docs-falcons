@@ -1,5 +1,5 @@
 :mod:`iodevices <pybricks.iodevices>` -- Dispositivos personalizados
-============================================================
+====================================================================
 
 .. module:: pybricks.iodevices
 

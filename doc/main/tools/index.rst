@@ -1,5 +1,3 @@
-.. pybricks-requirements::
-
 :mod:`tools <pybricks.tools>` -- Herramientas de propósito general
 ================================================
 
@@ -37,16 +35,12 @@ Herramientas de entrada
 Herramientas de álgebra lineal
 --------------------
 
-.. pybricks-requirements:: stm32-float
-
 .. autoclass:: pybricks.tools.Matrix
     :no-members:
 
     .. autoattribute:: pybricks.tools::Matrix.T
 
     .. autoattribute:: pybricks.tools::Matrix.shape
-
-.. pybricks-requirements:: stm32-float
 
 .. autofunction:: pybricks.tools.vector
 

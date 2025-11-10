@@ -453,7 +453,7 @@ class Light:
     def off(self) -> None:
         """off()
 
-        Turns off the light."""
+        Apaga la luz."""
 
 
 # HACK: exclude from jedi

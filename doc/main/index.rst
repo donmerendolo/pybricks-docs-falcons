@@ -20,7 +20,7 @@ Es posible que necesites hacer click en el icono ☰ de arriba para revelar el m
    :width: 100 %
    :target: hubs/index.html
 
-.. rubric:: Motores y sensores de Powered Up
+.. rubric:: Motores y sensores
 
 .. figure:: ../main/cad/output/pupdevice-all.png
    :width: 100 %
@@ -34,6 +34,15 @@ Es posible que necesites hacer click en el icono ☰ de arriba para revelar el m
     :maxdepth: 1
     :caption: Tabla de contenidos
     :hidden:
+
+.. toctree::
+   :maxdepth: 1
+   :caption: ANTES DE EMPEZAR
+   :hidden:
+
+   antes_de_empezar/funciones
+   antes_de_empezar/modulos
+   antes_de_empezar/clases
 
 .. toctree::
    :maxdepth: 1

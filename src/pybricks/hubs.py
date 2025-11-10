@@ -29,27 +29,22 @@ class TechnicHub:
         observe_channels: Sequence[int] = [],
     ):
         """TechnicHub(top_side=Axis.Z, front_side=Axis.X, broadcast_channel=None, observe_channels=[])
-
-        Initializes the hub. Optionally, specify how the hub is
-        :ref:`placed in your design <robotframe>` by saying in which
-        direction the top side (with the button) and front side
-        (with the light) are pointing.
+        
+        Inicializa el hub. Puedes especificar cómo el hub se
+        :ref:`coloca en tu diseño <robotframe>` indicando en qué
+        dirección apuntan el lado superior (con el botón)
+        y el lado frontal (con la luz).
 
         Arguments:
-            top_side (Axis): The axis that passes through the *top side* of
-                the hub.
-            front_side (Axis): The axis that passes through the *front side* of
-                the hub.
+            top_side (Axis): El eje que pasa por el *lado superior* del hub.
+            front_side (Axis): El eje que pasa por el *lado frontal* del hub.
             broadcast_channel:
-                Channel number (0 to 255) used to broadcast data.
-                Choose ``None`` when not using broadcasting.
+                Número de canal (0 a 255) usado para transmitir datos.
+                Elige ``None`` si no usas transmisión.
             observe_channels:
-                A list of channels to listen to when ``hub.ble.observe()`` is
-                called. Listening to more channels requires more memory.
-                Default is an empty list (no channels).
-
-        .. versionchanged:: 3.3
-            Added *broadcast_channel* and *observe_channels* arguments.
+                Una lista de canales para escuchar cuando se llama a ``hub.ble.observe()``.
+                Escuchar más canales requiere más memoria.
+                Por defecto es una lista vacía (sin canales).
         """
 
 
@@ -84,26 +79,21 @@ class PrimeHub:
     ):
         """PrimeHub(top_side=Axis.Z, front_side=Axis.X, broadcast_channel=None, observe_channels=[])
 
-        Initializes the hub. Optionally, specify how the hub is
-        :ref:`placed in your design <robotframe>` by saying in which
-        direction the top side (with the buttons) and front side (with the USB
-        port) are pointing.
+        Inicializa el hub. Puedes especificar cómo el hub se
+        :ref:`coloca en tu diseño <robotframe>` indicando en qué
+        dirección apuntan el lado superior (con el botón)
+        y el lado frontal (con la luz).
 
         Arguments:
-            top_side (Axis): The axis that passes through the *top side* of
-                the hub.
-            front_side (Axis): The axis that passes through the *front side* of
-                the hub.
+            top_side (Axis): El eje que pasa por el *lado superior* del hub.
+            front_side (Axis): El eje que pasa por el *lado frontal* del hub.
             broadcast_channel:
-                Channel number (0 to 255) used to broadcast data.
-                Choose ``None`` when not using broadcasting.
+                Número de canal (0 a 255) usado para transmitir datos.
+                Elige ``None`` si no usas transmisión.
             observe_channels:
-                A list of channels to listen to when ``hub.ble.observe()`` is
-                called. Listening to more channels requires more memory.
-                Default is an empty list (no channels).
-
-        .. versionchanged:: 3.3
-            Added *broadcast_channel* and *observe_channels* arguments.
+                Una lista de canales para escuchar cuando se llama a ``hub.ble.observe()``.
+                Escuchar más canales requiere más memoria.
+                Por defecto es una lista vacía (sin canales).
         """
 
 

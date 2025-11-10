@@ -69,7 +69,8 @@ Motors with rotation sensors
     .. automethod:: pybricks.pupdevices.Motor.control.pid
 
         .. warning::
-            Ojo con poner valores demasiado altos o demasiado bajos. El motor puede romperse. Mejor no tocarlo.
+            Ojo con poner valores demasiado altos o demasiado bajos.
+            El motor puede romperse. Mejor no tocarlo (de momento).
 
     .. automethod:: pybricks.pupdevices.Motor.control.target_tolerances
 

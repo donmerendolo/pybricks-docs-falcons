@@ -1,8 +1,8 @@
 # SPDX-License-Identifier: MIT
 # Copyright (c) 2018-2023 The Pybricks Authors
 
-"""Generic cross-platform module for typical devices like lights, displays,
-speakers, and batteries."""
+"""Módulo genérico multiplataforma para dispositivos típicos como luces, pantallas,
+altavoces y baterías."""
 
 from __future__ import annotations
 
@@ -42,7 +42,7 @@ if TYPE_CHECKING:
 
 
 class System:
-    """System control actions for a hub."""
+    """Acciones de control del sistema para un hub."""
 
     def set_stop_button(
         self, button: Optional[Union[Button, Iterable[Button]]]
@@ -50,24 +50,24 @@ class System:
         """
         set_stop_button(button)
 
-        Sets the button or button combination that stops a running script.
+        Configura el botón o combinación de botones que detiene un script en ejecución.
 
-        Normally, the center button is used to stop a running script. You can
-        change or disable this behavior in order to use the button for other
-        purposes.
+        Normalmente, el botón central se usa para detener un script en ejecución. Puedes
+        cambiar o deshabilitar este comportamiento para usar el botón con otros
+        propósitos.
 
         Arguments:
-            button (Button): A button such
-                as :attr:`Button.CENTER <pybricks.parameters.Button.CENTER>`,
-                or a tuple of multiple buttons. Choose ``None`` to disable the
-                stop button altogether. If you do, you can still turn the hub
-                off by holding the center button for three seconds.
+            button (Button): Un botón como
+                :attr:`Button.CENTER <pybricks.parameters.Button.CENTER>`,
+                o una tupla de múltiples botones. Elige ``None`` para deshabilitar
+                completamente el botón de detención. Si lo haces, aún puedes apagar el hub
+                manteniendo presionado el botón central durante tres segundos.
         """
 
     def shutdown(self) -> None:
         """shutdown()
 
-        Stops your program and shuts the hub down."""
+        Detiene el programa y apaga el hub."""
 
     @overload
     def storage(self, offset: int, *, read: int) -> bytes: ...
@@ -80,102 +80,97 @@ class System:
         storage(offset, write=)
         storage(offset, read=) -> bytes
 
-        Reads or writes binary data to persistent storage.
+        Lee o escribe datos binarios en almacenamiento persistente.
 
-        This lets you store data that can be used the next time you run the
-        program.
+        Esto te permite almacenar datos que pueden usarse la próxima vez que ejecutes el
+        programa.
 
-        The data will be saved to flash memory when you turn the hub off
-        normally. It will not be saved if the batteries are removed *while* the
-        hub is still running.
+        Los datos se guardarán en la memoria flash cuando apagues el hub
+        normalmente. No se guardarán si retiras las baterías *mientras* el
+        hub todavía está en encendido.
 
-        Once saved, the data will remain available even after you remove the
-        batteries.
+        Una vez guardados, los datos permanecerán disponibles incluso después de retirar las
+        baterías.
 
-        Args:
-            offset (int): The offset from the start of the user storage memory, in bytes.
-            read (int): The number of bytes to read. Omit this argument when writing.
-            write (bytes): The bytes to write. Omit this argument when reading.
+        Arguments:
+            offset (int): El desplazamiento desde el inicio de la memoria de almacenamiento del usuario, en bytes.
+            read (int): El número de bytes a leer. Omite este argumento al escribir.
+            write (bytes): Los bytes a escribir. Omite este argumento al leer.
 
         Returns:
-            The bytes read if reading, otherwise ``None``.
+            Los bytes leídos si se está leyendo, de lo contrario ``None``.
 
         Raises:
             ValueError:
-                If you try to read or write data outside of the allowed range.
+                Si intentas leer o escribir datos fuera del rango permitido.
         """
 
     def reset_storage(self) -> None:
         """reset_storage()
 
-        Resets all user settings to default values and erases user programs.
+        Restablece todas las configuraciones de usuario a los valores predeterminados y borra los programas de usuario.
         """
 
     def info(self) -> dict:
         """info() -> dict
 
-        Gets information about the hub as a dictionary with the following keys:
+        Obtiene información sobre el hub como un diccionario con las siguientes claves:
 
-         - ``"name"``: The hub name. This is the name you see when connecting
-           via Bluetooth.
-         - ``"reset_reason"``: Why the hub (re)booted. It is ``0`` if the hub
-           was previously powered off normally. It is ``1`` if the hub rebooted
-           automatically, like after a firmware update. It is ``2`` if the hub
-           previously crashed due to a watchdog timeout, which indicates a
-           firmware issue.
-         - ``"host_connected_ble"``: ``True`` if the hub is connected to a
-           computer, tablet, or phone via Bluetooth, and ``False`` otherwise.
-         - ``"program_start_type"``: It is ``1`` if the program started
-           automatically when the hub was powered on. It is ``2`` if the program
-           was started with the hub buttons. It is ``3`` if the program was
-           started from your connected computer.
+         - ``"name"``: El nombre del hub. Este es el nombre que ves al conectarte
+           vía Bluetooth.
+         - ``"reset_reason"``: Por qué el hub (re)inició. Es ``0`` si el hub
+           se apagó previamente de forma normal. Es ``1`` si el hub se reinició
+           automáticamente, como después de una actualización de firmware. Es ``2`` si el hub
+           previamente falló debido a un timeout del watchdog, lo que indica un
+           problema de firmware.
+         - ``"host_connected_ble"``: ``True`` si el hub está conectado a un
+           ordenador, tableta o teléfono vía Bluetooth, y ``False`` de lo contrario.
+         - ``"program_start_type"``: Es ``1`` si el programa se inició
+           automáticamente cuando el hub se encendió. Es ``2`` si el programa
+           se inició con los botones del hub. Es ``3`` si el programa se
+           inició desde tu computadora conectada.
 
         Returns:
-            A dictionary with system info.
-
-        .. versionchanged:: 3.6
-            The name and reset reason where previously available as separate
-            methods. Now they are included in the info dictionary. The methods
-            are still available for backwards compatibility.
+            Un diccionario con información del sistema.
         """
 
 
 class DCMotor:
-    """Generic class to control simple motors without rotation sensors, such
-    as train motors."""
+    """Clase genérica para controlar motores simples sin sensores de rotación, como
+    motores de tren."""
 
     def __init__(self, port: Port, positive_direction: Direction = Direction.CLOCKWISE):
         """__init__(port, positive_direction=Direction.CLOCKWISE)
 
         Arguments:
-            port (Port): Port to which the motor is connected.
-            positive_direction (Direction): Which direction the motor should
-                turn when you give a positive duty cycle value.
+            port (Port): Puerto al que está conectado el motor.
+            positive_direction (Direction): En qué dirección debe
+                girar el motor cuando das un valor de ciclo de trabajo positivo.
         """
 
     def dc(self, duty: Number) -> None:
         """dc(duty)
 
-        Rotates the motor at a given duty cycle (also known as "power").
+        Hace girar el motor a un ciclo de trabajo dado (también conocido como "potencia").
 
         Arguments:
-            duty (Number, %): The duty cycle (-100.0 to 100).
+            duty (Number, %): El ciclo de trabajo (-100.0 a 100).
         """
 
     def stop(self) -> None:
         """stop()
 
-        Stops the motor and lets it spin freely.
+        Detiene el motor y lo deja girar libremente.
 
-        The motor gradually stops due to friction."""
+        El motor se detiene gradualmente debido a la fricción."""
 
     def brake(self) -> None:
         """brake()
 
-        Passively brakes the motor.
+        Frena el motor pasivamente.
 
-        The motor stops due to friction, plus the voltage that
-        is generated while the motor is still moving."""
+        El motor se detiene debido a la fricción, más el voltaje que
+        se genera mientras el motor todavía está en movimiento."""
 
     @overload
     def settings(self, max_voltage: Number) -> None: ...
@@ -188,24 +183,24 @@ class DCMotor:
         settings(max_voltage)
         settings() -> Tuple[int]
 
-        Configures motor settings. If no arguments are given,
-        this returns the current values.
+        Configura los ajustes del motor. Si no se dan argumentos,
+        devuelve los valores actuales.
 
         Arguments:
             max_voltage (Number, mV):
-                Maximum voltage applied to the motor during all motor commands.
+                Voltaje máximo aplicado al motor durante todos los comandos del motor.
         """
 
 
 class Control:
-    """Class to interact with PID controller and settings."""
+    """Clase para interactuar con el controlador PID y configuraciones."""
 
     scale: int
 
     """
-    Scaling factor between the controlled integer variable
-    and the physical output. For example, for a single
-    motor this is the number of encoder pulses per degree of rotation.
+    Factor de escala entre la variable entera controlada
+    y la salida física. Por ejemplo, para un solo
+    motor este es el número de pulsos del codificador por grado de rotación.
     """
 
     @overload
@@ -224,22 +219,22 @@ class Control:
         limits(speed, acceleration, torque)
         limits() -> Tuple[int, int, int]
 
-        Configures the maximum speed, acceleration, and torque.
+        Configura la velocidad, aceleración y par máximos.
 
-        If no arguments are given, this will return the current values.
+        Si no se dan argumentos, devolverá los valores actuales.
 
-        The new ``acceleration`` and ``speed`` limit will become effective
-        when you give a new motor command. Ongoing maneuvers are not affected.
+        Los nuevos límites de ``acceleration`` y ``speed`` entrarán en efecto
+        cuando des un nuevo comando al motor. Las maniobras en curso no se ven afectadas.
 
         Arguments:
-            speed (Number, deg/s or Number, mm/s):
-                Maximum speed. All speed commands will be capped to this value.
-            acceleration (Number, deg/s² or Number, mm/s²):
-                Slope of the speed curve when accelerating or decelerating.
-                Use a tuple to set acceleration and deceleration separately.
-                If one value is given, it is used for both.
+            speed (Number, deg/s o Number, mm/s):
+                Velocidad máxima. Todos los comandos de velocidad se limitarán a este valor.
+            acceleration (Number, deg/s² o Number, mm/s²):
+                Pendiente de la curva de velocidad al acelerar o desacelerar.
+                Usa una tupla para configurar aceleración y desaceleración por separado.
+                Si se da un valor, se usa para ambos.
             torque (:ref:`torque`):
-                Maximum feedback torque during control.
+                Par de retroalimentación máximo durante el control.
         """
 
     @overload
@@ -259,23 +254,23 @@ class Control:
         """pid(kp, ki, kd, integral_deadzone, integral_rate)
         pid() -> Tuple[int, int, int, int, int]
 
-        Gets or sets the PID values for position and speed control.
+        Obtiene o configura los valores PID para el control de posición y velocidad.
 
-        If no arguments are given, this will return the current values.
+        Si no se dan argumentos, esto retornará los valores actuales.
 
         Arguments:
-            kp (int): Proportional position control
-                constant. It is the feedback torque per degree of
+            kp (int): Constante de control de posición proporcional. Es el par de
+                retroalimentación por grado de
                 error: µNm/deg.
-            ki (int): Integral position control constant. It is the feedback
-                torque per accumulated degree of error: µNm/(deg s).
-            kd (int): Derivative position (or proportional speed) control
-                constant. It is the feedback torque per
-                unit of speed: µNm/(deg/s).
-            integral_deadzone (Number, deg or Number, mm): Zone around the
-                target where the error integral does not accumulate errors.
-            integral_rate (Number, deg/s or Number, mm/s): Maximum rate at
-                which the error integral is allowed to grow.
+            ki (int): Constante de control de posición integral. Es el par de
+                retroalimentación por grado acumulado de error: µNm/(deg s).
+            kd (int): Constante de control de posición derivativo (o velocidad proporcional).
+                Es el par de retroalimentación por
+                unidad de velocidad: µNm/(deg/s).
+            integral_deadzone (Number, deg o Number, mm): Zona alrededor del
+                objetivo donde la integral del error no acumula errores.
+            integral_rate (Number, deg/s o Number, mm/s): Tasa máxima a la
+                que se permite crecer la integral del error.
         """
 
     @overload
@@ -290,16 +285,16 @@ class Control:
         """target_tolerances(speed, position)
         target_tolerances() -> Tuple[int, int]
 
-        Gets or sets the tolerances that say when a maneuver is done.
+        Obtiene o configura las tolerancias que indican cuándo una maniobra está completa.
 
-        If no arguments are given, this will return the current values.
+        Si no se dan argumentos, esto retornará los valores actuales.
 
         Arguments:
-            speed (Number, deg/s or Number, mm/s): Allowed deviation
-                from zero speed before motion is considered complete.
-            position (Number, deg or :ref:`distance`): Allowed
-                deviation from the target before motion is considered
-                complete.
+            speed (Number, deg/s o Number, mm/s): Desviación permitida
+                de velocidad cero antes de que el movimiento se considere completo.
+            position (Number, deg o :ref:`distance`): Desviación
+                permitida del objetivo antes de que el movimiento se considere
+                completo.
         """
 
     @overload
@@ -314,39 +309,39 @@ class Control:
         """stall_tolerances(speed, time)
         stall_tolerances() -> Tuple[int, int]
 
-        Gets or sets stalling tolerances.
+        Obtiene o configura las tolerancias de bloqueo.
 
-        If no arguments are given, this will return the current values.
+        Si no se dan argumentos, esto retornará los valores actuales.
 
         Arguments:
-            speed (Number, deg/s or Number, mm/s): If the controller
-                cannot reach this speed for some ``time`` even with maximum
-                actuation, it is stalled.
-            time (Number, ms): How long the controller has to be below this
-                minimum ``speed`` before we say it is stalled.
+            speed (Number, deg/s o Number, mm/s): Si el controlador
+                no puede alcanzar esta velocidad durante algún ``time`` incluso con la
+                actuación máxima, está bloqueado.
+            time (Number, ms): Cuánto tiempo el controlador tiene que estar por debajo de esta
+                ``speed`` mínima antes de que digamos que está bloqueado.
         """
 
 
 class Model:
-    """Class to interact with motor state observer and settings."""
+    """Clase para interactuar con el observador de estado del motor y configuraciones."""
 
     def state(self) -> Tuple[float, float, float, bool]:
         """state() -> Tuple[float, float, float, bool]
 
-        Gets the estimated angle, speed, current, and stall state of the motor,
-        using a simulation model that mimics the real motor.
-        These estimates are updated faster than the real measurements,
-        which can be useful when building your own PID controllers.
+        Obtiene el ángulo, velocidad, corriente y estado de bloqueo estimados del motor,
+        usando un modelo de simulación que imita el motor real.
+        Estas estimaciones se actualizan más rápido que las mediciones reales,
+        lo que puede ser útil al construir tus propios controladores PID.
 
-        For most applications it is better to used the *measured*
+        Para la mayoría de las aplicaciones es mejor usar el *medido*
         :meth:`angle <pybricks.pupdevices.Motor.angle>`,
         :meth:`speed <pybricks.pupdevices.Motor.speed>`,
-        :meth:`load <pybricks.pupdevices.Motor.load>`, and
-        :meth:`stall <pybricks.pupdevices.Motor.stalled>` state instead.
+        :meth:`load <pybricks.pupdevices.Motor.load>`, y
+        estado :meth:`stall <pybricks.pupdevices.Motor.stalled>` en su lugar.
 
         Returns:
-            Tuple with the estimated angle (deg), speed (deg/s), current (mA),
-            and stall state (``True`` or ``False``).
+            Tupla con el ángulo estimado (deg), velocidad (deg/s), corriente (mA),
+            y estado de bloqueo (``True`` o ``False``).
         """
 
     @overload
@@ -359,29 +354,29 @@ class Model:
         """settings(values)
         settings() -> Tuple
 
-        Gets or sets model settings as a tuple of integers. If no arguments are
-        given, this will return the current values. This method is mainly used
-        to debug the motor model class. Changing these settings should not be
-        needed in user programs.
+        Obtiene o configura los ajustes del modelo como una tupla de enteros. Si no se dan argumentos,
+        esto retornará los valores actuales. Este método se usa principalmente
+        para depurar la clase del modelo del motor. Cambiar estos ajustes no debería ser
+        necesario en programas de usuario.
 
         .. _model settings: https://docs.pybricks.com/projects/pbio/en/latest/struct__pbio__observer__settings__t.html
 
         Arguments:
-            values (Tuple): Tuple with `model settings`_.
+            values (Tuple): Tupla con los `model settings`_.
         """
 
 
 class Motor(DCMotor):
-    """Generic class to control motors with built-in rotation sensors."""
+    """Clase genérica para controlar motores con sensores de rotación incorporados."""
 
     control = Control()
-    """The motors use PID control to accurately track the speed and
-    angle targets that you specify. You can change its behavior through the
-    ``control`` attribute of the motor. See :ref:`control` for an overview
-    of available methods."""
+    """Los motores usan control PID para seguir con precisión los objetivos de velocidad y
+    ángulo que especificas. Puedes cambiar su comportamiento a través del
+    atributo ``control`` del motor. Ver :ref:`control` para una descripción de los
+    métodos disponibles."""
 
     model = Model()
-    """Model representing the observer that estimates the motor state."""
+    """Modelo que representa el observador que estima el estado del motor."""
 
     def __init__(
         self,
@@ -394,115 +389,115 @@ class Motor(DCMotor):
         """__init__(port, positive_direction=Direction.CLOCKWISE, gears=None, reset_angle=True, profile=None)
 
         Arguments:
-            port (Port): Port to which the motor is connected.
-            positive_direction (Direction): Which direction the motor should
-                turn when you give a positive speed value or
-                angle.
+            port (Port): Puerto al que está conectado el motor.
+            positive_direction (Direction): En qué dirección debe
+                girar el motor cuando das un valor de velocidad o
+                ángulo positivo.
             gears (list):
-                List of gears linked to the motor. The gear connected
-                to the motor comes first and the gear connected to the output
-                comes last.
+                Lista de engranajes vinculados al motor. El engranaje conectado
+                al motor va primero y el engranaje conectado a la salida
+                va al final.
 
-                For example: ``[12, 36]`` represents a gear train with a
-                12-tooth gear connected to the motor and a 36-tooth gear
-                connected to the output. Use a list of lists for multiple
-                gear trains, such as ``[[12, 36], [20, 16, 40]]``.
+                Por ejemplo: ``[12, 36]`` representa un tren de engranajes con un
+                engranaje de 12 dientes conectado al motor y un engranaje de 36 dientes
+                conectado a la salida. Usa una lista de listas para múltiples
+                trenes de engranajes, como ``[[12, 36], [20, 16, 40]]``.
 
-                When you specify a gear train, all motor commands and settings
-                are automatically adjusted to account for the resulting gear
-                ratio. The motor direction remains unchanged by this.
+                Cuando especificas un tren de engranajes, todos los comandos y configuraciones del motor
+                se ajustan automáticamente para tener en cuenta la relación de engranajes resultante.
+                La dirección del motor permanece sin cambios por esto.
             reset_angle (bool):
-                Choose ``True`` to reset the rotation sensor value to the
-                absolute marker angle (between -180 and 179).
-                Choose ``False`` to keep the
-                current value, so your program knows where it left off last
-                time.
-            profile (Number, deg): Precision profile. This is the approximate
-                position tolerance in degrees that is acceptable in your
-                application. A lower value gives more precise but more erratic
-                movement; a higher value gives less precise but smoother
-                movement. If no value is given, a suitable profile for this
-                motor type will be selected automatically (about 11 degrees).
+                Elige ``True`` para restablecer el valor del sensor de rotación al
+                ángulo del marcador absoluto (entre -180 y 179).
+                Elige ``False`` para mantener el
+                valor actual, para que tu programa sepa dónde lo dejó la última
+                vez.
+            profile (Number, deg): Perfil de precisión. Esta es la tolerancia de
+                posición aproximada en grados que es aceptable en tu
+                aplicación. Un valor menor da un movimiento más preciso pero más errático;
+                un valor mayor da un movimiento menos preciso pero más suave. Si no se da ningún valor,
+                se seleccionará automáticamente un perfil adecuado para este
+                tipo de motor (aproximadamente 11 grados).
         """
 
     def angle(self) -> int:
         """angle() -> int: deg
 
-        Gets the rotation angle of the motor.
+        Obtiene el ángulo de rotación del motor.
 
         Returns:
-            Motor angle.
+            Ángulo del motor.
         """
 
     def speed(self, window: Number = 100) -> int:
         """speed(window=100) -> int: deg/s
 
-        Gets the speed of the motor.
+        Obtiene la velocidad del motor.
 
-        The speed is measured as the change in the motor angle during the
-        given time window. A short window makes the speed value more
-        responsive to motor movement, but less steady. A long window makes the
-        speed value less responsive, but more steady.
+        La velocidad se mide como el cambio en el ángulo del motor durante la
+        ventana de tiempo dada. Una ventana corta hace que el valor de velocidad sea más
+        sensible al movimiento del motor, pero menos estable. Una ventana larga hace que el
+        valor de velocidad sea menos sensible, pero más estable.
 
         Arguments:
-            window (Number, ms): The time window used to determine the speed.
+            window (Number, ms): La ventana de tiempo usada para determinar la velocidad.
 
         Returns:
-            Motor speed.
+            Velocidad del motor.
 
         """
 
     def stalled(self) -> bool:
         """stalled() -> bool
 
-        Checks if the motor is currently stalled.
+        Verifica si el motor está actualmente bloqueado.
 
-        It is stalled when it cannot reach the target speed or position, even
-        with the maximum actuation signal.
+        Está bloqueado cuando no puede alcanzar la velocidad o posición objetivo, incluso
+        con la señal de actuación máxima.
 
         Returns:
-            ``True`` if the motor is stalled, ``False`` if not.
+            ``True`` si el motor está bloqueado, ``False`` si no lo está.
         """
 
     def load(self) -> int:
         """load() -> int: mNm
 
-        Estimates the load that holds back the motor when it tries to move.
+        Estima la carga que retiene al motor cuando intenta moverse.
 
         Returns:
-            The load torque.
+            El par de carga.
         """
 
     def reset_angle(self, angle: Optional[Number]) -> None:
         """
         reset_angle(angle)
 
-        Sets the accumulated rotation angle of the motor to a desired value.
+        Establece el ángulo de rotación acumulado del motor a un valor deseado.
 
-        If this motor is also being used by a drive base, its distance and
-        angle values will also be affected. You might want to
-        use its :meth:`reset <pybricks.robotics.DriveBase.reset>`
-        method instead.
+        Si este motor también está siendo usado por una base de conducción, sus valores de distancia y
+        ángulo también se verán afectados. Es posible que desees
+        usar su método :meth:`reset <pybricks.robotics.DriveBase.reset>`
+        en su lugar.
 
         Arguments:
-            angle (Number, deg): Value to which the angle should be reset.
+            angle (Number, deg): Valor al que debe restablecerse el ángulo.
         """
 
     def hold(self) -> None:
         """hold()
 
-        Stops the motor and actively holds it at its current angle."""
+        Detiene el motor y lo mantiene activamente en su ángulo actual."""
 
     def run(self, speed: Number) -> None:
         """run(speed)
 
-        Runs the motor at a constant speed.
+        Hace funcionar el motor a una velocidad constante.
 
-        The motor accelerates to the given speed and keeps running at this
-        speed until you give a new command.
+        El motor acelera a la velocidad dada y sigue funcionando a esta
+        velocidad hasta que des un nuevo comando.
 
         Arguments:
-            speed (Number, deg/s): Speed of the motor.
+            speed (Number, deg/s): Velocidad del motor.
         """
 
     def run_time(
@@ -510,18 +505,18 @@ class Motor(DCMotor):
     ) -> MaybeAwaitable:
         """run_time(speed, time, then=Stop.HOLD, wait=True)
 
-        Runs the motor at a constant speed for a given amount of time.
+        Hace funcionar el motor a una velocidad constante durante un tiempo determinado.
 
-        The motor accelerates to the given speed, keeps running at this speed,
-        and then decelerates. The total maneuver lasts for exactly the given
-        amount of ``time``.
+        El motor acelera a la velocidad dada, sigue funcionando a esta velocidad,
+        y luego desacelera. La maniobra completa dura exactamente el
+        ``time`` dado.
 
         Arguments:
-            speed (Number, deg/s): Speed of the motor.
-            time (Number, ms): Duration of the maneuver.
-            then (Stop): What to do after coming to a standstill.
-            wait (bool): Wait for the maneuver to complete before continuing
-                with the rest of the program.
+            speed (Number, deg/s): Velocidad del motor.
+            time (Number, ms): Duración de la maniobra.
+            then (Stop): Qué hacer después de detenerse.
+            wait (bool): Esperar a que la maniobra se complete antes de continuar
+                con el resto del programa.
         """
 
     def run_angle(
@@ -533,15 +528,15 @@ class Motor(DCMotor):
     ) -> MaybeAwaitable:
         """run_angle(speed, rotation_angle, then=Stop.HOLD, wait=True)
 
-        Runs the motor at a constant speed by a given angle.
+        Hace funcionar el motor a una velocidad constante por un ángulo dado.
 
         Arguments:
-            speed (Number, deg/s): Speed of the motor.
-            rotation_angle (Number, deg): Angle by which the motor should
-                rotate.
-            then (Stop): What to do after coming to a standstill.
-            wait (bool): Wait for the maneuver to complete before continuing
-                with the rest of the program.
+            speed (Number, deg/s): Velocidad del motor.
+            rotation_angle (Number, deg): Ángulo por el que el motor debe
+                girar.
+            then (Stop): Qué hacer después de detenerse.
+            wait (bool): Esperar a que la maniobra se complete antes de continuar
+                con el resto del programa.
         """
 
     def run_target(
@@ -553,17 +548,17 @@ class Motor(DCMotor):
     ) -> MaybeAwaitable:
         """run_target(speed, target_angle, then=Stop.HOLD, wait=True)
 
-        Runs the motor at a constant speed towards a given target angle.
+        Hace funcionar el motor a una velocidad constante hacia un ángulo objetivo dado.
 
-        The direction of rotation is automatically selected based on the target
-        angle. It does not matter if ``speed`` is positive or negative.
+        La dirección de rotación se selecciona automáticamente según el ángulo
+        objetivo. No importa si ``speed`` es positivo o negativo.
 
         Arguments:
-            speed (Number, deg/s): Speed of the motor.
-            target_angle (Number, deg): Angle that the motor should rotate to.
-            then (Stop): What to do after coming to a standstill.
-            wait (bool): Wait for the motor to reach the target
-                before continuing with the rest of the program.
+            speed (Number, deg/s): Velocidad del motor.
+            target_angle (Number, deg): Ángulo al que el motor debe girar.
+            then (Stop): Qué hacer después de detenerse.
+            wait (bool): Esperar a que el motor alcance el objetivo
+                antes de continuar con el resto del programa.
         """
 
     def run_until_stalled(
@@ -575,55 +570,55 @@ class Motor(DCMotor):
         """
         run_until_stalled(speed, then=Stop.COAST, duty_limit=None) -> int: deg
 
-        Runs the motor at a constant speed until it stalls.
+        Hace funcionar el motor a una velocidad constante hasta que se bloquea.
 
         Arguments:
-            speed (Number, deg/s): Speed of the motor.
-            then (Stop): What to do after coming to a standstill.
-            duty_limit (Number, %): Duty cycle limit during this
-                command. This is useful to avoid applying the full motor
-                torque to a geared or lever mechanism. If it is ``None``, the
-                duty limit won't be changed during this command.
+            speed (Number, deg/s): Velocidad del motor.
+            then (Stop): Qué hacer después de detenerse.
+            duty_limit (Number, %): Límite de ciclo de trabajo durante este
+                comando. Esto es útil para evitar aplicar el par completo del motor
+                a un mecanismo de engranajes o palanca. Si es ``None``, el
+                límite de trabajo no se cambiará durante este comando.
 
         Returns:
-            Angle at which the motor becomes stalled.
+            Ángulo en el que el motor se bloquea.
         """
 
     def done(self) -> bool:
         """done() -> bool
 
-        Checks if an ongoing command or maneuver is done.
+        Verifica si un comando o maniobra en curso está completo.
 
         Returns:
-            ``True`` if the command is done, ``False`` if not.
+            ``True`` si el comando está completo, ``False`` si no lo está.
         """
 
     def track_target(self, target_angle: Number) -> None:
         """track_target(target_angle)
 
-        Tracks a target angle. This is similar to :meth:`.run_target`, but
-        the usual smooth acceleration is skipped: it will move to the target
-        angle as fast as possible. This method is useful if you want to
-        continuously change the target angle.
+        Rastrea un ángulo objetivo. Esto es similar a :meth:`.run_target`, pero
+        se omite la aceleración suave habitual: se moverá al ángulo
+        objetivo lo más rápido posible. Este método es útil si quieres
+        cambiar continuamente el ángulo objetivo.
 
         Arguments:
-            target_angle (Number, deg): Target angle that the motor should
-                rotate to.
+            target_angle (Number, deg): Ángulo objetivo al que el motor debe
+                girar.
         """
 
     def close(self) -> None:
         """close()
 
-        Closes the motor object so you can call ``Motor`` again to initialize
-        a new object.
+        Cierra el objeto del motor para que puedas llamar a ``Motor`` nuevamente para inicializar
+        un nuevo objeto.
 
-        This allows advanced users to change properties such as gearing in the
-        middle of the program, which can be useful for removeable attachments.
+        Esto permite a usuarios avanzados cambiar propiedades como los engranajes en el
+        medio del programa, lo que puede ser útil para accesorios removibles.
         """
 
 
 class Speaker:
-    """Plays beeps and sounds using a speaker."""
+    """Reproduce pitidos y sonidos usando un altavoz."""
 
     @overload
     def volume(self, volume: Number) -> None: ...
@@ -635,394 +630,392 @@ class Speaker:
         """volume(volume)
         volume() -> int: %
 
-        Gets or sets the speaker volume.
+        Obtiene o configura el volumen del altavoz.
 
-        If no volume is given, this method returns the current volume.
+        Si no se da volumen, este método retorna el volumen actual.
 
         Arguments:
-            volume (Number, %): Volume of the speaker in the 0-100 range.
+            volume (Number, %): Volumen del altavoz en el rango 0-100.
         """
 
     def beep(self, frequency: Number = 500, duration: Number = 100) -> MaybeAwaitable:
         """beep(frequency=500, duration=100)
 
-        Play a beep/tone.
+        Reproduce un pitido/tono.
 
         Arguments:
             frequency (Number, Hz):
-                Frequency of the beep in the 64-24000 Hz range.
+                Frecuencia del pitido en el rango de 64-24000 Hz.
             duration (Number, ms):
-                Duration of the beep. If the duration is less
-                than 0, then the method returns immediately and the frequency
-                play continues to play indefinitely.
+                Duración del pitido. Si la duración es menor
+                que 0, entonces el método retorna inmediatamente y la frecuencia
+                continúa reproduciéndose indefinidamente.
         """
 
     def play_notes(self, notes: Iterable[str], tempo: Number = 120) -> MaybeAwaitable:
         """play_notes(notes, tempo=120)
 
-        Plays a sequence of musical notes. For example:
+        Reproduce una secuencia de notas musicales. Por ejemplo:
         ``["C4/4", "C4/4", "G4/4", "G4/4"]``.
 
-        Each note is a string with the following format:
+        Cada nota es una cadena con el siguiente formato:
 
-            - The first character is the name of the note, ``A`` to ``G``
-              or ``R`` for a rest.
-            - Note names can also include an accidental ``#`` (sharp) or
-              ``b`` (flat). ``B#``/``Cb`` and ``E#``/``Fb`` are not
-              allowed.
-            - The note name is followed by the octave number ``2``
-              to ``8``. For example ``C4`` is middle C. The octave changes
-              to the next number at the note C, for example, ``B3`` is the
-              note below middle C (``C4``).
-            - The octave is followed by ``/`` and a number that indicates
-              the size of the note. For example ``/4`` is a quarter note,
-              ``/8`` is an eighth note and so on.
-            - This can optionally followed by a ``.`` to make a dotted
-              note. Dotted notes are 1-1/2 times as long as notes without a
-              dot.
-            - The note can optionally end with a ``_`` which is a tie or a
-              slur. This causes there to be no pause between this note and
-              the next note.
+            - El primer carácter es el nombre de la nota, ``A`` a ``G``
+              o ``R`` para un silencio.
+            - Los nombres de las notas también pueden incluir un accidental ``#`` (sostenido) o
+              ``b`` (bemol). ``B#``/``Cb`` y ``E#``/``Fb`` no están
+              permitidos.
+            - El nombre de la nota es seguido por el número de octava ``2``
+              a ``8``. Por ejemplo ``C4`` es el do central. La octava cambia
+              al siguiente número en la nota C, por ejemplo, ``B3`` es la
+              nota debajo del do central (``C4``).
+            - La octava es seguida por ``/`` y un número que indica
+              el tamaño de la nota. Por ejemplo ``/4`` es una negra,
+              ``/8`` es una corchea y así sucesivamente.
+            - Esto puede ser seguido opcionalmente por un ``.`` para hacer una nota
+              con puntillo. Las notas con puntillo duran 1-1/2 veces más que las notas sin
+              punto.
+            - La nota puede terminar opcionalmente con un ``_`` que es una ligadura o
+              slur. Esto hace que no haya pausa entre esta nota y
+              la siguiente nota.
 
         Arguments:
             notes (iter):
-                A sequence of notes to be played.
+                Una secuencia de notas a reproducir.
             tempo (int):
-                Beats per minute. A quarter note is one beat.
+                Beats por minuto. Una negra es un beat.
         """
 
 
 class ColorLight:
-    """Control a multi-color light."""
+    """Controla una luz multicolor."""
 
     def on(self, color: Color) -> None:
         """on(color)
 
-        Turns on the light at the specified color.
+        Enciende la luz con el color especificado.
 
         Arguments:
-            color (Color): Color of the light.
+            color (Color): Color de la luz.
         """
 
     def off(self) -> None:
         """off()
 
-        Turns off the light."""
+        Apaga la luz."""
 
     def blink(self, color: Color, durations: Collection[Number]) -> None:
         """blink(color, durations)
 
-        Blinks the light at a given color by turning it on and off for given
-        durations.
+        Hace parpadear la luz con el color dado, encendiéndola y apagándola
+        durante las duraciones especificadas.
 
-        The light keeps blinking indefinitely while the rest of your
-        program keeps running.
+        La luz sigue parpadeando indefinidamente mientras el resto del
+        programa continúa ejecutándose.
 
-        This method provides a simple way to make basic but useful patterns.
-        For more generic and multi-color patterns, use ``animate()``
-        instead.
+        Este método proporciona una forma simple de crear patrones básicos
+        pero útiles. Para patrones más genéricos y con múltiples colores,
+        usa ``animate()`` en su lugar.
 
         Arguments:
-            color (Color): Color of the light.
-            durations (list): Sequence of time values of the
-                form ``[on_1, off_1, on_2, off_2, ...]``.
+            color (Color): Color de la luz.
+            durations (list): Secuencia de valores de tiempo de
+                la forma ``[encendido_1, apagado_1, encendido_2, apagado_2, ...]``.
         """
 
     def animate(self, colors: Collection[Color], interval: Number) -> None:
         """animate(colors, interval)
 
-        Animates the light with a sequence of colors, shown one by
-        one for the given interval.
+        Anima la luz con una secuencia de colores, mostrándolos uno por
+        uno durante el intervalo especificado.
 
-        The animation runs in the background while the rest of your program
-        keeps running. When the animation completes, it repeats.
+        La animación se ejecuta en segundo plano mientras el resto del
+        programa continúa ejecutándose. Cuando la animación se completa, se repite.
 
         Arguments:
-            colors (list): Sequence of :class:`Color <.parameters.Color>`
-                values.
-            interval (Number, ms): Time between color updates.
+            colors (list): Secuencia de valores :class:`Color <.parameters.Color>`.
+            interval (Number, ms): Tiempo entre actualizaciones de color.
         """
 
 
 class ExternalColorLight:
-    """Control a multi-color light."""
+    """Controla una luz multicolor."""
 
     def on(self, color: Color) -> MaybeAwaitable:
         """on(color)
 
-        Turns on the light at the specified color.
+        Enciende la luz con el color especificado.
 
         Arguments:
-            color (Color): Color of the light.
+            color (Color): Color de la luz.
         """
 
     def off(self) -> MaybeAwaitable:
         """off()
 
-        Turns off the light.
+        Apaga la luz.
         """
 
 
 class LightArray3:
-    """Control an array of three single-color lights."""
+    """Controla un arreglo de tres luces de un solo color."""
 
     def on(
         self, brightness: Union[Number, Tuple[Number, Number, Number]]
     ) -> MaybeAwaitable:
         """on(brightness)
 
-        Turns on the lights at the specified brightness.
+        Enciende las luces con el brillo especificado.
 
         Arguments:
-            brightness (Number or tuple, %):
-                Use a single value to set the brightness of all lights at the
-                same time. Use a tuple of three values to set the brightness
-                of each light individually.
+            brightness (Number o tuple, %):
+                Usa un solo valor para establecer el brillo de todas las luces al
+                mismo tiempo. Usa una tupla de tres valores para establecer el brillo
+                de cada luz individualmente.
         """
 
     def off(self) -> MaybeAwaitable:
         """off()
 
-        Turns off all the lights.
+        Apaga todas las luces.
         """
 
 
 class LightArray4(LightArray3):
-    """Control an array of four single-color lights."""
+    """Controla un arreglo de cuatro luces de un solo color."""
 
     def on(
         self, brightness: Union[Number, Tuple[Number, Number, Number, Number]]
     ) -> MaybeAwaitable:
         """on(brightness)
 
-        Turns on the lights at the specified brightness.
+        Enciende las luces con el brillo especificado.
 
         Arguments:
-            brightness (Number or tuple, %):
-                Use a single value to set the brightness of all lights at the
-                same time. Use a tuple of four values to set the brightness
-                of each light individually. The order of the lights is shown
-                in the image above.
+            brightness (Number o tuple, %):
+                Usa un solo valor para establecer el brillo de todas las luces al
+                mismo tiempo. Usa una tupla de cuatro valores para establecer el brillo
+                de cada luz individualmente. El orden de las luces se muestra
+                en la imagen anterior.
         """
 
 
 class LightMatrix:
-    """Control a rectangular grid of single-color lights."""
+    """Controla una cuadrícula rectangular de luces de un solo color."""
 
     def __init__(self, rows: int, columns: int):
         """LightMatrix(rows, columns)
 
-        Initializes the light matrix display.
+        Inicializa la pantalla de matriz de luces.
 
         Arguments:
-            rows (int): Number of rows in the grid
-            columns (int): Number of columns in the grid
+            rows (int): Número de filas en la cuadrícula
+            columns (int): Número de columnas en la cuadrícula
         """
 
     def orientation(self, up: Side) -> None:
         """orientation(up)
 
-        Sets the orientation of the light matrix display.
+        Establece la orientación de la pantalla de matriz de luces.
 
-        Only new displayed images and pixels are affected. The existing display
-        contents remain unchanged.
+        Solo las nuevas imágenes y píxeles mostrados se ven afectados. El contenido de pantalla
+        existente permanece sin cambios.
 
         Arguments:
-            top (Side): Which side of the light matrix display is "up" in your
-                design. Choose ``Side.TOP``, ``Side.LEFT``, ``Side.RIGHT``,
-                or ``Side.BOTTOM``.
+            top (Side): Qué lado de la pantalla de matriz de luces está "arriba" en tu
+                diseño. Elige ``Side.TOP``, ``Side.LEFT``, ``Side.RIGHT``,
+                o ``Side.BOTTOM``.
         """
 
     def icon(self, icon: Matrix) -> None:
         """icon(icon)
 
-        Displays an icon, represented by a matrix of :ref:`brightness`
-        values.
+        Muestra un icono, representado por una matriz de valores de :ref:`brightness`.
 
         Arguments:
-            icon (Matrix): Matrix of intensities (:ref:`brightness`). A 2D
-                list is also accepted.
+            icon (Matrix): Matriz de intensidades (:ref:`brightness`). También se
+                acepta una lista 2D.
         """
 
     def animate(self, matrices: Collection[Matrix], interval: Number) -> None:
         """animate(matrices, interval)
 
-        Displays an animation made using a list of images.
+        Muestra una animación hecha usando una lista de imágenes.
 
-        Each image has the same format as above. Each image is
-        shown for the given interval. The animation repeats
-        forever while the rest of your program keeps running.
+        Cada imagen tiene el mismo formato que arriba. Cada imagen se
+        muestra durante el intervalo dado. La animación se repite
+        para siempre mientras el resto de tu programa sigue ejecutándose.
 
         Arguments:
-            matrices (iter): Sequence of
-                :class:`Matrix <pybricks.tools.Matrix>` of intensities.
-            interval (Number, ms): Time to display each image in the list.
+            matrices (iter): Secuencia de
+                :class:`Matrix <pybricks.tools.Matrix>` de intensidades.
+            interval (Number, ms): Tiempo para mostrar cada imagen en la lista.
         """
 
     def pixel(self, row: Number, column: Number, brightness: Number = 100) -> None:
         """pixel(row, column, brightness=100)
 
-        Turns on one pixel at the specified brightness.
+        Enciende un píxel con el brillo especificado.
 
         Arguments:
-            row (Number): Vertical grid index, starting at 0 from the top.
-            column (Number): Horizontal grid index, starting at 0 from the left.
-            brightness (Number :ref:`brightness`): Brightness of the pixel.
+            row (Number): Índice vertical de la cuadrícula, comenzando en 0 desde arriba.
+            column (Number): Índice horizontal de la cuadrícula, comenzando en 0 desde la izquierda.
+            brightness (Number :ref:`brightness`): Brillo del píxel.
         """
 
     def off(self) -> None:
         """off()
 
-        Turns off all the pixels."""
+        Apaga todos los píxeles."""
 
     def number(self, number: Number) -> None:
         """number(number)
 
-        Displays a number in the range -99 to 99.
+        Muestra un número en el rango -99 a 99.
 
-        A minus sign (``-``) is shown as a faint dot
-        in the center of the display. Numbers greater than 99 are
-        shown as ``>``. Numbers less than -99 are shown as ``<``.
+        Un signo menos (``-``) se muestra como un punto tenue
+        en el centro de la pantalla. Los números mayores que 99 se
+        muestran como ``>``. Los números menores que -99 se muestran como ``<``.
 
         Arguments:
-            number (int): The number to be displayed.
+            number (int): El número a mostrar.
         """
 
     def char(self, char: str) -> None:
         """char(char)
 
-        Displays a character or symbol on the light grid. This may
-        be any letter (``a``--``z``), capital letter (``A``--``Z``) or one of
-        the following symbols: ``!"#$%&'()*+,-./:;<=>?@[\\]^_`{|}``.
+        Muestra un carácter o símbolo en la cuadrícula de luces. Puede
+        ser cualquier letra (``a``--``z``), letra mayúscula (``A``--``Z``) o uno de
+        los siguientes símbolos: ``!"#$%&'()*+,-./:;<=>?@[\\]^_`{|}``.
 
         Arguments:
-            character (str): The character or symbol to be displayed.
+            character (str): El carácter o símbolo a mostrar.
         """
 
     def text(self, text: str, on: Number = 500, off: Number = 50) -> None:
         """text(text, on=500, off=50)
 
-        Displays a text string, one character at a time, with a pause
-        between each character. After the last character is shown, all lights
-        turn off.
+        Muestra una cadena de texto, un carácter a la vez, con una pausa
+        entre cada carácter. Después de que se muestra el último carácter, todas las luces
+        se apagan.
 
         Arguments:
-            text (str): The text to be displayed.
-            on (Number, ms): For how long a character is shown.
-            off (Number, ms): For how long the display is off between
-                characters.
+            text (str): El texto a mostrar.
+            on (Number, ms): Por cuánto tiempo se muestra un carácter.
+            off (Number, ms): Por cuánto tiempo la pantalla está apagada entre
+                caracteres.
         """
 
 
 class Keypad:
-    """Get status of buttons on a keypad layout."""
+    """Obtiene el estado de los botones en un diseño de teclado."""
 
     def __init__(self, active_buttons): ...
 
     def pressed(self) -> Set[Button]:
         """pressed() -> Set[Button]
 
-        Checks which buttons are currently pressed.
+        Verifica qué botones están actualmente presionados.
 
         Returns:
-            Set of pressed buttons.
+            Conjunto de botones presionados.
         """
 
 
 class Battery:
-    """Get the status of a battery."""
+    """Obtiene el estado de una batería."""
 
     def voltage(self) -> int:
         """voltage() -> int: mV
 
-        Gets the voltage of the battery.
+        Obtiene el voltaje de la batería.
 
         Returns:
-            Battery voltage.
+            Voltaje de la batería.
         """
 
     def current(self) -> int:
         """current() -> int: mA
 
-        Gets the current supplied by the battery.
+        Obtiene la corriente suministrada por la batería.
 
         Returns:
-            Battery current.
+            Corriente de la batería.
         """
 
 
 class Charger:
-    """Get the status of a battery charger."""
+    """Obtiene el estado de un cargador de batería."""
 
     def connected(self) -> bool:
         """connected() -> bool
 
-        Checks whether a charger is connected via USB.
+        Verifica si un cargador está conectado vía USB.
 
         Returns:
-            ``True`` if a charger is connected, ``False`` if not.
+            ``True`` si un cargador está conectado, ``False`` si no lo está.
         """
 
     def status(self) -> int:
         """status() -> int
 
-        Gets the status of the battery charger, represented by one of the
-        following values. This corresponds to the battery light indicator
-        right next to the USB port.
+        Obtiene el estado del cargador de batería, representado por uno de los
+        siguientes valores. Esto corresponde al indicador de luz de la batería
+        justo al lado del puerto USB.
 
-            0. Not charging (light is off).
-            1. Charging (light is red).
-            2. Charging is complete (light is green).
-            3. There is a problem with the charger (light is yellow).
+            0. No cargando (luz apagada).
+            1. Cargando (luz roja).
+            2. Carga completa (luz verde).
+            3. Hay un problema con el cargador (luz amarilla).
 
         Returns:
-            Status value.
+            Valor de estado.
         """
 
     def current(self) -> int:
         """current() -> int: mA
 
-        Gets the charging current.
+        Obtiene la corriente de carga.
 
         Returns:
-            Charging current.
+            Corriente de carga.
         """
 
 
 class SimpleAccelerometer:
-    """Get measurements from an accelerometer."""
+    """Obtiene mediciones de un acelerómetro."""
 
     def acceleration(self) -> Tuple[int, int, int]:
         """acceleration() -> Tuple[int, int, int]: mm/s²
 
-        Gets the acceleration of the device.
+        Obtiene la aceleración del dispositivo.
 
         Returns:
-            Acceleration along all three axes.
+            Aceleración a lo largo de los tres ejes.
         """
 
     def up(self) -> Side:
         """up() -> Side
 
-        Checks which side of the hub currently faces upward.
+        Verifica qué lado del hub está mirando hacia arriba actualmente.
 
         Returns:
             ``Side.TOP``, ``Side.BOTTOM``, ``Side.LEFT``, ``Side.RIGHT``,
-            ``Side.FRONT`` or ``Side.BACK``.
+            ``Side.FRONT`` o ``Side.BACK``.
         """
 
     def tilt(self) -> Tuple[int, int]:
         """tilt() -> Tuple[int, int]
 
-        Gets the pitch and roll angles. This is relative to the
-        :ref:`user-specified neutral orientation <robotframe>`.
+        Obtiene los ángulos de inclinación (pitch) y balanceo (roll). Esto es relativo a la
+        :ref:`orientación neutral especificada por el usuario <robotframe>`.
 
-        The order of rotation is pitch-then-roll. This is equivalent to a
-        positive rotation along the robot y-axis and then a positive rotation
-        along the x-axis.
+        El orden de rotación es inclinación-luego-balanceo. Esto es equivalente a una
+        rotación positiva a lo largo del eje y del robot y luego una rotación positiva
+        a lo largo del eje x.
 
         Returns:
-            Tuple of pitch and roll angles in degrees.
+            Tupla de ángulos de inclinación y balanceo en grados.
         """
 
 
@@ -1031,35 +1024,35 @@ class IMU:
     def up(self, calibrated: bool = True) -> Side:
         """up(calibrated=True) -> Side
 
-        Checks which side of the hub currently faces upward.
+        Verifica qué lado del hub está mirando hacia arriba actualmente.
 
         Arguments:
-            calibrated (bool): Choose ``True`` to use calibrated gyroscope and
-                accelerometer data to determine which way is up. Choose
-                ``False`` to use raw acceleration values.
+            calibrated (bool): Elige ``True`` para usar datos calibrados del giroscopio y
+                acelerómetro para determinar qué lado está arriba. Elige
+                ``False`` para usar valores de aceleración crudos.
 
         Returns:
             ``Side.TOP``, ``Side.BOTTOM``, ``Side.LEFT``, ``Side.RIGHT``,
-            ``Side.FRONT`` or ``Side.BACK``.
+            ``Side.FRONT`` o ``Side.BACK``.
         """
 
     def tilt(self, calibrated: bool = True) -> Tuple[int, int]:
         """tilt(calibrated=True) -> Tuple[int, int]
 
-        Gets the pitch and roll angles. This is relative to the
-        :ref:`user-specified neutral orientation <robotframe>`.
+        Obtiene los ángulos de inclinación (pitch) y balanceo (roll). Esto es relativo a la
+        :ref:`orientación neutral especificada por el usuario <robotframe>`.
 
-        The order of rotation is pitch-then-roll. This is equivalent to a
-        positive rotation along the robot y-axis and then a positive rotation
-        along the x-axis.
+        El orden de rotación es inclinación-luego-balanceo. Esto es equivalente a una
+        rotación positiva a lo largo del eje y del robot y luego una rotación positiva
+        a lo largo del eje x.
 
         Arguments:
-            calibrated (bool): Choose ``True`` to use calibrated gyroscope and
-                accelerometer data to determine the tilt. Choose ``False``
-                to use raw acceleration values.
+            calibrated (bool): Elige ``True`` para usar datos calibrados del giroscopio y
+                acelerómetro para determinar la inclinación. Elige ``False``
+                para usar valores de aceleración crudos.
 
         Returns:
-            Tuple of pitch and roll angles in degrees.
+            Tupla de ángulos de inclinación y balanceo en grados.
         """
 
     @overload
@@ -1073,42 +1066,42 @@ class IMU:
         acceleration(axis, calibrated=True) -> float: mm/s²
         acceleration(calibrated=True) -> vector: mm/s²
 
-        Gets the acceleration of the device along a given axis in the
-        :ref:`robot reference frame <robotframe>`.
+        Obtiene la aceleración del dispositivo a lo largo de un eje dado en el
+        :ref:`marco de referencia del robot <robotframe>`.
 
         Arguments:
-            axis (Axis): Axis along which the acceleration should be
-                measured, or ``None`` to get a vector along all axes.
-            calibrated (bool): Choose ``True`` to use calibrated acceleration
-                values. Choose ``False`` to use raw acceleration values.
+            axis (Axis): Eje a lo largo del cual se debe medir la aceleración,
+                o ``None`` para obtener un vector a lo largo de todos los ejes.
+            calibrated (bool): Elige ``True`` para usar valores de aceleración
+                calibrados. Elige ``False`` para usar valores de aceleración crudos.
 
         Returns:
-            Acceleration along the specified axis. If you specify no axis,
-            this returns a vector of accelerations along all axes.
+            Aceleración a lo largo del eje especificado. Si no especificas ningún eje,
+            esto retorna un vector de aceleraciones a lo largo de todos los ejes.
         """
 
     def ready(self) -> bool:
         """ready() -> bool
 
-        Checks if the device is calibrated and ready for use.
+        Comprueba si el dispositivo está calibrado y listo para su uso.
 
-        This becomes ``True`` when the robot has been sitting stationary for a
-        few seconds, which allows the device to re-calibrate. It is ``False``
-        if the hub has just been started, or if it hasn't had a chance to
-        calibrate for more than 10 minutes.
+        Esto se vuelve ``True`` cuando el robot ha estado estático durante
+        unos segundos, lo que permite que el dispositivo se recalibre. Es ``False``
+        si el hub acaba de iniciarse, o si no ha tenido la oportunidad de
+        calibrarse durante más de 10 minutos.
 
         Returns:
-            ``True`` if it is ready for use, ``False`` if not.
+            ``True`` si está listo para su uso, ``False`` si no lo está.
         """
 
     def stationary(self) -> bool:
         """stationary() -> bool
 
-        Checks if the device is currently stationary (not moving).
+        Comprueba si el dispositivo está actualmente estacionario (sin moverse).
 
         Returns:
-            ``True`` if stationary for at least a second, ``False`` if it is
-            moving.
+            ``True`` si está estacionario durante al menos un segundo,
+            ``False`` si se está moviendo.
         """
 
     @overload
@@ -1140,111 +1133,99 @@ class IMU:
         settings(*, angular_velocity_threshold, acceleration_threshold, heading_correction, angular_velocity_bias, angular_velocity_scale, acceleration_correction)
         settings() -> Tuple
 
-        Configures the IMU settings. If no arguments are given,
-        this returns the current values. Use keyword arguments for each value
-        to ensure correct behavior because settings may be added or changed in
-        future releases.
+        Configura los ajustes del IMU. Si no se dan argumentos,
+        esto retorna los valores actuales. Usa argumentos con nombre para cada valor
+        para asegurar el comportamiento correcto porque los ajustes pueden agregarse o cambiarse en
+        versiones futuras.
 
-        These IMU settings are saved on the hub. They will keep their values
-        until you change them again. The values will be reset to default values
-        if you update the hub to a different firmware version or call the
-        ``hub.system.reset_storage`` method.
+        Estos ajustes del IMU se guardan en el hub. Mantendrán sus valores
+        hasta que los cambies nuevamente. Los valores se restablecerán a los valores predeterminados
+        si actualizas el hub a una versión de firmware diferente o llamas al
+        método ``hub.system.reset_storage``.
 
-        The ``angular_velocity_threshold`` and ``acceleration_threshold``
-        define when the hub is considered stationary. If all
-        measurements stay below these thresholds for one second, the IMU
-        will recalibrate itself. In a noisy room with high ambient vibrations (such as a
-        competition hall), you can increase the thresholds
-        slightly to give your robot the chance to calibrate.
-        To verify that your settings are working as expected, test that
-        the ``stationary()`` method gives ``False`` if your robot is moving,
-        and ``True`` if it is sitting still.
+        Los ``angular_velocity_threshold`` y ``acceleration_threshold``
+        definen cuándo el hub se considera estacionario. Si todas
+        las mediciones permanecen por debajo de estos umbrales durante un segundo, el IMU
+        se recalibrará a sí mismo. En una sala ruidosa con altas vibraciones ambientales (como un
+        salón de competencia), puedes aumentar los umbrales
+        ligeramente para darle a tu robot la oportunidad de calibrarse.
+        Para verificar que tus ajustes funcionen como se espera, prueba que
+        el método ``stationary()`` dé ``False`` si tu robot se está moviendo,
+        y ``True`` si está quieto.
 
-        The gyroscope measures how fast the hub rotates to estimate the total
-        angle. Due to variations in the production process, each
-        hub consistently reports a different value for a full rotation. For
-        example, your hub might consistently report `357` degrees for every
-        `360` degree turn. You can measure this value
-        with ``hub.imu.rotation(-Axis.Z, calibrated=False)`` and enter it as
-        the ``heading_correction`` setting. Then, the ``hub.imu.heading()``
-        method will take it into account going forward, correctly scaling it
-        to 360 degrees for a full rotation.
+        El giroscopio mide qué tan rápido gira el hub para estimar el
+        ángulo total. Debido a variaciones en el proceso de producción, cada
+        hub reporta consistentemente un valor diferente para una rotación completa. Por
+        ejemplo, tu hub podría reportar consistentemente `357` grados por cada
+        vuelta de `360` grados. Puedes medir este valor
+        con ``hub.imu.rotation(-Axis.Z, calibrated=False)`` e ingresarlo como
+        el ajuste ``heading_correction``. Entonces, el método ``hub.imu.heading()``
+        lo tendrá en cuenta en adelante, escalándolo correctamente
+        a 360 grados para una rotación completa.
 
         Arguments:
-            angular_velocity_threshold (Number, deg/s): The threshold for
-                variations in the angular velocity below which the hub is
-                considered stationary enough to calibrate.
-                After a reset the value is 2 deg/s.
-            acceleration_threshold (Number, mm/s²): The threshold for
-                variations in acceleration below which the hub is considered
-                stationary enough to calibrate. After a reset the value
-                is 2500 mm/s².
-            heading_correction (Number, deg): Number of degrees
-                reported by for one full rotation of your robot.
-                After a reset the value is 360 degrees. This is applied on top
-                of any scaling that is done by the ``angular_velocity_scale``
-                setting.
-            angular_velocity_bias (tuple, deg/s): Initial bias for angular
-                velocity measurements along x, y, and z immediately after boot.
-                After a reset the value is (0, 0, 0) deg/s.
-            angular_velocity_scale (tuple, deg): Scale adjustment for x, y, and
-                z rotation to account for manufacturing differences. After a
-                reset the value is (360, 360, 360) deg/s. The correct values
-                can be obtained using `hub.imu.rotation(Axis.X, calibrated=False)`
-                and repeating it for each axis.
-            acceleration_correction (tuple, mm/s²): Scale adjustment for x, y,
-                and z gravity magnitude in both directions to account for
-                manufacturing differences. After a reset the
-                value is (9806.65, -9806.65, 9806.65, -9806.65, 9806.65, -9806.65) mm/s².
-                The correct values can be
-                obtained using `hub.imu.acceleration(Axis.X, calibrated=False)`
-                and repeating it for all axes in both directions.
+            angular_velocity_threshold (Number, deg/s): El umbral para
+                variaciones en la velocidad angular por debajo del cual el hub se
+                considera suficientemente estacionario para calibrarse.
+                Después de un reinicio el valor es 2 deg/s.
+            acceleration_threshold (Number, mm/s²): El umbral para
+                variaciones en la aceleración por debajo del cual el hub se considera
+                suficientemente estacionario para calibrarse. Después de un reinicio el valor
+                es 2500 mm/s².
+            heading_correction (Number, deg): Número de grados
+                reportados para una rotación completa de tu robot.
+                Después de un reinicio el valor es 360 grados. Esto se aplica además
+                de cualquier escalado que se haga con el ajuste ``angular_velocity_scale``.
+            angular_velocity_bias (tuple, deg/s): Sesgo inicial para mediciones de
+                velocidad angular a lo largo de x, y, y z inmediatamente después del arranque.
+                Después de un reinicio el valor es (0, 0, 0) deg/s.
+            angular_velocity_scale (tuple, deg): Ajuste de escala para rotación en x, y,
+                y z para tener en cuenta diferencias de fabricación. Después de un
+                reinicio el valor es (360, 360, 360) deg/s. Los valores correctos
+                pueden obtenerse usando `hub.imu.rotation(Axis.X, calibrated=False)`
+                y repitiéndolo para cada eje.
+            acceleration_correction (tuple, mm/s²): Ajuste de escala para magnitud de gravedad en x, y,
+                y z en ambas direcciones para tener en cuenta
+                diferencias de fabricación. Después de un reinicio el
+                valor es (9806.65, -9806.65, 9806.65, -9806.65, 9806.65, -9806.65) mm/s².
+                Los valores correctos pueden
+                obtenerse usando `hub.imu.acceleration(Axis.X, calibrated=False)`
+                y repitiéndolo para todos los ejes en ambas direcciones.
         """
 
     def heading(self) -> float:
         """heading() -> float: deg
 
-        Gets the heading angle of your robot. A positive value means a
-        clockwise turn.
+        Obtiene el ángulo de rumbo de tu robot. Un valor positivo significa un
+        giro en sentido horario.
 
-        The heading is 0 when your program starts. The value continues to grow
-        even as the robot turns more than 180 degrees. It does not wrap around
-        to -180 like it does in some apps.
-
-
-        .. note:: *For now, this method only keeps track of the heading while
-                  the robot is on a flat surface.*
-
-                  This means that the value is
-                  no longer correct if you lift it from the table or turn on
-                  a ramp. Try ``hub.imu.heading('3D')`` for a heading value
-                  that compensates for this. This will become the default in a
-                  future release. If you try it, please let us know on our
-                  forums!
+        El rumbo es 0 cuando tu programa inicia. El valor continúa creciendo
+        incluso cuando el robot gira más de 180 grados. No se ajusta
+        a -180 como lo hace en algunas aplicaciones.
 
         Returns:
-            Heading angle relative to starting orientation.
+            Ángulo de rumbo relativo a la orientación inicial.
 
         """
 
     def reset_heading(self, angle: Number) -> None:
         """reset_heading(angle)
 
-        Resets the accumulated heading angle of the robot.
+        Restablece el ángulo de rumbo acumulado del robot.
 
-        This cannot be called while a drive base is using the gyro to drive or
-        hold position.
-        Use :meth:`DriveBase.reset() <pybricks.robotics.DriveBase.reset>`
-        instead, which will stop the robot and then set the new heading value.
+        Esto no puede llamarse mientras una base de conducción está usando el giroscopio para conducir o
+        mantener posición.
+        Usa :meth:`DriveBase.reset() <pybricks.robotics.DriveBase.reset>`
+        en su lugar, que detendrá el robot y luego establecerá el nuevo valor de rumbo.
 
-        .. versionchanged:: 3.6 Resetting the angle while driving is not allowed. Stop first.
+        .. versionchanged:: 3.6 No está permitido restablecer el ángulo mientras se conduce. Detente primero.
 
         Arguments:
-            angle (Number, deg): Value to which the heading should be reset.
+            angle (Number, deg): Valor al que debe restablecerse el rumbo.
 
         Raises:
             OSError:
-                There is a drive base that is currently using the gyro.
+                Hay una base de conducción que actualmente está usando el giroscopio.
         """
 
     @overload
@@ -1258,113 +1239,113 @@ class IMU:
         angular_velocity(axis, calibrated=True) -> float: deg/s
         angular_velocity(calibrated=True) -> vector: deg/s
 
-        Gets the angular velocity of the device along a given axis in
-        the :ref:`robot reference frame <robotframe>`.
+        Obtiene la velocidad angular del dispositivo a lo largo de un eje dado en
+        el :ref:`marco de referencia del robot <robotframe>`.
 
         Arguments:
-            axis (Axis): Axis along which the angular velocity should be
-                measured, or ``None`` to get a vector along all axes.
-            calibrated (bool): Choose ``True`` to compensate for the estimated
-                bias and configured scale of the gyroscope. Choose ``False``
-                to get raw angular velocity values.
+            axis (Axis): Eje a lo largo del cual se debe medir la velocidad angular,
+                o ``None`` para obtener un vector a lo largo de todos los ejes.
+            calibrated (bool): Elige ``True`` para compensar el
+                sesgo estimado y la escala configurada del giroscopio. Elige ``False``
+                para obtener valores de velocidad angular crudos.
 
         Returns:
-            Angular velocity along the specified axis. If you specify no axis,
-            this returns a vector of accelerations along all axes.
+            Velocidad angular a lo largo del eje especificado. Si no especificas ningún eje,
+            esto retorna un vector de aceleraciones a lo largo de todos los ejes.
         """
 
     def rotation(self, axis: Axis, calibrated: bool = True) -> float:
         """
         rotation(axis, calibrated=True) -> float: deg
 
-        Gets the rotation of the device along a given axis in
-        the :ref:`robot reference frame <robotframe>`.
+        Obtiene la rotación del dispositivo a lo largo de un eje dado en
+        el :ref:`marco de referencia del robot <robotframe>`.
 
-        This value is useful if your robot *only* rotates along the requested
-        axis. For general three-dimensional motion, use the
-        ``orientation()`` method instead.
+        Este valor es útil si tu robot *solo* rota a lo largo del eje solicitado.
+        Para movimiento tridimensional general, usa el
+        método ``orientation()`` en su lugar.
 
         Arguments:
-            axis (Axis): Axis along which the rotation should be measured.
-            calibrated (bool): Choose ``True`` to compensate for configured
-                scale of the gyroscope. Choose ``False`` to get unscaled values.
+            axis (Axis): Eje a lo largo del cual se debe medir la rotación.
+            calibrated (bool): Elige ``True`` para compensar la escala
+                configurada del giroscopio. Elige ``False`` para obtener valores sin escalar.
 
         Returns:
-            The rotation angle.
+            El ángulo de rotación.
         """
 
     def orientation(self) -> Matrix:
         """
         orientation() -> Matrix
 
-        Gets the three-dimensional orientation of the robot in
-        the :ref:`robot reference frame <robotframe>`.
+        Obtiene la orientación tridimensional del robot en
+        el :ref:`marco de referencia del robot <robotframe>`.
 
-        It returns a rotation matrix whose columns represent the ``X``, ``Y``,
-        and ``Z`` axis of the robot.
+        Retorna una matriz de rotación cuyas columnas representan los ejes ``X``, ``Y``,
+        y ``Z`` del robot.
 
         Returns:
-            The 3x3 rotation matrix.
+            La matriz de rotación 3x3.
         """
 
 
 class CommonColorSensor:
-    """Generic color sensor that supports Pybricks color calibration."""
+    """Sensor de color genérico que soporta la calibración de color de Pybricks."""
 
     def __init__(self, port: Port):
         """__init__(port)
 
         Arguments:
-            port (Port): Port to which the sensor is connected.
+            port (Port): Puerto al que está conectado el sensor.
         """
 
     def color(self) -> MaybeAwaitableColor:
         """color() -> Color
 
-        Scans the color of a surface.
+        Escanea el color de una superficie.
 
-        You choose which colors are detected using the
-        ``detectable_colors()`` method. By default, it detects
+        Eliges qué colores se detectan usando el
+        método ``detectable_colors()``. Por defecto, detecta
         ``Color.RED``, ``Color.YELLOW``, ``Color.GREEN``, ``Color.BLUE``,
-        ``Color.WHITE``, or ``Color.NONE``.
+        ``Color.WHITE``, o ``Color.NONE``.
 
         Returns:
-            Detected color.
+            Color detectado.
         """
 
     def hsv(self) -> MaybeAwaitableColor:
         """hsv() -> Color
 
-        Scans the color of a surface.
+        Escanea el color de una superficie.
 
-        This method is similar to ``color()``, but it gives the full range
-        of hue, saturation and brightness values, instead of rounding it to the
-        nearest detectable color.
+        Este método es similar a ``color()``, pero da el rango completo
+        de valores de matiz, saturación y brillo, en lugar de redondearlo al
+        color detectable más cercano.
 
         Returns:
-            Measured color. The color is described by a hue (0--359), a
-            saturation (0--100), and a brightness value (0--100).
+            Color medido. El color es descrito por un matiz (0--359), una
+            saturación (0--100), y un valor de brillo (0--100).
         """
 
     def ambient(self) -> MaybeAwaitableInt:
         """ambient() -> int: %
 
-        Measures the ambient light intensity.
+        Mide la intensidad de la luz ambiente.
 
         Returns:
-            Ambient light intensity, ranging from 0% (dark)
-            to 100% (bright).
+            Intensidad de luz ambiente, variando de 0% (oscuro)
+            a 100% (brillante).
         """
 
     def reflection(self) -> MaybeAwaitableInt:
         """reflection() -> int: %
 
-        Measures how much a surface reflects the light emitted by the
+        Mide cuánto refleja una superficie la luz emitida por el
         sensor.
 
         Returns:
-            Measured reflection, ranging from 0% (no reflection) to
-            100% (high reflection).
+            Reflejo medido, variando de 0% (sin reflejo) a
+            100% (alto reflejo).
         """
 
     @overload
@@ -1378,66 +1359,66 @@ class CommonColorSensor:
         detectable_colors(colors)
         detectable_colors() -> Collection[Color]
 
-        Configures which colors the ``color()`` method should detect.
+        Configura qué colores debe detectar el método ``color()``.
 
-        Specify only colors that you wish to detect in your application.
-        This way, the full-color measurements are rounded to the nearest
-        desired color, and other colors are ignored. This improves reliability.
+        Especifica solo los colores que deseas detectar en tu aplicación.
+        De esta manera, las mediciones de color completo se redondean al color
+        deseado más cercano, y otros colores se ignoran. Esto mejora la confiabilidad.
 
-        If you give no arguments, the currently chosen colors will be returned.
+        Si no das argumentos, se retornarán los colores actualmente elegidos.
 
-        When coding with blocks, this is configured in the sensor setup block.
+        Al programar con bloques, esto se configura en el bloque de configuración del sensor.
 
         Arguments:
-            colors (list or tuple): List of :class:`Color <.parameters.Color>`
-                objects: the colors that you want to detect. You can pick
-                standard colors such as ``Color.MAGENTA``, or provide your
-                own colors like ``Color(h=348, s=96, v=40)`` for even
-                better results. You measure your own colors with the
-                ``hsv()`` method.
+            colors (list o tuple): Lista de objetos :class:`Color <.parameters.Color>`
+                : los colores que quieres detectar. Puedes elegir
+                colores estándar como ``Color.MAGENTA``, o proporcionar tus
+                propios colores como ``Color(h=348, s=96, v=40)`` para resultados
+                aún mejores. Mides tus propios colores con el
+                método ``hsv()``.
         """
 
 
 class AmbientColorSensor(CommonColorSensor):
-    """Like CommonColorSensor, but also detects ambient colors when the sensor
-    light is turned off"""
+    """Como CommonColorSensor, pero también detecta colores ambientales cuando la luz del sensor
+    está apagada"""
 
     def color(self, surface: bool = True) -> MaybeAwaitableColor:
         """color(surface=True) -> Color
 
-        Scans the color of a surface or an external light source.
+        Escanea el color de una superficie o una fuente de luz externa.
 
-        You choose which colors are detected using the
-        ``detectable_colors()`` method. By default, it detects
+        Eliges qué colores se detectan usando el
+        método ``detectable_colors()``. Por defecto, detecta
         ``Color.RED``, ``Color.YELLOW``, ``Color.GREEN``, ``Color.BLUE``,
-        ``Color.WHITE``, or ``Color.NONE``.
+        ``Color.WHITE``, o ``Color.NONE``.
 
         Arguments:
-            surface (bool): Choose ``true`` to scan the color of objects
-                and surfaces. Choose ``false`` to scan the color of
-                screens and other external light sources.
+            surface (bool): Elige ``true`` para escanear el color de objetos
+                y superficies. Elige ``false`` para escanear el color de
+                pantallas y otras fuentes de luz externas.
 
         Returns:
-            Detected color.`
+            Color detectado.
         """
 
     def hsv(self, surface: bool = True) -> MaybeAwaitableColor:
         """hsv(surface=True) -> Color
 
-        Scans the color of a surface or an external light source.
+        Escanea el color de una superficie o una fuente de luz externa.
 
-        This method is similar to ``color()``, but it gives the full range
-        of hue, saturation and brightness values, instead of rounding it to the
-        nearest detectable color.
+        Este método es similar a ``color()``, pero da el rango completo
+        de valores de matiz, saturación y brillo, en lugar de redondearlo al
+        color detectable más cercano.
 
         Arguments:
-            surface (bool): Choose ``true`` to scan the color of objects
-                and surfaces. Choose ``false`` to scan the color of
-                screens and other external light sources.
+            surface (bool): Elige ``true`` para escanear el color de objetos
+                y superficies. Elige ``false`` para escanear el color de
+                pantallas y otras fuentes de luz externas.
 
         Returns:
-            Measured color. The color is described by a hue (0--359), a
-            saturation (0--100), and a brightness value (0--100).
+            Color medido. El color es descrito por un matiz (0--359), una
+            saturación (0--100), y un valor de brillo (0--100).
         """
 
 
@@ -1451,28 +1432,28 @@ class BLE:
     def broadcast(self, data: Union[bool, int, float, str, bytes]) -> MaybeAwaitable:
         """broadcast(data)
 
-        Starts broadcasting the given data on
-        the ``broadcast_channel`` you selected when initializing the hub.
+        Comienza a transmitir los datos dados en
+        el ``broadcast_channel`` que seleccionaste al inicializar el hub.
 
-        Data may be of type ``int``, ``float``, ``str``, ``bytes``,
-        ``True``, or ``False``. It can also be a list or tuple of these.
+        Los datos pueden ser de tipo ``int``, ``float``, ``str``, ``bytes``,
+        ``True``, o ``False``. También puede ser una lista o tupla de estos.
 
-        Choose ``None`` to stop broadcasting. This helps improve performance
-        when you don't need the broadcast feature, especially when observing
-        at the same time.
+        Elige ``None`` para detener la transmisión. Esto ayuda a mejorar el rendimiento
+        cuando no necesitas la función de transmisión, especialmente cuando observas
+        al mismo tiempo.
 
-        The total data size is quite limited (26 bytes). ``True`` and
-        ``False`` take 1 byte each. ``float`` takes 5 bytes. ``int`` takes 2 to
-        5 bytes depending on how big the number is. ``str`` and ``bytes`` take
-        the number of bytes in the object plus one extra byte.
+        El tamaño total de datos es bastante limitado (26 bytes). ``True`` y
+        ``False`` ocupan 1 byte cada uno. ``float`` ocupa 5 bytes. ``int`` ocupa de 2 a
+        5 bytes dependiendo de qué tan grande sea el número. ``str`` y ``bytes`` ocupan
+        el número de bytes en el objeto más un byte extra.
 
-        When multitasking, only one task can broadcast at a time. To broadcast
-        information from multiple tasks (or block stacks), you could use a
-        dedicated separate task that broadcast new values when one or more
-        variables change.
+        Al hacer multitarea, solo una tarea puede transmitir a la vez. Para transmitir
+        información de múltiples tareas (o pilas de bloques), podrías usar una
+        tarea separada dedicada que transmita nuevos valores cuando una o más
+        variables cambien.
 
-        Args:
-            data: The value or values to be broadcast.
+        Arguments:
+            data: El valor o valores a transmitir.
 
         .. versionadded:: 3.3
         """
@@ -1482,17 +1463,17 @@ class BLE:
     ) -> Optional[Tuple[Union[bool, int, float, str, bytes], ...]]:
         """observe(channel) -> bool | int | float | str | bytes | tuple | None
 
-        Retrieves the last observed data for a given channel.
+        Recupera los últimos datos observados para un canal dado.
 
-        Receiving data is more reliable when the hub is not connected
-        to a computer or other devices at the same time.
+        Recibir datos es más confiable cuando el hub no está conectado
+        a una computadora u otros dispositivos al mismo tiempo.
 
-        Args:
-            channel (int): The channel to observe (0 to 255).
+        Arguments:
+            channel (int): El canal a observar (0 a 255).
 
         Returns:
-            The received data in the same format as it was sent, or ``None``
-            if no recent data is available.
+            Los datos recibidos en el mismo formato en que fueron enviados, o ``None``
+            si no hay datos recientes disponibles.
 
         .. versionadded:: 3.3
         """
@@ -1500,17 +1481,17 @@ class BLE:
     def signal_strength(self, channel: int) -> int:
         """signal_strength(channel) -> int: dBm
 
-        Gets the average signal strength in dBm for the given channel.
+        Obtiene la intensidad de señal promedio en dBm para el canal dado.
 
-        This indicates how near the broadcasting device is. Nearby devices
-        may have a signal strength around -40 dBm, while far away devices
-        might have a signal strength around -70 dBm.
+        Esto indica qué tan cerca está el dispositivo transmisor. Los dispositivos cercanos
+        pueden tener una intensidad de señal alrededor de -40 dBm, mientras que los dispositivos lejanos
+        podrían tener una intensidad de señal alrededor de -70 dBm.
 
-        Args:
-            channel (int): The channel number (0 to 255).
+        Arguments:
+            channel (int): El número de canal (0 a 255).
 
         Returns:
-            The signal strength or ``-128`` if there is no recent observed data.
+            La intensidad de señal o ``-128`` si no hay datos observados recientes.
 
         .. versionadded:: 3.3
         """
@@ -1518,7 +1499,7 @@ class BLE:
     def version(self) -> str:
         """version() -> str
 
-        Gets the firmware version from the Bluetooth chip.
+        Obtiene la versión de firmware del chip Bluetooth.
 
         .. versionadded:: 3.3
         """

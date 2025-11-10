@@ -1,5 +1,3 @@
-.. pybricks-requirements::
-
 Lado
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 

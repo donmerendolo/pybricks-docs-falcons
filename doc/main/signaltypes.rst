@@ -48,25 +48,14 @@ el número de grados por segundo (°/s).
 Por ejemplo, la velocidad angular de un ``Motor`` o del
 ``GyroSensor`` (giroscopio) se expresa en grados por segundo.
 
-Si bien recomendamos trabajar con grados por segundo en tus programas,
-puedes usar la siguiente tabla para convertir entre unidades comúnmente usadas.
-
-+-----------+-------+-----------+
-|           | °/s   | rpm       |
-+-----------+-------+-----------+
-| 1 °/s =   | 1     | 1/6=0.167 |
-+-----------+-------+-----------+
-| 1 rpm =   | 6     | 1         |
-+-----------+-------+-----------+
-
 .. _acceleration:
 
-aceleración angular: deg/s²
+aceleración angular: °/s²
 --------------------------------
 
 La aceleración angular describe cómo de rápido cambia la velocidad angular.
 Esto se expresa como el cambio del número de grados por segundo, durante
-un segundo (°/s²). Esto también se escribe comúnmente como :math:`deg/s^2`.
+un segundo (°/s²). Esto también se escribe comúnmente como :math:`°/s^2`.
 
 Por ejemplo, puedes ajustar la aceleración angular de un ``Motor``
 para cambiar cómo de suave o rápido alcanza la velocidad constante establecida.
@@ -82,20 +71,6 @@ Las distancias se expresan en milímetros (mm) siempre que sea posible.
 
 Por ejemplo, el valor de distancia del ``UltrasonicSensor``
 se expresa en milímetros.
-
-
-Si bien recomendamos trabajar con milímetros en tus programas,
-puedes usar la siguiente tabla para convertir entre unidades comúnmente usadas.
-
-+-------------+------+------+----------+
-|             | mm   | cm   | pulgadas |
-+-------------+------+------+----------+
-| 1 mm =      | 1    | 0.1  | 0.0394   |
-+-------------+------+------+----------+
-| 1 cm =      | 10   | 1    | 0.394    |
-+-------------+------+------+----------+
-| 1 pulgada = | 25.4 | 2.54 | 1        |
-+-------------+------+------+----------+
 
 .. _dimension:
 
@@ -176,21 +151,11 @@ Los valores de fuerza se expresan en newtons (N).
 Si bien recomendamos trabajar con newtons en tus programas, puedes usar la
 siguiente tabla para convertir a y desde otras unidades.
 
-+---------+------+-------+-----------------------------+
-|         | mN   | N     | lbf                         |
-+---------+------+-------+-----------------------------+
-| 1 mN =  | 1    | 0.001 | :math:`2.248 \cdot 10^{-4}` |
-+---------+------+-------+-----------------------------+
-| 1 N =   | 1000 | 1     | 0.2248                      |
-+---------+------+-------+-----------------------------+
-| 1 lbf = | 4448 | 4.448 | 1                           |
-+---------+------+-------+-----------------------------+
-
 .. _torque:
 
-par: mNm
+par: mN·m
 ------------
-Los valores de par se expresan en milinewtonmetros (mNm) a menos que se indique lo contrario.
+Los valores de par se expresan en milinewtonmetros (mN·m) a menos que se indique lo contrario.
 
 Electricidad
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -243,10 +208,8 @@ Por ejemplo, puedes elegir la frecuencia de un pitido para cambiar el tono.
 temperatura: °C
 ---------------
 
-La temperatura se mide en grados Celsius (°C). Para convertir a grados
-Fahrenheit (°F) o Kelvin (K), puedes usar las siguientes fórmulas:
-
-    :math:`^{\circ}\kern1pt\!F =\kern1pt^{\circ}\kern1pt\!C \cdot \frac{9}{5} + 32`.
+La temperatura se mide en grados Celsius (°C). Para convertir a
+Kelvin (K), puedes usar la siguiente fórmula:
 
     :math:`K =\kern1pt^{\circ}\kern1pt\!C + 273.15`.
 

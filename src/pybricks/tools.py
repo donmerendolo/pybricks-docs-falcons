@@ -1,7 +1,7 @@
 # SPDX-License-Identifier: MIT
 # Copyright (c) 2018-2023 The Pybricks Authors
 
-"""Common tools for timing, data logging, and linear algebra."""
+"""Herramientas comunes para temporización, registro de datos y álgebra lineal."""
 
 from __future__ import annotations
 
@@ -15,52 +15,52 @@ if TYPE_CHECKING:
 def wait(time: Number) -> MaybeAwaitable:
     """wait(time)
 
-    Pauses the user program for a specified amount of time.
+    Pausa el programa del usuario durante una cantidad de tiempo especificada.
 
     Arguments:
-        time (Number, ms): How long to wait.
+        time (Number, ms): Cuánto tiempo esperar.
     """
 
 
 class StopWatch:
-    """A stopwatch to measure time intervals. Similar to the stopwatch
-    feature on your phone."""
+    """Un cronómetro para medir intervalos de tiempo. Similar a la función
+    de cronómetro de tu teléfono."""
 
     def __init__(self): ...
 
     def time(self) -> int:
         """time() -> int: ms
 
-        Gets the current time of the stopwatch.
+        Obtiene el tiempo actual del cronómetro.
 
         Returns:
-            Elapsed time.
+            Tiempo transcurrido.
         """
 
     def pause(self) -> None:
         """pause()
 
-        Pauses the stopwatch."""
+        Pausa el cronómetro."""
 
     def resume(self) -> None:
         """resume()
 
-        Resumes the stopwatch."""
+        Reanuda el cronómetro."""
 
     def reset(self) -> None:
         """reset()
 
-        Resets the stopwatch time to 0.
+        Reinicia el tiempo del cronómetro a 0.
 
-        The run state is unaffected:
+        El estado de ejecución no se ve afectado:
 
-        * If it was paused, it stays paused (but now at 0).
-        * If it was running, it stays running (but starting again from 0).
+        * Si estaba en pausa, permanece en pausa (pero ahora en 0).
+        * Si estaba en ejecución, permanece en ejecución (pero comenzando nuevamente desde 0).
         """
 
 
 class DataLog:
-    """Create a file and log data."""
+    """Crea un archivo y registra datos."""
 
     def __init__(
         self,
@@ -73,39 +73,39 @@ class DataLog:
         """DataLog(*headers, name='log', timestamp=True, extension='csv', append=False)
 
         Arguments:
-            headers (str, str, ...): Column headers. These are the
-                names of the data columns. For example, choose ``'time'`` and
+            headers (str, str, ...): Encabezados de columna. Estos son los
+                nombres de las columnas de datos. Por ejemplo, elige ``'time'`` y
                 ``'angle'``.
-            name (str): Name of the file.
-            timestamp (bool): Choose ``True`` to add the date and time to the
-                file name. This way, your file has a unique name.
-                Choose ``False`` to omit the timestamp.
-            extension (str): File extension.
-            append (bool): Choose ``True`` to reopen an existing data log file
-                and append data to it. Choose ``False`` to clear existing
-                data. If the file does not exist yet, an empty file will be
-                created either way.
+            name (str): Nombre del archivo.
+            timestamp (bool): Elige ``True`` para agregar la fecha y hora al
+                nombre del archivo. De esta manera, tu archivo tiene un nombre único.
+                Elige ``False`` para omitir la marca de tiempo.
+            extension (str): Extensión del archivo.
+            append (bool): Elige ``True`` para reabrir un archivo de registro de datos existente
+                y agregar datos a él. Elige ``False`` para borrar los datos
+                existentes. Si el archivo aún no existe, se creará un archivo vacío
+                de cualquier manera.
         """
 
     def log(self, *values: Any) -> None:
         """log(value1, value2, ...)
 
-        Saves one or more values on a new line in the file.
+        Guarda uno o más valores en una nueva línea del archivo.
 
         Arguments:
-            values (object, object, ...): One or more objects or values.
+            values (object, object, ...): Uno o más objetos o valores.
         """
 
 
 class Matrix:
-    """Mathematical representation of a matrix. It supports
-    addition (``A + B``), subtraction (``A - B``),
-    and matrix multiplication (``A * B``) for matrices of compatible size.
+    """Representación matemática de una matriz. Soporta
+    suma (``A + B``), resta (``A - B``),
+    y multiplicación de matrices (``A * B``) para matrices de tamaño compatible.
 
-    It also supports scalar multiplication (``c * A`` or ``A * c``)
-    and scalar division (``A / c``).
+    También soporta multiplicación escalar (``c * A`` o ``A * c``)
+    y división escalar (``A / c``).
 
-    A :class:`.Matrix` object is immutable."""
+    Un objeto :class:`.Matrix` es inmutable."""
 
     def __add__(self, other) -> Matrix: ...
 
@@ -133,48 +133,48 @@ class Matrix:
         """Matrix(rows)
 
         Arguments:
-            rows (list): List of rows. Each row is itself a list of numbers.
+            rows (list): Lista de filas. Cada fila es en sí misma una lista de números.
 
         """
 
     @property
     def T(self) -> Matrix:  # noqa: N802
-        """Returns a new :class:`.Matrix` that is the transpose of the
+        """Devuelve una nueva :class:`.Matrix` que es la transpuesta de la
         original."""
 
     @property
     def shape(self) -> Tuple[int, int]:
-        """Returns a tuple (``m``, ``n``),
-        where ``m`` is the number of rows and ``n`` is the number of columns.
+        """Devuelve una tupla (``m``, ``n``),
+        donde ``m`` es el número de filas y ``n`` es el número de columnas.
         """
 
 
 @overload
 def vector(x: float, y: float) -> Matrix:
     """
-    Convenience function to create a :class:`.Matrix` with the shape (``2``, ``1``).
+    Función de conveniencia para crear una :class:`.Matrix` con forma (``2``, ``1``).
 
     Arguments:
-        x (float): x-coordinate of the vector.
-        y (float): y-coordinate of the vector.
+        x (float): coordenada x del vector.
+        y (float): coordenada y del vector.
 
     Returns:
-        A matrix with the shape of a column vector.
+        Una matriz con la forma de un vector columna.
     """
 
 
 @overload
 def vector(x: float, y: float, z: float) -> Matrix:
     """
-    Convenience function to create a :class:`.Matrix` with the shape (``3``, ``1``).
+    Función de conveniencia para crear una :class:`.Matrix` con forma (``3``, ``1``).
 
     Arguments:
-        x (float): x-coordinate of the vector.
-        y (float): y-coordinate of the vector.
-        z (float): z-coordinate of the vector.
+        x (float): coordenada x del vector.
+        y (float): coordenada y del vector.
+        z (float): coordenada z del vector.
 
     Returns:
-        A matrix with the shape of a column vector.
+        Una matriz con la forma de un vector columna.
     """
 
 
@@ -183,16 +183,16 @@ def vector(*args):
     vector(x, y) -> Matrix
     vector(x, y, z) -> Matrix
 
-    Convenience function to create a :class:`.Matrix` with the
-    shape (``2``, ``1``) or (``3``, ``1``).
+    Función de conveniencia para crear una :class:`.Matrix` con
+    forma (``2``, ``1``) o (``3``, ``1``).
 
     Arguments:
-        x (float): x-coordinate of the vector.
-        y (float): y-coordinate of the vector.
-        z (float): z-coordinate of the vector (optional).
+        x (float): coordenada x del vector.
+        y (float): coordenada y del vector.
+        z (float): coordenada z del vector (opcional).
 
     Returns:
-        A matrix with the shape of a column vector.
+        Una matriz con la forma de un vector columna.
     """
 
 
@@ -200,14 +200,14 @@ def cross(a: Matrix, b: Matrix) -> Matrix:
     """
     cross(a, b) -> Matrix
 
-    Gets the cross product ``a`` × ``b`` of two vectors.
+    Obtiene el producto vectorial ``a`` × ``b`` de dos vectores.
 
     Arguments:
-        a (Matrix): A three-dimensional vector.
-        b (Matrix): A three-dimensional vector.
+        a (Matrix): Un vector tridimensional.
+        b (Matrix): Un vector tridimensional.
 
     Returns:
-        The cross product, also a three-dimensional vector.
+        El producto vectorial, también un vector tridimensional.
     """
 
 
@@ -215,19 +215,19 @@ def read_input_byte(last: bool = False, chr: bool = False) -> Optional[int | str
     """
     read_input_byte() -> int | str | None
 
-    Reads one byte from standard input without blocking and removes it from the
-    input buffer.
+    Lee un byte de la entrada estándar sin bloquear y lo elimina del
+    búfer de entrada.
 
     Arguments:
-        last (bool): Choose ``True`` to read the last (most recent) byte in the buffer and discard the rest.
-                     Choose ``False`` to read only the first (oldest) byte.
-        chr (bool): Choose ``True`` to convert the result to a one-character string.
+        last (bool): Elige ``True`` para leer el último (más reciente) byte en el búfer y descartar el resto.
+                     Elige ``False`` para leer solo el primer (más antiguo) byte.
+        chr (bool): Elige ``True`` para convertir el resultado a una cadena de un solo carácter.
 
     Returns:
-        The byte that was read, as a numeric value (``0`` to ``255``) or
-        string (e.g. ``"B"``). Returns ``None`` if no data is available. If
-        ``chr=True``, it also return ``None`` if the byte that was read is not
-        printable as a character.
+        El byte que se leyó, como un valor numérico (``0`` a ``255``) o
+        cadena (ej. ``"B"``). Devuelve ``None`` si no hay datos disponibles. Si
+        ``chr=True``, también devuelve ``None`` si el byte que se leyó no es
+        imprimible como un carácter.
     """
 
 
@@ -235,20 +235,20 @@ def hub_menu(*symbols: int | str) -> int | str:
     """
     hub_menu(symbol1, symbol2, ...) -> int | str
 
-    Shows a menu on the hub display and waits for the user to select an item
-    using the buttons. Can be used in your own menu-program that lets you
-    choose which of your other programs to run.
+    Muestra un menú en la pantalla del hub y espera a que el usuario seleccione un elemento
+    usando los botones. Puede usarse en tu propio programa de menú que te permite
+    elegir cuál de tus otros programas ejecutar.
 
-    Note that this is just a convenience function that combines the display,
-    buttons, and waits to make a simple menu. This means that it can be used
-    anywhere in a program, not just at the start.
+    Ten en cuenta que esto es solo una función de conveniencia que combina la pantalla,
+    los botones y las esperas para hacer un menú simple. Esto significa que puede usarse
+    en cualquier lugar de un programa, no solo al inicio.
 
     Arguments:
-        symbol1 (int or str): The first symbol to show in the menu.
-        symbol2 (int or str): The second symbol, and so on...
+        symbol1 (int or str): El primer símbolo a mostrar en el menú.
+        symbol2 (int or str): El segundo símbolo, y así sucesivamente...
 
     Returns:
-        The selected symbol.
+        El símbolo seleccionado.
     """
 
 
@@ -256,19 +256,19 @@ def multitask(*coroutines: Coroutine, race=False) -> MaybeAwaitableTuple:
     """
     multitask(coroutine1, coroutine2, ...) -> Tuple
 
-    Runs multiple coroutines concurrently. This creates a new coroutine that
-    can be used like any other, including in another ``multitask`` statement.
+    Ejecuta múltiples corrutinas concurrentemente. Esto crea una nueva corrutina que
+    puede usarse como cualquier otra, incluso en otra declaración ``multitask``.
 
     Arguments:
-        coroutines (coroutine, coroutine, ...): One or more coroutines to run
-            in parallel.
-        race (bool): Choose ``False`` to wait for all coroutines to finish.
-            Choose ``True`` to wait for one coroutine to finish and then
-            cancel the others, as if it's a "race".
+        coroutines (coroutine, coroutine, ...): Una o más corrutinas para ejecutar
+            en paralelo.
+        race (bool): Elige ``False`` para esperar a que todas las corrutinas terminen.
+            Elige ``True`` para esperar a que una corrutina termine y luego
+            cancelar las demás, como si fuera una "carrera".
 
     Returns:
-        Tuple of the return values of each coroutine. Unfinished coroutines
-        will have ``None`` as their return value.
+        Tupla de los valores de retorno de cada corrutina. Las corrutinas no terminadas
+        tendrán ``None`` como su valor de retorno.
     """
 
 
@@ -276,17 +276,17 @@ def run_task(coroutine: Coroutine) -> Optional[bool]:
     """
     run_task(coroutine) -> bool | None
 
-    Runs a coroutine from start to finish while blocking the rest of the
-    program. This is used primarily to run the main coroutine of a program.
+    Ejecuta una corrutina de principio a fin mientras bloquea el resto del
+    programa. Se usa principalmente para ejecutar la corrutina principal de un programa.
 
-    Calls to this function are not allowed to be nested.
+    No se permiten llamadas anidadas a esta función.
 
     Arguments:
-        coroutine (coroutine): The main coroutine to run.
+        coroutine (coroutine): La corrutina principal a ejecutar.
 
     Returns:
-        If no ``coroutine`` is given, this function returns whether the
-        run loop is currently active (``True``) or not (``False``).
+        Si no se proporciona ``coroutine``, esta función devuelve si el
+        bucle de ejecución está actualmente activo (``True``) o no (``False``).
     """
 
 

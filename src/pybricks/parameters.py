@@ -1,7 +1,7 @@
 # SPDX-License-Identifier: MIT
 # Copyright (c) 2018-2022 The Pybricks Authors
 
-"""Constant parameters/arguments for the Pybricks API."""
+"""Parámetros/argumentos constantes para la API de Pybricks."""
 
 from __future__ import annotations
 
@@ -14,24 +14,20 @@ from .tools import Matrix as _Matrix, vector as _vector
 if TYPE_CHECKING or os.environ.get("SPHINX_BUILD") == "True":
     Number = Union[int, float]
     """
-    Numbers can be represented as integers or floating point values:
+    Los números pueden representarse como enteros o valores de punto flotante:
 
-        * Integers (:class:`int <ubuiltins.int>`) are whole numbers
-          like ``15`` or ``-123``.
-        * Floating point values (:class:`float <ubuiltins.float>`) are decimal
-          numbers like ``3.14`` or ``-123.45``.
+        * Los enteros (:class:`int <ubuiltins.int>`) son números enteros
+          como ``15`` o ``-123``.
+        * Los valores de punto flotante (:class:`float <ubuiltins.float>`) son números decimales
+          como ``3.14`` o ``-123.45``.
 
-    If you see :class:`Number` as the argument type, both
-    :class:`int <ubuiltins.int>` and :class:`float <ubuiltins.float>` may be used.
+    Si ves :class:`Number` como el tipo de argumento, se pueden usar tanto
+    :class:`int <ubuiltins.int>` como :class:`float <ubuiltins.float>`.
 
-    For example, :func:`wait(15) <pybricks.tools.wait>` and
-    :func:`wait(15.75) <pybricks.tools.wait>` are both allowed. In most functions,
-    however, your input value will be truncated to a whole number anyway. In this
-    example, either command makes the program pause for just 15 milliseconds.
-
-    .. note::
-        The BOOST Move hub doesn't support floating point numbers due to
-        limited system resources. Only integers can be used on that hub.
+    Por ejemplo, :func:`wait(15) <pybricks.tools.wait>` y
+    :func:`wait(15.75) <pybricks.tools.wait>` están ambos permitidos. Sin embargo, en la mayoría de las funciones,
+    tu valor de entrada se truncará a un número entero de todos modos. En este
+    ejemplo, cualquiera de los dos comandos hace que el programa se pause durante solo 15 milisegundos.
     """
 
 
@@ -72,7 +68,7 @@ class Axis:
 
 
 class Color:
-    """Light or surface color."""
+    """Color de luz o superficie."""
 
     NONE: Color = ...
     BLACK: Color = ...
@@ -92,28 +88,28 @@ class Color:
         """Color(h, s=100, v=100)
 
         Arguments:
-            h (Number, deg): Hue.
-            s (Number, %): Saturation.
-            v (Number, %): Brightness value.
+            h (Number, deg): Tono.
+            s (Number, %): Saturación.
+            v (Number, %): Valor de brillo.
         """
 
         self.h = int(h) % 360
         """
-        The hue.
+        El tono.
         """
 
         self.s = max(0, min(int(s), 100))
         """
-        The saturation.
+        La saturación.
         """
 
         self.v = max(0, min(int(v), 100))
         """
-        The brightness value.
+        El valor de brillo.
         """
 
     def __iter__(self):
-        """Allows unpacking of the Color instance into h, s, and v."""
+        """Permite el desempaquetado de la instancia Color en h, s y v."""
         return iter((self.h, self.s, self.v))
 
     def __repr__(self):
@@ -151,7 +147,7 @@ Color.MAGENTA = Color(300, 100, 100)
 
 
 class Port(_PybricksEnum):
-    """Port on the programmable brick or hub."""
+    """Puerto en el brick programable o hub."""
 
     # Generic motor/sensor ports
     A: Port = ord("A")
@@ -169,46 +165,45 @@ class Port(_PybricksEnum):
 
 
 class Stop(_PybricksEnum):
-    """Action after the motor stops or reaches its target."""
+    """Acción después de que el motor se detenga o alcance su objetivo."""
 
     COAST: Stop = 0
-    """Let the motor move freely."""
+    """Dejar que el motor se mueva libremente."""
 
     COAST_SMART: Stop = 4
     """
-    Let the motor move freely. For the next relative angle maneuver,
-    take the last target angle (instead of the current angle) as the new
-    starting point. This reduces cumulative errors. This will apply only if the
-    current angle is less than twice the configured position tolerance.
+    Dejar que el motor se mueva libremente. Para la próxima maniobra de ángulo relativo,
+    tomar el último ángulo objetivo (en lugar del ángulo actual) como el nuevo
+    punto de partida. Esto reduce los errores acumulativos. Esto solo se aplicará si el
+    ángulo actual es menor que el doble de la tolerancia de posición configurada.
     """
 
     BRAKE: Stop = 1
-    """Passively resist small external forces."""
+    """Resistir pasivamente pequeñas fuerzas externas."""
 
     HOLD: Stop = 2
-    """Keep controlling the motor to hold it at the commanded angle."""
+    """Seguir controlando el motor para mantenerlo en el ángulo comandado."""
 
     NONE: Stop = 3
     """
-    Do not decelerate when approaching the target position. This can be used
-    to concatenate multiple motor or drive base maneuvers without stopping. If
-    no further commands are given, the motor will proceed to run indefinitely
-    at the given speed.
+    No desacelerar al acercarse a la posición objetivo. Esto se puede usar
+    para concatenar múltiples maniobras de motor o base de conducción sin detenerse. Si
+    no se dan más comandos, el motor procederá a funcionar indefinidamente
+    a la velocidad dada.
     """
 
 
 class Direction(_PybricksEnum):
-    """Rotational direction for positive speed or angle values."""
+    """Dirección de rotación para valores positivos de velocidad o ángulo."""
 
     CLOCKWISE: Direction = 0
-    """A positive speed value should make the motor move clockwise."""
+    """Una velocidad positiva debe hacer que el motor gire en el sentido de las agujas del reloj."""
 
     COUNTERCLOCKWISE: Direction = 1
-    """A positive speed value should make the motor move counterclockwise."""
-
+    """Una velocidad positiva debe hacer que el motor gire en sentido contrario a las agujas del reloj."""
 
 class Button(_PybricksEnum):
-    """Buttons on a hub or remote."""
+    """Botones en un hub o control remoto."""
 
     LEFT_DOWN: Button = 1
     LEFT_MINUS: Button = 1
@@ -244,7 +239,7 @@ class Button(_PybricksEnum):
 
 
 class Side(_PybricksEnum):
-    """Side of a hub or a sensor."""
+    """Lado de un hub o un sensor."""
 
     RIGHT: Side = 6
     FRONT: Side = 0
@@ -255,10 +250,10 @@ class Side(_PybricksEnum):
 
 
 class Icon:
-    """Icons to display on a light matrix.
+    """Iconos para mostrar en una matriz de luz.
 
-    Each of the following attributes are matrices. This means you can scale
-    icons to adjust the brightness or add icons to make composites.
+    Cada uno de los siguientes atributos son matrices. Esto significa que puedes escalar
+    iconos para ajustar el brillo o agregar iconos para hacer composiciones.
     """
 
     UP: _Matrix = ...

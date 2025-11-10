@@ -14,9 +14,9 @@
 # Copyright (c) 2001-2021 Python Software Foundation
 
 """
-The following functions and exceptions can be used without importing anything.
+Las siguientes funciones y excepciones se pueden usar sin importar nada.
 
-Most functions and classes in this module do not accept keyword arguments.
+La mayoría de las funciones y clases en este módulo no aceptan argumentos de palabra clave.
 """
 
 from typing import (
@@ -65,26 +65,26 @@ _Self = TypeVar("_Self")
 def abs(x: Any) -> Any:
     """abs(x) -> Any
 
-    Returns the absolute value of a number.
+    Devuelve el valor absoluto de un número.
 
-    The argument may be an integer, a
-    floating point number, or any object implementing ``__abs__()``.
-    If the argument is a complex number, its magnitude is returned.
+    El argumento puede ser un entero, un
+    número de punto flotante, o cualquier objeto que implemente ``__abs__()``.
+    Si el argumento es un número complejo, se devuelve su magnitud.
 
     Arguments:
-        x (Any): The value.
+        x (Any): El valor.
 
     Returns:
-        Absolute value of ``x``.
+        Valor absoluto de ``x``.
     """
 
 
 def all(x: Iterable) -> _bool:
     """all(x) -> bool
 
-    Checks if all elements of the iterable are true.
+    Comprueba si todos los elementos del iterable son verdaderos.
 
-    Equivalent to::
+    Equivalente a::
 
         def all(x):
             for element in x:
@@ -93,20 +93,20 @@ def all(x: Iterable) -> _bool:
             return True
 
     Arguments:
-        x (Iterable): The iterable to be checked.
+        x (Iterable): El iterable a comprobar.
 
     Returns:
-        ``True`` if the iterable ``x`` is empty or if all elements
-        are true. Otherwise ``False``.
+        ``True`` si el iterable ``x`` está vacío o si todos los elementos
+        son verdaderos. De lo contrario ``False``.
     """
 
 
 def any(x: Iterable) -> _bool:
     """any(x) -> bool
 
-    Checks if at least one elements of the iterable is true.
+    Comprueba si al menos un elemento del iterable es verdadero.
 
-    Equivalent to::
+    Equivalente a::
 
         def any(x):
             for element in x:
@@ -115,25 +115,25 @@ def any(x: Iterable) -> _bool:
             return False
 
     Arguments:
-        x (Iterable): The iterable to be checked.
+        x (Iterable): El iterable a comprobar.
 
     Returns:
-        ``True`` if at least one element in ``x`` is true. Otherwise ``False``.
+        ``True`` si al menos un elemento en ``x`` es verdadero. De lo contrario ``False``.
     """
 
 
 def bin(x: Any) -> _str:
     """bin(x) -> str
 
-    Converts an integer to its binary representation. The result is a
-    string prefixed with ``0b``. The result is a valid Python expression.
-    For example, ``bin(5)`` gives ``"0b101"``.
+    Convierte un entero a su representación binaria. El resultado es una
+    cadena con prefijo ``0b``. El resultado es una expresión válida de Python.
+    Por ejemplo, ``bin(5)`` da ``"0b101"``.
 
     Arguments:
-        x (int): Value to be converted.
+        x (int): Valor a convertir.
 
     Returns:
-        A string representing the binary form of the input.
+        Una cadena que representa la forma binaria de la entrada.
     """
 
 
@@ -151,16 +151,16 @@ class bool:
         bool(​)
         bool(x)
 
-        Creates a boolean value, which is either ``True`` or ``False``.
+        Crea un valor booleano, que es ``True`` o ``False``.
 
-        The input value is converted using the standard truth testing
-        procedure. If no input is given, it is assumed to be ``False``.
+        El valor de entrada se convierte usando el procedimiento estándar de 
+        prueba de verdad. Si no se proporciona entrada, se asume que es ``False``.
 
         Arguments:
-            x: Value to be converted.
+            x: Valor a convertir.
 
         Returns:
-            Result of the truth-test.
+            Resultado de la prueba de verdad.
         """
 
 
@@ -188,22 +188,22 @@ class bytes:
         bytes(iterable)
         bytes(string, encoding)
 
-        Creates a new ``bytes`` object, which is a sequence of integers
-        in the range :math:`0 \leq x \leq 255`. This object is *immutable*,
-        which means that you *cannot* change its contents after you create it.
+        Crea un nuevo objeto ``bytes``, que es una secuencia de enteros
+        en el rango :math:`0 \leq x \leq 255`. Este objeto es *inmutable*,
+        lo que significa que *no puedes* cambiar su contenido después de crearlo.
 
-        If no argument is given, this creates an empty ``bytes`` object.
+        Si no se proporciona ningún argumento, esto crea un objeto ``bytes`` vacío.
 
         Arguments:
-            integer (int): If the argument is a single integer, this creates
-              a ``bytes`` object of zeros. The argument specifies how many.
-            iterable (iter): If the argument is a ``bytearray``, ``bytes``
-              object, or some other iterable of integers, this creates a ``bytes``
-              object with the same byte sequence as the argument.
-            string (str): If the argument is a string, this creates a ``bytes``
-              object containing the encoded string.
-            encoding (str): Specifies which encoding to use for the ``string``
-              argument. Only ``"utf-8"``  is supported.
+            integer (int): Si el argumento es un solo entero, esto crea
+              un objeto ``bytes`` de ceros. El argumento especifica cuántos.
+            iterable (iter): Si el argumento es un ``bytearray``, objeto ``bytes``
+              u otro iterable de enteros, esto crea un objeto ``bytes``
+              con la misma secuencia de bytes que el argumento.
+            string (str): Si el argumento es una cadena, esto crea un objeto ``bytes``
+              que contiene la cadena codificada.
+            encoding (str): Especifica qué codificación usar para el argumento ``string``.
+              Solo se admite ``"utf-8"``.
         """
 
 
@@ -227,20 +227,20 @@ class bytearray:
         bytearray(iterable)
         bytearray(string)
 
-        Creates a new ``bytearray`` object, which is a sequence of integers
-        in the range :math:`0 \leq x \leq 255`. This object is *mutable*, which
-        means that you *can* change its contents after you create it.
+        Crea un nuevo objeto ``bytearray``, que es una secuencia de enteros
+        en el rango :math:`0 \leq x \leq 255`. Este objeto es *mutable*, lo que
+        significa que *puedes* cambiar su contenido después de crearlo.
 
-        If no argument is given, this creates an empty ``bytearray`` object.
+        Si no se proporciona ningún argumento, esto crea un objeto ``bytearray`` vacío.
 
         Arguments:
-            integer (int): If the argument is a single integer, this creates
-              a ``bytearray`` object of zeros. The argument specifies how many.
-            iterable (iter): If the argument is a ``bytearray``, ``bytes``
-              object, or some other iterable of integers, this creates
-              a ``bytearray`` object with the same byte sequence as the argument.
-            string (str): If the argument is a string, this creates
-              a ``bytearray`` object containing the encoded string.
+            integer (int): Si el argumento es un solo entero, esto crea
+              un objeto ``bytearray`` de ceros. El argumento especifica cuántos.
+            iterable (iter): Si el argumento es un ``bytearray``, objeto ``bytes``
+              u otro iterable de enteros, esto crea un objeto ``bytearray``
+              con la misma secuencia de bytes que el argumento.
+            string (str): Si el argumento es una cadena, esto crea
+              un objeto ``bytearray`` que contiene la cadena codificada.
         """
 
 
@@ -248,34 +248,34 @@ def callable(object: Any) -> _bool:
     """
     callable(object) -> bool
 
-    Checks if an object is callable.
+    Comprueba si un objeto es invocable.
 
     Arguments:
-        object: Object to check.
+        object: Objeto a comprobar.
 
     Returns:
-        ``True`` if the object argument appears callable, ``False`` if not.
+        ``True`` si el argumento objeto parece invocable, ``False`` si no.
     """
 
 
 def chr(x: _int) -> _str:
     """chr(x) -> str
 
-    Returns the string representing a character whose Unicode code is the
-    integer ``x``. This is the inverse of :meth:`ord`. For
-    example, ``chr(97)`` gives ``"a"``.
+    Devuelve la cadena que representa un carácter cuyo código Unicode es el
+    entero ``x``. Esta es la inversa de :meth:`ord`. Por
+    ejemplo, ``chr(97)`` da ``"a"``.
 
     Arguments:
-        x (int): Value to be converted (0-255).
+        x (int): Valor a convertir (0-255).
 
     Returns:
-        A string with one character, corresponding to the given Unicode value.
+        Una cadena con un carácter, correspondiente al valor Unicode dado.
     """
 
 
 def classmethod(method: _callable) -> _callable:
     """
-    Transforms a method into a class method.
+    Transforma un método en un método de clase.
     """
 
 
@@ -307,19 +307,19 @@ class complex:
         complex(string)
         complex(a=0, b=0)
 
-        Creates a complex number from a string or from a pair of numbers.
+        Crea un número complejo a partir de una cadena o de un par de números.
 
-        If a string is given, it must be of the form ``'1+2j'``.
-        If a pair of numbers is provided, the result is computed
-        as: ``a + b * j``.
+        Si se proporciona una cadena, debe ser de la forma ``'1+2j'``.
+        Si se proporciona un par de números, el resultado se calcula
+        como: ``a + b * j``.
 
         Arguments:
-            string (str): A string of the form ``'1+2j'`` .
-            a (float or complex): A real-valued or complex number.
-            b (float or complex): A real-valued or complex number.
+            string (str): Una cadena de la forma ``'1+2j'``.
+            a (float or complex): Un número de valor real o complejo.
+            b (float or complex): Un número de valor real o complejo.
 
         Returns:
-            The resulting complex number.
+            El número complejo resultante.
         """
 
 
@@ -338,12 +338,12 @@ class dict:
         dict(mapping, **kwargs)
         dict(iterable, **kwargs)
 
-        Creates a dictionary object.
+        Crea un objeto diccionario.
 
-        See the standard
-        `Python documentation
+        Consulta la
+        `documentación estándar de Python
         <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
-        for a comprehensive reference with examples.
+        para una referencia completa con ejemplos.
         """
 
 
@@ -362,16 +362,16 @@ def dir(*args) -> List[_str]:
     dir() -> List[str]
     dir(object) -> List[str]
 
-    Gets a list of attributes of an object.
+    Obtiene una lista de los atributos de un objeto.
 
-    If no object argument is given, this function gets the list of names in the
-    current local scope.
+    Si no se proporciona un argumento de objeto, esta función obtiene la lista de nombres
+    en el ámbito local actual.
 
     Arguments:
-        object: Object to check for valid attributes.
+        object: Objeto del cual comprobar atributos válidos.
 
     Returns:
-        List of object attributes or list of names in current local scope.
+        Lista de atributos del objeto o lista de nombres en el ámbito local actual.
     """
 
 
@@ -389,19 +389,19 @@ def divmod(a, b):
     """
     divmod(a, b) -> Tuple[int, int]
 
-    Gets the quotient and remainder for dividing two integers.
+    Obtiene el cociente y el resto al dividir dos enteros.
 
-    See the standard `Python divmod documentation
-    <https://docs.python.org/3/library/functions.html#divmod>`_ for
-    the expected behavior when ``a`` or ``b`` are floating point numbers
-    instead.
+    Consulta la `documentación estándar de divmod de Python
+    <https://docs.python.org/3/library/functions.html#divmod>`_ para
+    el comportamiento esperado cuando ``a`` o ``b`` son números de punto flotante
+    en su lugar.
 
     Arguments:
-        a (int): Numerator.
-        b (int): Denominator.
+        a (int): Numerador.
+        b (int): Denominador.
 
     Returns:
-        A tuple with the quotient ``a // b`` and the remainder ``a % b``.
+        Una tupla con el cociente ``a // b`` y el resto ``a % b``.
     """
 
 
@@ -418,9 +418,9 @@ class enumerate:
         """
         enumerate(iterable, start=0)
 
-        Enumerates an existing iterator by adding a numeric index.
+        Enumera un iterador existente agregando un índice numérico.
 
-        This function is equivalent to::
+        Esta función es equivalente a::
 
             def enumerate(sequence, start=0):
                 n = start
@@ -451,19 +451,19 @@ def eval(*args):
     eval(expression, globals) -> Any
     eval(expression, globals, locals) -> Any
 
-    Evaluates the result of an expression.
+    Evalúa el resultado de una expresión.
 
-    Syntax errors are reported as exceptions.
+    Los errores de sintaxis se reportan como excepciones.
 
     Arguments:
-        expression (str): Expression to evaluate result of.
-        globals (dict): If given, this controls what functions are available
-            for use in the expression. By default the global scope is accessible.
-        locals (dict): If given, this controls what functions are available
-            for use in the expression. Defaults to the same as ``globals``.
+        expression (str): Expresión de la cual evaluar el resultado.
+        globals (dict): Si se proporciona, esto controla qué funciones están disponibles
+            para usar en la expresión. Por defecto, el ámbito global es accesible.
+        locals (dict): Si se proporciona, esto controla qué funciones están disponibles
+            para usar en la expresión. Por defecto es el mismo que ``globals``.
 
     Returns:
-        The value obtained by executing the expression.
+        El valor obtenido al ejecutar la expresión.
     """
 
 
@@ -488,16 +488,16 @@ def exec(*args):
     exec(expression, globals)
     exec(expression, globals, locals)
 
-    Executes MicroPython code.
+    Ejecuta código de MicroPython.
 
-    Syntax errors are reported as exceptions.
+    Los errores de sintaxis se reportan como excepciones.
 
     Arguments:
-        expression (str): Code to be executed.
-        globals (dict): If given, this controls what functions are available
-            for use in the expression. By default the global scope is accessible.
-        locals (dict): If given, this controls what functions are available
-            for use in the expression. Defaults to the same as ``globals``.
+        expression (str): Código a ejecutar.
+        globals (dict): Si se proporciona, esto controla qué funciones están disponibles
+            para usar en la expresión. Por defecto, el ámbito global es accesible.
+        locals (dict): Si se proporciona, esto controla qué funciones están disponibles
+            para usar en la expresión. Por defecto es el mismo que ``globals``.
     """
 
 
@@ -521,10 +521,10 @@ class float:
     def __init__(self, *args) -> None:
         """float(x=0.0)
 
-        Creates a floating point number from a given object.
+        Crea un número de punto flotante a partir de un objeto dado.
 
         Arguments:
-            x (int or float or str): Number or string to be converted.
+            x (int or float or str): Número o cadena a convertir.
         """
 
 
@@ -543,15 +543,15 @@ def getattr(*args):
     getattr(object, name) -> Any
     getattr(object, name, default) -> Any
 
-    Looks up the attribute called ``name`` in the given ``object``.
+    Busca el atributo llamado ``name`` en el ``object`` dado.
 
     Arguments:
-        object: Object in which to look for the attribute.
-        name (str): Name of the attribute.
-        default: Object to return if the attribute is not found.
+        object: Objeto en el cual buscar el atributo.
+        name (str): Nombre del atributo.
+        default: Objeto a devolver si el atributo no se encuentra.
 
     Returns:
-        Returns the value of the named attribute.
+        Devuelve el valor del atributo nombrado.
     """
 
 
@@ -559,10 +559,10 @@ def globals() -> Dict[_str, Any]:
     """
     globals() -> dict
 
-    Gets a dictionary representing the current global symbol table.
+    Obtiene un diccionario que representa la tabla de símbolos global actual.
 
     Returns:
-        The dictionary of globals.
+        El diccionario de globales.
     """
 
 
@@ -570,14 +570,14 @@ def hasattr(object: Any, name: _str) -> _bool:
     """
     hasattr(object, name) -> bool
 
-    Checks if an attribute exists on an object.
+    Comprueba si un atributo existe en un objeto.
 
     Arguments:
-        object: Object in which to look for the attribute.
-        name (str): Name of the attribute.
+        object: Objeto en el cual buscar el atributo.
+        name (str): Nombre del atributo.
 
     Returns:
-        ``True`` if an attribute by that name exists, ``False`` if not.
+        ``True`` si existe un atributo con ese nombre, ``False`` si no.
     """
 
 
@@ -585,13 +585,13 @@ def hash(object: Any) -> _int:
     """
     hash(object) -> int
 
-    Gets the hash value of an object, if the object supports it.
+    Obtiene el valor hash de un objeto, si el objeto lo admite.
 
     Arguments:
-        object: Object for which to get a hash value.
+        object: Objeto del cual obtener un valor hash.
 
     Returns:
-        The hash value.
+        El valor hash.
     """
 
 
@@ -610,28 +610,28 @@ def help(*args) -> None:
     help()
     help(object)
 
-    Get information about an object.
+    Obtiene información sobre un objeto.
 
-    If no arguments are given, this function prints instructions to operate the
-    REPL. If the argument is ``"modules"``, it prints the available modules.
+    Si no se proporcionan argumentos, esta función imprime instrucciones para operar el
+    REPL. Si el argumento es ``"modules"``, imprime los módulos disponibles.
 
     Arguments:
-        object: Object for which to print help information.
+        object: Objeto del cual imprimir información de ayuda.
     """
 
 
 def hex(x: int) -> _str:
     """hex(x) -> str
 
-    Converts an integer to its hexadecimal representation. The result is a
-    lowercase string prefixed with ``0x``. The result is a valid Python
-    expression. For example, ``hex(25)`` gives ``"0x19"``.
+    Convierte un entero a su representación hexadecimal. El resultado es una
+    cadena en minúsculas con prefijo ``0x``. El resultado es una expresión válida
+    de Python. Por ejemplo, ``hex(25)`` da ``"0x19"``.
 
     Arguments:
-        x (int): Value to be converted.
+        x (int): Valor a convertir.
 
     Returns:
-        A string representing the hexadecimal form of the input.
+        Una cadena que representa la forma hexadecimal de la entrada.
     """
 
 
@@ -639,14 +639,14 @@ def id(object: Any) -> _int:
     """
     id(object) -> int
 
-    Gets the *identity* of an object. This is an integer which is guaranteed
-    to be unique and constant for this object during its lifetime.
+    Obtiene la *identidad* de un objeto. Este es un entero que se garantiza
+    que es único y constante para este objeto durante su vida útil.
 
     Arguments:
-        object: Object of which to get the identifier.
+        object: Objeto del cual obtener el identificador.
 
     Returns:
-        The identifier.
+        El identificador.
     """
 
 
@@ -664,15 +664,15 @@ def input(*args) -> _str:
     """input() -> str
     input(prompt) -> str
 
-    Gets input from the user in the terminal window. It waits until
-    the user presses :kbd:`Enter`.
+    Obtiene entrada del usuario en la ventana del terminal. Espera hasta
+    que el usuario presione :kbd:`Enter`.
 
     Arguments:
-        prompt (str): If given, this is printed in the terminal window first.
-            This can be used to ask a question so the user knows what to type.
+        prompt (str): Si se proporciona, esto se imprime primero en la ventana del terminal.
+            Esto se puede usar para hacer una pregunta para que el usuario sepa qué escribir.
 
     Returns:
-        Everything the user typed before pressing :kbd:`Enter`.
+        Todo lo que el usuario escribió antes de presionar :kbd:`Enter`.
     """
 
 
@@ -696,42 +696,42 @@ class int:
     def __init__(self, *args) -> None:
         """int(x=0)
 
-        Creates an integer.
+        Crea un entero.
 
         Arguments:
-            x (int or float or str): Object to be converted.
+            x (int or float or str): Objeto a convertir.
         """
 
     def to_bytes(self, length: _int, byteorder: Literal["little", "big"]) -> _bytes:
         """
         to_bytes(length, byteorder) -> bytes
 
-        Get a :class:`bytes` representation of the integer.
+        Obtiene una representación en :class:`bytes` del entero.
 
         Arguments:
-            length (int): How many bytes to use.
-            byteorder (str): Choose ``"big"`` to put the most significant byte
-                first. Choose ``"little"`` to put the least significant byte
-                first.
+            length (int): Cuántos bytes usar.
+            byteorder (str): Elige ``"big"`` para poner el byte más significativo
+                primero. Elige ``"little"`` para poner el byte menos significativo
+                primero.
 
         Returns:
-            Byte sequence that represents the integer.
+            Secuencia de bytes que representa el entero.
         """
 
     @_classmethod
     def from_bytes(cls, _bytes: _bytes, byteorder: Literal["little", "big"]) -> _int:
         """from_bytes(bytes, byteorder) -> int
 
-        Convert a byte sequence to the number it represents.
+        Convierte una secuencia de bytes al número que representa.
 
         Arguments:
-            bytes (bytes): The bytes to convert.
-            byteorder (str): Choose ``"big"`` if the most significant byte is
-                the first element. Choose ``"little"`` if the least significant
-                byte is the first element.
+            bytes (bytes): Los bytes a convertir.
+            byteorder (str): Elige ``"big"`` si el byte más significativo es
+                el primer elemento. Elige ``"little"`` si el byte menos significativo
+                es el primer elemento.
 
         Returns:
-            The number represented by the bytes.
+            El número representado por los bytes.
         """
 
 
@@ -739,15 +739,15 @@ def isinstance(object: Any, classinfo: Union[_type, Tuple[_type]]) -> _bool:
     """
     isinstance(object, classinfo) -> bool
 
-    Checks if an object is an instance of a certain class.
+    Comprueba si un objeto es una instancia de una cierta clase.
 
     Arguments:
-        object: Object to check the type of.
-        classinfo (type or tuple): Class information.
+        object: Objeto del cual comprobar el tipo.
+        classinfo (type or tuple): Información de clase.
 
     Returns:
-        ``True`` if the ``object`` argument is an instance of the ``classinfo``
-        argument, or of a subclass thereof.
+        ``True`` si el argumento ``object`` es una instancia del argumento ``classinfo``,
+        o de una subclase del mismo.
     """
 
 
@@ -755,14 +755,14 @@ def issubclass(cls: _type, classinfo: Union[_type, Tuple[_type]]) -> _bool:
     """
     issubclass(cls, classinfo) -> bool
 
-    Checks if one class is a subclass of another class.
+    Comprueba si una clase es una subclase de otra clase.
 
     Arguments:
-        cls: Class type.
-        classinfo (type or tuple): Class information.
+        cls: Tipo de clase.
+        classinfo (type or tuple): Información de clase.
 
     Returns:
-        ``True`` if ``cls`` is a subclass of ``classinfo``.
+        ``True`` si ``cls`` es una subclase de ``classinfo``.
     """
 
 
@@ -770,13 +770,13 @@ def iter(object: Union[Iterable, Sequence]) -> Iterator:
     """
     iter(object) -> Iterator
 
-    Gets the iterator of the object if available.
+    Obtiene el iterador del objeto si está disponible.
 
     Arguments:
-        object: Object for which to get the iterator.
+        object: Objeto del cual obtener el iterador.
 
     Returns:
-        The iterator.
+        El iterador.
     """
 
 
@@ -784,13 +784,13 @@ def len(s: Sequence) -> _int:
     """
     len(s) -> int
 
-    Gets the length (the number of items) of an object.
+    Obtiene la longitud (el número de elementos) de un objeto.
 
     Arguments:
-        s (Sequence): The sequence of which to get the length.
+        s (Sequence): La secuencia de la cual obtener la longitud.
 
     Returns:
-        The length.
+        La longitud.
     """
 
 
@@ -808,14 +808,14 @@ class list:
         list(​)
         list(iterable)
 
-        Creates a new list. If no argument is given, this creates an empty
-        ``list`` object.
+        Crea una nueva lista. Si no se proporciona ningún argumento, esto crea un
+        objeto ``list`` vacío.
 
-        A list is *mutable*, which means that you *can* change its contents
-        after you create it.
+        Una lista es *mutable*, lo que significa que *puedes* cambiar su contenido
+        después de crearla.
 
         Arguments:
-            iterable (iter): Iterable from which to build the list.
+            iterable (iter): Iterable a partir del cual construir la lista.
         """
 
 
@@ -823,10 +823,10 @@ def locals() -> _dict:
     """
     locals() -> dict
 
-    Gets a dictionary representing the current local symbol table.
+    Obtiene un diccionario que representa la tabla de símbolos local actual.
 
     Returns:
-        The dictionary of locals.
+        El diccionario de locales.
     """
 
 
@@ -835,19 +835,19 @@ def map(function: Callable, iterable: Iterable, *args: Any) -> Iterator:
     map(function, iterable) -> Iterator
     map(function, iterable1, iterable2...) -> Iterator
 
-    Creates a new iterator that applies the given function to each item in the
-    given iterable and yields the results.
+    Crea un nuevo iterador que aplica la función dada a cada elemento del
+    iterable dado y devuelve los resultados.
 
     Arguments:
-        function (callable): Function that computes a result for one item in the
-            iterable(s). The number of arguments to this function must match
-            the number of iterables given.
-        iterable (iter): One or more source interables from which to draw data.
-            With multiple iterables, the iterator stops when the shortest
-            iterable is exhausted.
+        function (callable): Función que calcula un resultado para un elemento del
+            iterable(s). El número de argumentos de esta función debe coincidir
+            con el número de iterables dados.
+        iterable (iter): Uno o más iterables fuente de los cuales extraer datos.
+            Con múltiples iterables, el iterador se detiene cuando el iterable
+            más corto se agota.
 
     Returns:
-        The new, mapped iterator.
+        El nuevo iterador mapeado.
     """
 
 
@@ -866,12 +866,12 @@ def max(*args):
     max(iterable) -> Any
     max(arg1, arg2, ....) -> Any
 
-    Gets the object with largest value.
+    Obtiene el objeto con el mayor valor.
 
-    The argument may be a single iterable, or any number of objects.
+    El argumento puede ser un solo iterable, o cualquier número de objetos.
 
     Returns:
-        The object with the largest value.
+        El objeto con el mayor valor.
     """
 
 
@@ -890,12 +890,12 @@ def min(*args):
     min(iterable) -> Any
     min(arg1, arg2, ....) -> Any
 
-    Gets the object with smallest value.
+    Obtiene el objeto con el menor valor.
 
-    The argument may be a single iterable, or any number of objects.
+    El argumento puede ser un solo iterable, o cualquier número de objetos.
 
     Returns:
-        The object with the smallest value.
+        El objeto con el menor valor.
     """
 
 
@@ -903,36 +903,36 @@ def next(iterator: Iterator) -> Any:
     """
     next(iterator) -> Any
 
-    Retrieves the next item from the iterator by calling its ``__next__()`` method.
+    Recupera el siguiente elemento del iterador llamando a su método ``__next__()``.
 
     Arguments:
-        iterator (iter): Initialized generator object from which to draw the next
-            value.
+        iterator (iter): Objeto generador inicializado del cual extraer el siguiente
+            valor.
 
     Returns:
-        The next value from the generator.
+        El siguiente valor del generador.
     """
 
 
 class object:
     def __init__(self) -> None:
         """
-        Creates a new, featureless object.
+        Crea un nuevo objeto sin características.
         """
 
 
 def oct(x: _int) -> _str:
     """oct(x) -> str
 
-    Converts an integer to its octal representation. The result is a
-    string prefixed with ``0o``. The result is a valid Python
-    expression. For example, ``oct(25)`` gives ``"0o31"``.
+    Convierte un entero a su representación octal. El resultado es una
+    cadena con prefijo ``0o``. El resultado es una expresión válida
+    de Python. Por ejemplo, ``oct(25)`` da ``"0o31"``.
 
     Arguments:
-        x (int): Value to be converted.
+        x (int): Valor a convertir.
 
     Returns:
-        A string representing the octal form of the input.
+        Una cadena que representa la forma octal de la entrada.
     """
 
 
@@ -942,14 +942,14 @@ def oct(x: _int) -> _str:
 def ord(c: _str) -> _int:
     """ord(c) -> int
 
-    Converts a string consisting of one Unicode character to the
-    corresponding number. This is the inverse of :meth:`chr`.
+    Convierte una cadena que consiste en un carácter Unicode al
+    número correspondiente. Esta es la inversa de :meth:`chr`.
 
     Arguments:
-        c (str): Character to be converted.
+        c (str): Carácter a convertir.
 
     Returns:
-        Number that represents the character (0--255).
+        Número que representa el carácter (0--255).
     """
 
 
@@ -957,16 +957,16 @@ def pow(base: Union[_int, _float], exp: Union[_int, _float]) -> Union[_int, _flo
     """
     pow(base, exp) -> Number
 
-    Raises the base to the given exponent: :math:`\\text{base}^{\\mathrm{exp}}`.
+    Eleva la base al exponente dado: :math:`\\text{base}^{\\mathrm{exp}}`.
 
-    This is the same as doing ``base ** exp``.
+    Esto es lo mismo que hacer ``base ** exp``.
 
     Arguments:
-        base (Number): The base.
-        exp (Number): The exponent.
+        base (Number): La base.
+        exp (Number): El exponente.
 
     Returns:
-        The result.
+        El resultado.
     """
 
 
@@ -983,17 +983,17 @@ def print(*objects, sep: _str = " ", end: _str = "\n", file: uio.FileIO = usys.s
 def print(*args):
     """print(*objects, sep=" ", end="\\n", file=usys.stdin)
 
-    Prints text or other objects in the terminal window.
+    Imprime texto u otros objetos en la ventana del terminal.
 
     Arguments:
-        objects: Zero or more objects to print.
+        objects: Cero o más objetos a imprimir.
 
     Keyword Arguments:
-        sep (str): This is printed between objects, if there is more than one.
-        end (str): This is printed after the last object.
-        file (FileIO): By default, the result is printed in the terminal window. This
-              argument lets you print it to a file instead, if files are
-              supported.
+        sep (str): Esto se imprime entre objetos, si hay más de uno.
+        end (str): Esto se imprime después del último objeto.
+        file (FileIO): Por defecto, el resultado se imprime en la ventana del terminal. Este
+              argumento te permite imprimirlo en un archivo en su lugar, si los archivos están
+              soportados.
     """
 
 
@@ -1016,27 +1016,27 @@ class range:
         range(start, stop)
         range(start, stop, step)
 
-        Creates a generator that yields values from ``start`` up to
-        ``stop``, with increments of ``step``.
+        Crea un generador que produce valores desde ``start`` hasta
+        ``stop``, con incrementos de ``step``.
 
         Arguments:
-            start (int): Starting value. Defaults to ``0`` if only one argument is given.
-            stop (int): Endpoint. This value is *not* included.
-            step (int): Increment between values. Defaults to ``1`` if only one
-                or two arguments are given.
+            start (int): Valor inicial. Por defecto es ``0`` si solo se proporciona un argumento.
+            stop (int): Punto final. Este valor *no* está incluido.
+            step (int): Incremento entre valores. Por defecto es ``1`` si solo se proporcionan
+                uno o dos argumentos.
         """
 
 
 def repr(x: Any) -> _str:
     """repr(object) -> str
 
-    Gets the string that represents an object.
+    Obtiene la cadena que representa un objeto.
 
     Arguments:
-        x (object): Object to be converted.
+        x (object): Objeto a convertir.
 
     Returns:
-        String representation implemented by the object's ``__repr__`` method.
+        Representación en cadena implementada por el método ``__repr__`` del objeto.
     """
 
 
@@ -1044,14 +1044,14 @@ def reversed(seq: Sequence) -> Iterator:
     """
     reversed(seq) -> Iterator
 
-    Gets an iterator that yields the values from the sequence in the reverse, if
-    supported.
+    Obtiene un iterador que produce los valores de la secuencia en reversa, si
+    está soportado.
 
     Arguments:
-        seq: Sequence from which to draw samples.
+        seq: Secuencia de la cual extraer muestras.
 
     Returns:
-        Iterator that yields values in reverse order, starting with the last value.
+        Iterador que produce valores en orden inverso, comenzando con el último valor.
     """
 
 
@@ -1070,21 +1070,21 @@ def round(*args):
     round(number) -> int
     round(number, ndigits) -> float
 
-    Round a number to a given number of digits after the decimal point.
+    Redondea un número a un número dado de dígitos después del punto decimal.
 
-    If ``ndigits`` is omitted or ``None``, it returns the nearest integer.
+    Si se omite ``ndigits`` o es ``None``, devuelve el entero más cercano.
 
-    Rounding with one or more digits after the decimal point will not always
-    truncate trailing zeros. To print numbers nicely, format strings instead::
+    El redondeo con uno o más dígitos después del punto decimal no siempre
+    truncará los ceros finales. Para imprimir números bien, formatea cadenas en su lugar::
 
-        # print two decimal places
+        # imprimir dos decimales
         print('my number: %.2f' % number)
         print('my number: {:.2f}'.format(number))
         print(f'my number: {number:.2f}')
 
     Arguments:
-        number (float): The number to be rounded.
-        ndigits (int): The number of digits remaining after the decimal point.
+        number (float): El número a redondear.
+        ndigits (int): El número de dígitos restantes después del punto decimal.
     """
 
 
@@ -1102,151 +1102,151 @@ class set:
         set()
         set(iterable)
 
-        Creates a new set.
+        Crea un nuevo conjunto.
 
-        With no arguments, creates a new empty set, otherwise creates a set
-        containing unique items of *iterable*.
+        Sin argumentos, crea un nuevo conjunto vacío, de lo contrario crea un conjunto
+        que contiene elementos únicos de *iterable*.
 
-        Sets can also be created using a set literal::
+        Los conjuntos también se pueden crear usando un literal de conjunto::
 
             my_set = {1, 2, 3}
 
-        Elements of a set must be hashable. There are only a few types, like
-        :class:`list` that aren't hashable.
+        Los elementos de un conjunto deben ser hashables. Solo hay unos pocos tipos, como
+        :class:`list` que no son hashables.
 
         Args:
-            iterable: An iterable of hashable objects.
+            iterable: Un iterable de objetos hashables.
         """
 
     def copy(self: _Self) -> _Self:
         """
         copy() -> set
 
-        Returns a shallow copy of the set.
+        Devuelve una copia superficial del conjunto.
 
         Returns:
-            A new set.
+            Un nuevo conjunto.
         """
 
     def difference(self: _Self, *others: set) -> _Self:
         """
         difference(other1, other2, ...) -> set
 
-        Returns a new set with elements that are not in any of the other sets.
+        Devuelve un nuevo conjunto con elementos que no están en ninguno de los otros conjuntos.
 
-        The difference can also be computed using the ``-`` operator::
+        La diferencia también se puede calcular usando el operador ``-``::
 
             diff = s - other
 
         Args:
-            others: 1 or more other sets.
+            others: 1 o más otros conjuntos.
 
         Returns:
-            A new set.
+            Un nuevo conjunto.
         """
 
     def intersection(self: _Self, *others: set) -> _Self:
         """
         intersection(other1, other2, ...) -> set
 
-        Returns a new set with elements that are common between this set and
-        all other sets.
+        Devuelve un nuevo conjunto con elementos que son comunes entre este conjunto y
+        todos los otros conjuntos.
 
-        The intersection can also be computed using the ``&`` operator::
+        La intersección también se puede calcular usando el operador ``&``::
 
             intersect = s & other
 
         Args:
-            others: 1 or more other sets.
+            others: 1 o más otros conjuntos.
 
         Returns:
-            A new set.
+            Un nuevo conjunto.
         """
 
     def isdisjoint(self, other: set) -> bool:
         """
         isdisjoint(other) -> bool
 
-        Tests if a set and *other* have no elements in common.
+        Prueba si un conjunto y *other* no tienen elementos en común.
 
         Args:
-            other: Another set.
+            other: Otro conjunto.
 
         Returns:
-            ``True`` if this set has no elements in common with *other*,
-            otherwise ``False``.
+            ``True`` si este conjunto no tiene elementos en común con *other*,
+            de lo contrario ``False``.
         """
 
     def issubset(self, other: set) -> bool:
         """
         issubset(other) -> bool
 
-        Tests if a set is a subset of *other*.
+        Prueba si un conjunto es un subconjunto de *other*.
 
-        The test can also be performed using using the ``<=`` operator::
+        La prueba también se puede realizar usando el operador ``<=``::
 
             if s <= other:
-                # s is subset of other
+                # s es subconjunto de other
                 ...
 
         Args:
-            other: Another set.
+            other: Otro conjunto.
 
         Returns:
-            ``True`` if this set is a subset of *other*, otherwise ``False``.
+            ``True`` si este conjunto es un subconjunto de *other*, de lo contrario ``False``.
         """
 
     def issuperset(self, other: set) -> bool:
         """
         issuperset(other) -> bool
 
-        Tests if a set is a superset of *other*.
+        Prueba si un conjunto es un superconjunto de *other*.
 
-        The test can also be performed using using the ``>=`` operator::
+        La prueba también se puede realizar usando el operador ``>=``::
 
             if s >= other:
-                # s is superset of other
+                # s es superconjunto de other
                 ...
 
         Args:
-            other: Another set.
+            other: Otro conjunto.
 
         Returns:
-            ``True`` if this set is a superset of *other*, otherwise ``False``.
+            ``True`` si este conjunto es un superconjunto de *other*, de lo contrario ``False``.
         """
 
     def symmetric_difference(self: _Self, other: set) -> _Self:
         """
         symmetric_difference(other) -> bool
 
-        Returns a new set with elements in one set or the other but not in both.
+        Devuelve un nuevo conjunto con elementos en un conjunto o en el otro pero no en ambos.
 
-        The symmetric difference can also be computed using the ``^`` operator::
+        La diferencia simétrica también se puede calcular usando el operador ``^``::
 
             diff = s ^ other
 
         Args:
-            other: Another set.
+            other: Otro conjunto.
 
         Returns:
-            A new set.
+            Un nuevo conjunto.
         """
 
     def union(self: _Self, *others: set) -> _Self:
         """
         union(other1, other2, ...) -> set
 
-        Returns a new set with elements from this set and all other sets.
+        Devuelve un nuevo conjunto con elementos de este conjunto y de todos los otros conjuntos.
 
-        The union can also be computed using the ``|`` operator::
+        La unión también se puede calcular usando el operador ``|``::
 
             u = s | other
 
         Args:
-            others: 1 or more other sets.
+            others: 1 o más otros conjuntos.
 
         Returns:
-            A new set.
+            Un nuevo conjunto.
         """
 
     def __contains__(self, item: Hashable) -> bool:
@@ -1293,14 +1293,14 @@ def setattr(object: Any, name: _str, value: Any) -> None:
     """
     setattr(object, name, value)
 
-    Assigns a value to an attribute, provided that the object allows it.
+    Asigna un valor a un atributo, siempre que el objeto lo permita.
 
-    This is the counterpart of :meth:`getattr`.
+    Esta es la contraparte de :meth:`getattr`.
 
     Arguments:
-        object: Object in which to store the attribute.
-        name (str): Name of the attribute.
-        value: Value to store.
+        object: Objeto en el cual almacenar el atributo.
+        name (str): Nombre del atributo.
+        value: Valor a almacenar.
     """
 
 
@@ -1321,35 +1321,35 @@ class slice:
         """
         slice(​)
 
-        Creating instances of this class is not supported.
+        No se admite la creación de instancias de esta clase.
 
-        Use indexing syntax instead. For
-        example: ``a[start:stop:step]`` or ``a[start:stop, i]``.
+        Usa la sintaxis de indexación en su lugar. Por
+        ejemplo: ``a[start:stop:step]`` o ``a[start:stop, i]``.
         """
 
 
 def sorted(iterable: Iterable, key=None, reverse=False) -> List:
     """
-    Sorts objects.
+    Ordena objetos.
 
     Arguments:
-        iterable (iter): Objects to be sorted. This can also be a generator that
-            yield a finite number of objects.
-        key (callable): Function ``def(item) -> int`` that maps an object to a
-            numerical value. This is used to figure out the order of the sorted
-            items.
-        reverse (bool): Whether to sort in reverse, putting the highest value
-            first.
+        iterable (iter): Objetos a ordenar. Esto también puede ser un generador que
+            produce un número finito de objetos.
+        key (callable): Función ``def(item) -> int`` que mapea un objeto a un
+            valor numérico. Esto se usa para determinar el orden de los elementos
+            ordenados.
+        reverse (bool): Si ordenar en reversa, poniendo el valor más alto
+            primero.
 
 
     Returns:
-        A new list with the sorted items.
+        Una nueva lista con los elementos ordenados.
     """
 
 
 def staticmethod(method: _callable) -> _callable:
     """
-    Transforms a method into a static method.
+    Transforma un método en un método estático.
     """
 
 
@@ -1370,16 +1370,16 @@ class str:
         str(object)
         str(object, encoding)
 
-        Gets the string representation of an object.
+        Obtiene la representación en cadena de un objeto.
 
-        If no argument is given, this creates an empty ``str`` object.
+        Si no se proporciona ningún argumento, esto crea un objeto ``str`` vacío.
 
         Arguments:
-            object: If only this argument is given, this returns the string
-              representation of the object.
-            encoding (str): If the first argument is a ``bytearray`` or ``bytes``
-              object and the encoding argument is ``"utf-8"``, this will decode
-              the byte data to get a string representation.
+            object: Si solo se proporciona este argumento, esto devuelve la representación
+              en cadena del objeto.
+            encoding (str): Si el primer argumento es un objeto ``bytearray`` o ``bytes``
+              y el argumento de codificación es ``"utf-8"``, esto decodificará
+              los datos de bytes para obtener una representación en cadena.
         """
 
 
@@ -1398,14 +1398,14 @@ def sum(*args):
     sum(iterable) -> Number
     sum(iterable, start) -> Number
 
-    Sums the items from the iterable and the start value.
+    Suma los elementos del iterable y el valor inicial.
 
     Arguments:
-        iterable (iter): Values to be summed, starting with the first value.
-        start (Number): Value added to the total.
+        iterable (iter): Valores a sumar, comenzando con el primer valor.
+        start (Number): Valor agregado al total.
 
     Returns:
-        The total sum.
+        La suma total.
     """
 
 
@@ -1430,11 +1430,11 @@ def super(*args):
     super(type) -> type
     super(type, object_or_type) -> type
 
-    Gets an object that delegates method calls to a parent, or a sibling class
-    of the given type.
+    Obtiene un objeto que delega llamadas de método a un padre, o a una clase hermana
+    del tipo dado.
 
     Returns:
-        The matching `super()` object.
+        El objeto `super()` correspondiente.
     """
 
 
@@ -1452,14 +1452,14 @@ class tuple:
         tuple(​)
         tuple(iterable)
 
-        Creates a new tuple. If no argument is given, this creates an empty
-        ``tuple`` object.
+        Crea una nueva tupla. Si no se proporciona ningún argumento, esto crea un
+        objeto ``tuple`` vacío.
 
-        A tuple is *immutable*, which means that you *cannot* change its
-        contents after you create it.
+        Una tupla es *inmutable*, lo que significa que *no puedes* cambiar su
+        contenido después de crearla.
 
         Arguments:
-            iterable (iter): Iterable from which to build the tuple.
+            iterable (iter): Iterable a partir del cual construir la tupla.
         """
 
 
@@ -1467,11 +1467,11 @@ class type:
     def __init__(self, object: Any) -> None:
         """type(object)
 
-        Gets the type of an object. This can be used to check if an object
-        is an instance of a particular class.
+        Obtiene el tipo de un objeto. Esto se puede usar para verificar si un objeto
+        es una instancia de una clase particular.
 
         Arguments:
-            object: Object of which to check the type.
+            object: Objeto del cual comprobar el tipo.
         """
 
 
@@ -1479,14 +1479,14 @@ def zip(*iterables: Iterable) -> Iterable[Tuple]:
     """
     zip(iter_a, iter_b, ...) -> Iterable[Tuple]
 
-    Returns an iterator of tuples, where the *i*-th tuple contains the *i*-th
-    element from each of the argument sequences or iterables. The iterator
-    stops when the shortest input iterable is exhausted.
+    Devuelve un iterador de tuplas, donde la *i*-ésima tupla contiene el *i*-ésimo
+    elemento de cada una de las secuencias o iterables del argumento. El iterador
+    se detiene cuando el iterable de entrada más corto se agota.
 
-    With a single iterable argument, it returns an iterator of 1-tuples.
-    With no arguments, it returns an empty iterator.
+    Con un solo argumento iterable, devuelve un iterador de tuplas de 1 elemento.
+    Sin argumentos, devuelve un iterador vacío.
 
-    This functionality is equivalent to::
+    Esta funcionalidad es equivalente a::
 
         def zip(*iterables):
             sentinel = object()
@@ -1501,14 +1501,14 @@ def zip(*iterables: Iterable) -> Iterable[Tuple]:
                 yield tuple(result)
 
     Arguments:
-        iter_a (iter): The first iterable. This provides the first value for
-            each of the yielded tuples.
-        iter_b (iter): The second iterable. This provides the second value in
-            each of the yielded tuples. And so on.
+        iter_a (iter): El primer iterable. Este proporciona el primer valor para
+            cada una de las tuplas producidas.
+        iter_b (iter): El segundo iterable. Este proporciona el segundo valor en
+            cada una de las tuplas producidas. Y así sucesivamente.
 
     Returns:
-        A new iterator that yields tuples containing the values of the
-        individual iterables.
+        Un nuevo iterador que produce tuplas que contienen los valores de los
+        iterables individuales.
     """
 
 
@@ -1517,37 +1517,37 @@ def zip(*iterables: Iterable) -> Iterable[Tuple]:
 
 class BaseException:
     """
-    The base class for all built-in exceptions.
+    La clase base para todas las excepciones integradas.
 
-    It is not meant to be directly inherited by user-defined classes (for that,
-    use :class:`Exception`).
+    No está destinada a ser heredada directamente por clases definidas por el usuario (para eso,
+    usa :class:`Exception`).
     """
 
     args: Tuple
     """
-    The tuple of arguments given to the exception constructor.
+    La tupla de argumentos dados al constructor de la excepción.
     """
 
 
 class Exception(BaseException):
     """
-    All built-in exceptions are derived from this class.
+    Todas las excepciones integradas se derivan de esta clase.
 
-    All user-defined exceptions should also be derived from this class.
+    Todas las excepciones definidas por el usuario también deben derivarse de esta clase.
     """
 
 
 class ArithmeticError(Exception):
     """
-    The base class for those built-in exceptions that are raised for various
-    arithmetic errors.
+    La clase base para aquellas excepciones integradas que se lanzan para varios
+    errores aritméticos.
     """
 
 
 class LookupError(Exception):
     """
-    The base class for the exceptions that are raised when a key or index used
-    on a mapping or sequence is invalid.
+    La clase base para las excepciones que se lanzan cuando una clave o índice usado
+    en un mapeo o secuencia es inválido.
     """
 
 
@@ -1556,146 +1556,146 @@ class LookupError(Exception):
 
 class AssertionError(Exception):
     """
-    Raised when an assert statement fails.
+    Se lanza cuando falla una declaración assert.
     """
 
 
 class AttributeError(Exception):
     """
-    Raised when an attribute reference or assignment fails.
+    Se lanza cuando falla una referencia o asignación de atributo.
     """
 
 
 class EOFError(Exception):
     """
-    Raised when the :meth:`input` function hits an end-of-file condition (EOF)
-    without reading any data.
+    Se lanza cuando la función :meth:`input` encuentra una condición de fin de archivo (EOF)
+    sin leer ningún dato.
     """
 
 
 class GeneratorExit(BaseException):
     """
-    Raised when a generator or coroutine is closed.
+    Se lanza cuando un generador o corrutina se cierra.
     """
 
 
 class ImportError(Exception):
     """
-    Raised when the ``import`` statement is unable to load a module.
+    Se lanza cuando la declaración ``import`` no puede cargar un módulo.
     """
 
 
 class IndentationError(SyntaxError):
     """
-    Base class for syntax errors related to incorrect indentation.
+    Clase base para errores de sintaxis relacionados con indentación incorrecta.
     """
 
 
 class IndexError(LookupError):
     """
-    Raised when a sequence subscript is out of range.
+    Se lanza cuando un subíndice de secuencia está fuera de rango.
     """
 
 
 class KeyError(LookupError):
     """
-    Raised when a mapping (dictionary) key is not found in the set of existing keys.
+    Se lanza cuando una clave de mapeo (diccionario) no se encuentra en el conjunto de claves existentes.
     """
 
 
 class KeyboardInterrupt(BaseException):
     """
-    Raised when the user hits the interrupt key (normally :kbd:`Ctrl` :kbd:`C`).
+    Se lanza cuando el usuario presiona la tecla de interrupción (normalmente :kbd:`Ctrl` :kbd:`C`).
     """
 
 
 class MemoryError(Exception):
     """
-    Raised when an operation runs out of memory.
+    Se lanza cuando una operación se queda sin memoria.
     """
 
 
 class NameError(Exception):
     """
-    Raised when a local or global name is not found.
+    Se lanza cuando no se encuentra un nombre local o global.
     """
 
 
 class NotImplementedError(RuntimeError):
     """
-    In user defined base classes, abstract methods should raise this exception
-    when they require derived classes to override the method, or while the
-    class is being developed to indicate that the real implementation still
-    needs to be added.
+    En clases base definidas por el usuario, los métodos abstractos deben lanzar esta excepción
+    cuando requieren que las clases derivadas sobrescriban el método, o mientras la
+    clase está siendo desarrollada para indicar que la implementación real aún
+    necesita ser agregada.
     """
 
 
 class OSError(Exception):
     """
-    This exception is raised by the firmware, which is
-    the Operating System that runs on the hub.
-    For :ref:`example <device_detection>`, it
-    raises an ``OSError`` if you call ``Motor(Port.A)`` when there is no
-    motor on port A.
+    Esta excepción es lanzada por el firmware, que es
+    el Sistema Operativo que se ejecuta en el hub.
+    Por :ref:`ejemplo <device_detection>`, lanza
+    un ``OSError`` si llamas a ``Motor(Port.A)`` cuando no hay un
+    motor en el puerto A.
     """
 
     errno: _int
     """
-    Specifies which kind of ``OSError`` occurred, as listed in the
-    :mod:`uerrno` module.
+    Especifica qué tipo de ``OSError`` ocurrió, como se lista en el
+    módulo :mod:`uerrno`.
     """
 
 
 class OverflowError(ArithmeticError):
     """
-    Raised when the result of an arithmetic operation is too large to be represented.
+    Se lanza cuando el resultado de una operación aritmética es demasiado grande para ser representado.
     """
 
 
 class RuntimeError(Exception):
     """
-    Raised when an error is detected that doesn’t fall in any of the other categories.
+    Se lanza cuando se detecta un error que no cae en ninguna de las otras categorías.
 
-    The associated value is a string indicating what precisely went wrong.
+    El valor asociado es una cadena que indica qué salió mal exactamente.
     """
 
 
 class StopIteration(Exception):
     """
-    Raised by built-in function :meth:`next` and an iterator’s ``__next__()``
-    method to signal that there are no further items produced by the iterator.
+    Lanzada por la función integrada :meth:`next` y el método ``__next__()`` de un iterador
+    para señalar que no hay más elementos producidos por el iterador.
 
-    Generator functions should return instead of raising this directly.
+    Las funciones generadoras deben retornar en lugar de lanzar esto directamente.
     """
 
 
 class SyntaxError(Exception):
     """
-    Raised when the parser encounters a syntax error.
+    Se lanza cuando el analizador encuentra un error de sintaxis.
     """
 
 
 class SystemExit(BaseException):
     """
-    Raised when you press the stop button on the hub or in the Pybricks Code app.
+    Se lanza cuando presionas el botón de parar en el hub o en la aplicación Pybricks Code.
     """
 
 
 class TypeError(Exception):
     """
-    Raised when an operation or function is applied to an object of inappropriate type.
+    Se lanza cuando se aplica una operación o función a un objeto de tipo inapropiado.
     """
 
 
 class ValueError(Exception):
     """
-    Raised when an operation or function receives an argument that has the right
-    type but an inappropriate value. This is used when the situation is
-    not described by a more precise exception such as :class:`IndexError`.
+    Se lanza cuando una operación o función recibe un argumento que tiene el tipo
+    correcto pero un valor inapropiado. Esto se usa cuando la situación
+    no está descrita por una excepción más precisa como :class:`IndexError`.
     """
 
 
 class ZeroDivisionError(ArithmeticError):
     """
-    Raised when the second argument of a division or modulo operation is zero.
+    Se lanza cuando el segundo argumento de una división o operación de módulo es cero.
     """
