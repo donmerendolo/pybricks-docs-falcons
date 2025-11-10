@@ -1,5 +1,5 @@
 Documentación de Pybricks
-==================================================================
+=========================
 
 `Pybricks <https://pybricks.com/>`_ es programación en Python para hubs inteligentes de LEGO®.
 Ejecuta scripts de MicroPython directamente en el hub y ten control total de sus motores y sensores.

@@ -6,6 +6,7 @@ cosas) de clases. Por ejemplo, la clase ``TechnicHub``:
 
 .. autoclass:: pybricks.hubs.TechnicHub
     :no-members:
+    :noindex:
 
 Las clases son las que tienen un rectángulo azul en la parte.
 Las que tiene un rectángulo gris, son funciones o métodos.

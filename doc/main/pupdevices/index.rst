@@ -1,5 +1,5 @@
 :mod:`pupdevices <pybricks.pupdevices>` -- Motores, sensores y luces
-==================================================================
+====================================================================
 
 .. automodule:: pybricks.pupdevices
     :no-members:

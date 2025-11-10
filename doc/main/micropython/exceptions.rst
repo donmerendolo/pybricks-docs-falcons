@@ -1,5 +1,5 @@
 Excepciones y errores
-=====================================================
+=====================
 
 Esta sección enumera todas las excepciones disponibles en orden alfabético.
 

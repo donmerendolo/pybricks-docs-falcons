@@ -1,5 +1,5 @@
 :mod:`robotics <pybricks.robotics>` -- Robótica y DriveBases
-===============================================================
+============================================================
 
 .. automodule:: pybricks.robotics
     :no-members:

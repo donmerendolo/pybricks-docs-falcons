@@ -1,5 +1,5 @@
 Señales y unidades
-=================
+==================
 
 
 Muchos comandos permiten especificar argumentos en términos de magnitudes
@@ -17,7 +17,7 @@ Tiempo
 .. _time:
 
 tiempo: ms
----------
+-----------
 Todas las cantidades de tiempo se miden en milisegundos (ms).
 
 Por ejemplo, la duración del movimiento con ``run_time``, y la duración
@@ -86,7 +86,7 @@ se especifican en milímetros (mm).
 .. _linspeed:
 
 velocidad: mm/s
-------------
+-----------------
 Las velocidades lineales se expresan en milímetros por segundo (mm/s).
 
 Por ejemplo, la velocidad de un robot se expresa en mm/s.

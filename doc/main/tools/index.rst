@@ -1,11 +1,11 @@
 :mod:`tools <pybricks.tools>` -- Herramientas de propósito general
-================================================
+==================================================================
 
 .. automodule:: pybricks.tools
     :no-members:
 
 Herramientas de tiempo
----------------
+----------------------
 
 .. autofunction:: wait
 
@@ -33,7 +33,7 @@ Herramientas de entrada
     ../../../examples/pup/tools/hub_menu.py
 
 Herramientas de álgebra lineal
---------------------
+------------------------------
 
 .. autoclass:: pybricks.tools.Matrix
     :no-members:

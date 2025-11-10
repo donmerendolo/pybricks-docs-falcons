@@ -1,5 +1,5 @@
 :mod:`hubs <pybricks.hubs>` -- Funciones del hub integradas
-=====================================================
+===========================================================
 
 .. module:: pybricks.hubs
 

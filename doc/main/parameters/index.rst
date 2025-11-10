@@ -1,5 +1,5 @@
 :mod:`parameters <pybricks.parameters>` -- Parámetros y constantes
-===================================================================
+==================================================================
 
 .. automodule:: pybricks.parameters
     :no-members:

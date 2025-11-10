@@ -1,5 +1,5 @@
 Clases y funciones integradas
-=====================================================
+=============================
 
 Las clases y funciones que se muestran en esta página se pueden usar sin
 importar nada.

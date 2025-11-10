@@ -36,7 +36,7 @@ Mando de Xbox
 .. _xbox-controller-pairing:
 
 Instrucciones para emparejar el mando de Xbox
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 La primera vez que uses un mando con un hub, tendrás que emparejarlos:
 enciende el mando y luego mantén pulsado el botón de emparejamiento
@@ -61,7 +61,7 @@ o lo conectas a otro hub, tendrás que emparejarlos de nuevo como se describe
 arriba.
 
 Mandos compatibles
-============================
+==================
 
 Todos los mandos lanzados después del 2016 son compatibles. Esto incluye el
 mando de la One S (``1708`` de 2016), el Elite Series 2 (``1797`` de 2019), y el
@@ -73,7 +73,7 @@ Series X/S (``1914`` de 2020), que es el modelo más reciente hasta la fecha de 
   este resumen</a> de números de modelo que incluye imágenes de cada mando.</p>
 
 Actualizar el mando de Xbox
-============================
+===========================
 
 Si usas el mando con una consola Xbox, probablemente esté ya actualizado. Si
 no lo has usado durante un tiempo o si lo has comprado recientemente, es posible
@@ -85,7 +85,7 @@ Conecta el mando al ordenador mediante USB y sigue las instrucciones en la
 app para hacer clic en "Actualizar ahora".
 
 Limitaciones del Technic Hub
-=======================
+============================
 
 Debido a limitaciones del Technic Hub, el hub se desconectará del
 ordenador al buscar el mando de Xbox. Esto significa que no podrás

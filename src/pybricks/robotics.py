@@ -31,7 +31,7 @@ class DriveBase:
     positivo significa en el sentido de las agujas del reloj y negativo significa
     en sentido contrario a las agujas del reloj.
 
-    Consulta la sección `measuring`_ para consejos sobre cómo medir y ajustar los
+    Consulta la sección :ref:`measuring` para consejos sobre cómo medir y ajustar los
     valores del diámetro de la rueda y la distancia entre ejes.
     """
 
