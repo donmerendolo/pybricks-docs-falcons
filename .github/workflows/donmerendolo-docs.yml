@@ -1,4 +1,4 @@
-name: Deploy docs to GitHub Pages
+name: Deploy custom pybricks docs to GitHub Pages
 
 on:
   push:
@@ -19,19 +19,19 @@ concurrency:
 
 jobs:
   build:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           submodules: recursive
       
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-      
       - name: Install uv
-        run: pip install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: 'latest'
+      
+      - name: Set up Python
+        run: uv python install 3.11
       
       - name: Install dependencies
         run: uv sync
@@ -40,7 +40,7 @@ jobs:
         run: uv run make -C doc html
       
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
           path: doc/main/build/html
 
@@ -48,9 +48,10 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     needs: build
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
