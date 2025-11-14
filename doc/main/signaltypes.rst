@@ -105,7 +105,7 @@ Por ejemplo, puedes ajustar la configuración de aceleración de una
 de suave o cómo de rápido alcanza el punto de ajuste de velocidad constante.
 
 Unidades aproximadas y relativas
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. _percentage:
 

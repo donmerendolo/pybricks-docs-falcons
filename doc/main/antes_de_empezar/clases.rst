@@ -53,6 +53,7 @@ hay que pasarle los objetos de los motores que queremos que use
 
 .. autoclass:: pybricks.robotics.DriveBase
     :no-members:
+    :noindex:
 
 En este caso, los parámetros ``left_motor`` y ``right_motor`` son 
 objetos de la clase ``Motor``, ``wheel_diameter`` y ``axle_track`` 

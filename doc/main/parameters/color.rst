@@ -10,35 +10,35 @@ Color
 
     .. autoattribute:: RED
 
-        .. pybricks-color:: RED
+        .. py:pybricks-color:: RED
 
     .. autoattribute:: ORANGE
 
-        .. pybricks-color:: ORANGE
+        .. py:pybricks-color:: ORANGE
 
     .. autoattribute:: YELLOW
 
-        .. pybricks-color:: YELLOW
+        .. py:pybricks-color:: YELLOW
 
     .. autoattribute:: GREEN
 
-        .. pybricks-color:: GREEN
+        .. py:pybricks-color:: GREEN
 
     .. autoattribute:: CYAN
 
-        .. pybricks-color:: CYAN
+        .. py:pybricks-color:: CYAN
 
     .. autoattribute:: BLUE
 
-        .. pybricks-color:: BLUE
+        .. py:pybricks-color:: BLUE
 
     .. autoattribute:: VIOLET
 
-        .. pybricks-color:: VIOLET
+        .. py:pybricks-color:: VIOLET
 
     .. autoattribute:: MAGENTA
 
-        .. pybricks-color:: MAGENTA
+        .. py:pybricks-color:: MAGENTA
 
     .. rubric:: Colores no saturados
 
@@ -50,23 +50,23 @@ Color
 
     .. autoattribute:: WHITE
 
-        .. pybricks-color:: WHITE
+        .. py:pybricks-color:: WHITE
 
     .. autoattribute:: GRAY
 
-        .. pybricks-color:: GRAY
+        .. py:pybricks-color:: GRAY
 
     .. autoattribute:: BLACK
 
         Esto representa objetos oscuros que reflejan muy poca luz.
 
-        .. pybricks-color:: BLACK
+        .. py:pybricks-color:: BLACK
 
     .. autoattribute:: NONE
 
         Esto es oscuridad total, sin reflexión ni luz en absoluto.
 
-        .. pybricks-color:: NONE
+        .. py:pybricks-color:: NONE
 
 .. rubric:: Creando tus propios colores
 

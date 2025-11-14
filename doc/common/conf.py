@@ -134,6 +134,26 @@ nitpick_ignore = [
 # not sure why, but this is needed for typing.IO in uselect
 nitpick_ignore.append(("py:obj", "typing.IO"))
 
+
+# cosas que dan error y chatgpt me ha dicho que ponga esto
+# medio entiendo por que
+
+nitpick_ignore.extend(
+    [
+        ("py:class", "ubuiltins.bool"),
+        ("py:class", "ubuiltins.dict"),
+        ("py:class", "stm32-float"),
+        ("py:class", "await"),
+        ("py:class", "list"),
+        ("py:class", "tuple"),
+        ("py:class", "Number"),
+        ("py:class", "deg"),
+        ("py:class", "deg/s"),
+        ("py:class", "deg/s²"),
+        ("py:obj", "FileIO"),
+    ]
+)
+
 # -- Autodoc options ------------------------------------------------------
 
 autodoc_member_order = "bysource"
